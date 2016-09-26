@@ -205,127 +205,127 @@ Anggota Kelompok
 #### 2. Langkah Instalasi Kali Linux (OS untuk Penetrasi)
 
 
-  1. Lorem Ipsum   
+  1. Unduh ISO Kali Linux 32 bit / 64 bit   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/0.png)
 
 
-  2. Lorem Ipsum    
+  2. Buka Oracle VM VirtualBox Manajer, kemudian pilih Baru untuk membuat mesin virtual baru    
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/1.JPG)
 
 
-  3. Lorem Ipsum    
+  3. Masukkan nama dan sistem operasi yang sesuai     
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/2.JPG)
 
 
-  4. Lorem Ipsum    
+  4. Atur ukuran memori yang diinginkan (disarankan mengalokasikan memori minimal 2048 MB untuk Kali Linux)    
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/3.JPG)
 
 
-  5. Lorem Ipsum    
+  5. Pilih opsi pembuatan hard disk    
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/4.JPG)
 
 
-  6. Lorem Ipsum    
+  6. Pilih opsi untuk menentukan tipe hard disk    
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/5.JPG)
 
 
-  7. Lorem Ipsum    
+  7. Pilih opsi cara pengalokasian *storage* hard disk     
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/6.JPG)
 
 
-  8. Lorem Ipsum    
+  8. Pilih lokasi dan ukuran hard disk    
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/7.JPG)
 
 
-  9. Lorem Ipsum    
+  9. Pilih mesin virtual yang baru dibuat dan pilih Mulai    
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/8.JPG)
 
 
-  10. Lorem Ipsum    
+  10. Pilih ISO Kali Linux yang di unduh pada langkah 1 untuk memulai proses instalasi
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/9.JPG)
 
 
-  11. Lorem Ipsum   
+  11. Pilih opsi "Install"   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/10.JPG)
 
 
-  12. Lorem Ipsum   
+  12. Pilih bahasa  yang akan digunakan saat proses instalasi (menjadi bahasa *default* dari sistem)  
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/11.JPG)
 
 
-  13. Lorem Ipsum   
+  13. Pilih benua tempat tinggalmu untuk menentukan *time zone*
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/12.JPG)
 
 
-  14. Lorem Ipsum   
+  14. Pilih negara tempat tinggalmu untuk menentukan *time zone*   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/13.JPG)
 
 
-  15. Lorem Ipsum   
+  15. Pilih negara yang menjadi basis *locale* (Indonesia belum terdaftar)   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/14.JPG)
 
 
-  16. Lorem Ipsum   
+  16. Pilih *keymap* yang ingin digunakan   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/15.JPG)
 
 
-  17. Lorem Ipsum   
+  17. Masukkan nama *host*   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/16.JPG)
 
 
-  18. Lorem Ipsum   
+  18. Masukkan nama *domain* (jika ada)   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/17.JPG)
 
 
-  19. Lorem Ipsum   
+  19. Masukkan *password* untuk user "root"   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/18.JPG)
 
 
-  20. Lorem Ipsum   
+  20. Masukkan *password* untuk konfirmasi ulang   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/19.JPG)
 
 
-  21. Lorem Ipsum   
+  21. Pilih *time zone* yang ingin digunakan   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/20.JPG)
 
 
-  22. Lorem Ipsum   
+  22. Pilih opsi cara melakukan partisi disk   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/21.JPG)
 
 
-  23. Lorem Ipsum   
+  23. Pilih disk yang ingin dipartisi   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/22.JPG)
 
 
-  24. Lorem Ipsum   
+  24. Pilih skema partisi yang ingin digunakan   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/23.JPG)
 
 
-  25. Lorem Ipsum   
+  25. Tampilan rangkuman dari konfigurasi partisi disk yang akan dilakukan   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/24.JPG)
 
 
-  26. Lorem Ipsum   
+  26. Pilih "Yes" untuk menjalankan partisi pada disk yang bersangkutan   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/25.JPG)
 
 
-  27. Lorem Ipsum   
+  27. Tampilan proses instalasi sistem sedang berlangsung   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/26.JPG)
 
 
-  28. Lorem Ipsum   
+  28. Tampilan instalasi sistem telah berhasil   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/27.JPG)
 
 
-  29. Lorem Ipsum   
+  29. Masukkan *username* (*default*-nya "root")   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/28.JPG)
 
 
-  30. Lorem Ipsum   
+  30. Masukkan *password* yang dimasukkan pada langkah 19   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/29.JPG)
 
 
-  31. Lorem Ipsum   
+  31. Buka terminal dan masukkan perintah "sudo apt-get -y update && sudo apt-get -y upgrade" agar semua aplikasi yang ter-*install* memiliki versi terbaru   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/30.JPG)
 
 
@@ -405,4 +405,5 @@ Dilakukan dengan perintah : ncrack -U list_user_pass/username.txt -P list_user_p
 
 
 b. Dengan Defense Tools (Fail2Ban diinstal pada komputer server)
+
 
