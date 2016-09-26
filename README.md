@@ -49,6 +49,88 @@ Anggota Kelompok
 
 
 #### 1. Langkah Instalasi Ubuntu Server
+  1. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/1.jpg)
+  2. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/2.png)
+  3. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/3.png)
+  4. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/4.png)
+  5. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/5.jpeg)
+  6. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/6.jpeg)
+  7. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/7.jpeg)
+  8. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/8.jpeg)
+  9. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/9.jpeg)
+  10. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/10.jpeg)
+  11. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/11.jpeg)
+  12. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/12.jpeg)
+  13. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/13.jpeg)
+  14. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/14.jpeg)
+  15. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/15.jpeg)
+  16. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/16.jpeg)
+  17. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/17.jpeg)
+  18. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/18.jpeg)
+  19. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/19.jpeg)
+  20. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/20.jpeg)
+  21. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/21.jpeg)
+  22. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/22.jpeg)
+  23. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/23.jpeg)
+  24. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/24.jpeg)
+  25. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/25.jpeg)
+  26. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/26.jpeg)
+  27. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/27.jpeg)
+  28. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/28.jpeg)
+  29. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/29.jpeg)
+  30. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/30.jpeg)
+  31. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/31.jpeg)
+  32. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/32.jpeg)
+  33. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/33.jpeg)
+  34. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/34.jpeg)
+  35. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/35.jpeg)
+  36. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/36.jpeg)
+  37. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/37.jpeg)
+  38. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/38.jpeg)
+  39. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/39.jpeg)
+  40. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/40.jpeg)
+  41. Lorem Ipsum		
+![Install Ubuntu Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Ubuntu_Server/41.jpeg)
 
 
 #### 2. Langkah Instalasi Kali Linux (OS untuk Penetrasi)
