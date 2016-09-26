@@ -352,13 +352,13 @@ Pada tahap ini , kami melakukan uji penetrasi dengan 4 skenario untuk setiap *at
 
 Dilakukan dengan perintah ncrack --user root --pass root 10.151.34.170 -p ssh:3022 -vvv
 
-![Ncrack Skenario 1](https://raw.githubusercontent.com/ronayumik/PKSJ/master/nofail2ban/ncrack_sk1.png)
+![Ncrack Skenario 1](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk1.png)
 
 **Skenario 2** : Dengan username "ardi" dan password "12344321"
 
 Dilakukan dengan perintah : ncrack --user ardi --pass 12344321 10.151.34.170 -p ssh:3022. Hasilnya adalah sebagai berikut :
 
-![Ncrack Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/nofail2ban/ncrack_sk2.png)
+![Ncrack Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk2.png)
 
 
 **Skenario 3** : Dengan username di file username.txt dan password di file password_list.txt 
@@ -366,13 +366,13 @@ Dilakukan dengan perintah : ncrack --user ardi --pass 12344321 10.151.34.170 -p 
 Dilakukan dengan perintah : ncrack -U list_user_pass/username.txt -P list_user_pass/password_list.txt 10.151.34.170 -p ssh:3022 
 
 
-![Ncrack Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/nofail2ban/ncrack_sk3.png)
+![Ncrack Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk3.png)
 
 **Skenario 4** : Dengan username di file username.txt dan password di file password_list_true.txt
 
 Dilakukan dengan perintah : ncrack -U list_user_pass/username.txt -P list_user_pass/password_list_true.txt 10.151.34.170 -p ssh:3022 
 
-![Ncrack Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/nofail2ban/ncrack_sk4.png)
+![Ncrack Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk4.png)
 
 
 
@@ -383,23 +383,23 @@ Dilakukan dengan perintah : ncrack -U list_user_pass/username.txt -P list_user_p
 **Skenario 1** : Dengan username "root" dan password "root"
 
 
-![Hydra Skenario 1](https://raw.githubusercontent.com/ronayumik/PKSJ/master/nofail2ban/hydra_sk1.png)
+![Hydra Skenario 1](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk1.png)
 
 **Skenario 2** : Dengan username "ardi" dan password "12344321"
 
-![Hydra Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/nofail2ban/hydra_sk2.png)
+![Hydra Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk2.png)
 
 
 **Skenario 3** : Dengan username di file username.txt dan password di file password_list.txt 
 
 
 
-![Hydra Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/nofail2ban/hydra_sk3.png)
+![Hydra Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk3.png)
 
 **Skenario 4** : Dengan username di file username.txt dan password di file password_list_true.txt
 
 
-![Hydra Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/nofail2ban/hydra_sk4.png)
+![Hydra Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk4.png)
 
 
 
