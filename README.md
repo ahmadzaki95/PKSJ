@@ -344,6 +344,48 @@ Pada tahap ini , kami melakukan uji penetrasi dengan 4 skenario untuk setiap *at
 
 * **Dengan Patator**
 
+**Skenario 1** : Dengan username "root" dan password "root"
+
+Dilakukan dengan perintah : patator ssh_login host=10.151.34.170 port=3022 user=root password=root  
+Hasilnya berupa pesan "Authentication failed" karena user dan password nya salah
+
+![Patator Skenario 1](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_1.JPG)
+
+**Skenario 2** : Dengan username "ardi" dan password "12344321"
+
+Dilakukan dengan perintah : patator ssh_login host=10.151.34.170 port=3022 user=ardi password=12344321  
+Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwordnya benar
+
+![Patator Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_2.JPG)
+
+**Skenario 3** : Dengan username di file username.txt dan password di file password_list.txt 
+
+Dilakukan dengan perintah : patator ssh_login host=10.151.34.170 port=3022 user=FILE0 password=FILE1 0=/root/Desktop/list_user_pass/username.txt 1=/root/Desktop/list_user_pass/password_list.txt
+
+![Patator Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_3.JPG)
+
+Hasilnya berupa daftar pesan "Authentication failed" dari kombinasi user dan password yang salah
+
+![Patator Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_4.JPG)
+
+**Skenario 4** : Dengan username di file username.txt dan password di file password_list_true.txt
+
+Dilakukan dengan perintah : patator ssh_login host=10.151.34.170 port=3022 user=FILE0 password=FILE1 0=/root/Desktop/list_user_pass/username.txt 1=/root/Desktop/list_user_pass/password_list_true.txt 
+
+![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_5.JPG)
+
+Hasilnya berupa pesan informasi dari SSH yang dipenetrasi menggunakan kombinasi user dan password yang benar
+
+![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_6.JPG)
+
+Baris terakhir dari perintah yang diinputkan tidak menunjukkan perbedaan apabila SSH berhasil dipenetrasi atau gagal, sehingga tentunya tidak efektif karena hasil tiap kombinasi user dan password harus dilihat satu per satu
+
+![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_7.JPG)
+
+Untuk mengatasi hal tersebut, ditambahkan perintah : -x ignore:fgrep='Authentication failed' agar setiap kombinasi user dan password yang menghasilkan pesan "Authentication Failed" tidak ditampilkan
+
+![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_8.JPG)
+
 
 
 * **Dengan NCrack**
@@ -360,11 +402,9 @@ Dilakukan dengan perintah : ncrack --user ardi --pass 12344321 10.151.34.170 -p 
 
 ![Ncrack Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk2.png)
 
-
 **Skenario 3** : Dengan username di file username.txt dan password di file password_list.txt 
 
 Dilakukan dengan perintah : ncrack -U list_user_pass/username.txt -P list_user_pass/password_list.txt 10.151.34.170 -p ssh:3022 
-
 
 ![Ncrack Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk3.png)
 
@@ -376,12 +416,9 @@ Dilakukan dengan perintah : ncrack -U list_user_pass/username.txt -P list_user_p
 
 
 
-
 * **Dengan Hydra**
 
-
 **Skenario 1** : Dengan username "root" dan password "root"
-
 
 ![Hydra Skenario 1](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk1.png)
 
@@ -389,21 +426,17 @@ Dilakukan dengan perintah : ncrack -U list_user_pass/username.txt -P list_user_p
 
 ![Hydra Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk2.png)
 
-
 **Skenario 3** : Dengan username di file username.txt dan password di file password_list.txt 
-
-
 
 ![Hydra Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk3.png)
 
 **Skenario 4** : Dengan username di file username.txt dan password di file password_list_true.txt
 
-
 ![Hydra Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk4.png)
 
 
 
-
 b. Dengan Defense Tools (Fail2Ban diinstal pada komputer server)
+
 
 
