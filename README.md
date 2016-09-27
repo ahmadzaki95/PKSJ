@@ -332,6 +332,14 @@ Anggota Kelompok
 
 #### 3. Langkah Instalasi SSH Server
 
+  Pada terminal server, kita ketikkan : sudo apt-get install openssh-server . Lalu masukkan password untuk *root*
+![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/1.png)
+
+  Untuk mengecek bisa mengetik: service ssh status. Jika sudah berhasil, maka muncul seperti dibawah ini :
+![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/2.png)  
+
+
+
 #### 4. Langkah Uji Penetrasi dengan SSH Brute Force Tools
 
 a. Tanpa Defense Tools (Fail2Ban tidak diinstal pada komputer server)
@@ -436,7 +444,35 @@ Dilakukan dengan perintah : ncrack -U list_user_pass/username.txt -P list_user_p
 
 
 
-b. Dengan Defense Tools (Fail2Ban diinstal pada komputer server)
+b. Dengan Defense Tools
 
 
+
+
+* **Dengan Mengubah Konfigurasi SSH**
+
+  Untuk mengkonfigurasi, maka ubah file di /etc/ssh/sshd_config
+![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/4.png)    
+
+
+  Berikut adalah pengaturan yang dapat diterapkan :
+  * Ubah port untuk SSH. Ubah pada line yang "Port 22 " menjadi port lain yang tidak sedang digunakan oleh aplikasi lainnya. Pada contoh ini, misalnya diganti menjadi port 4222
+![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/5.png)      
+
+
+  * Mendisable Root Login dengan password. Login *root* hanya bisa login dengan menggunakan *SSH key*. Untuk membuatnya, maka diedit di bagian "PermitRootLogin yes" menjadi "PermitRootLogin without-password"
+![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/6.png)      
+
+
+  * Mendisable Password Authentication, berarti hanya SSH dengan SSH key yang bisa dijalankan. Cari baris yang berisi "PasswordAuthentication" , dan ubah menjadi seperti berikut:
+![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/9.png)   
+
+
+   Setelah selesai, ketik baris berikut untuk mereload pengaturan SSH yang telah diubah & merestart SSH *service* :
+![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/7.png)      
+
+
+
+   Jika settingannya sudah berhasil, jika anda SSH ke komputer server dengan menggunakan password ( SSH server belum terdaftar ), maka akan muncul sebagai berikut :
+![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/10.png)      
 
