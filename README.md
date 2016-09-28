@@ -38,7 +38,7 @@ Anggota Kelompok
 
 * **Hydra**, adalah salah satu tools brute force *password* dapat dicompile/digunakan Linux, Windows/Cygwin, Solaris 11, FreeBSD 8.1, OpenBSD, OSX, QNX/Blackberry. Tutorial instalasi dan penggunaannya dapat diliat pada website resminya ( [link](https://www.thc.org/thc-hydra/) )
 
-* **Patator**, adalah salah satu tools untuk *brute force* password yang lebih baru dari Medusa maupun Hydra. Pada repository resminya, patator ditulis menggunakan bahasa Python dan bersifat *multithread*, dan dituliskan untuk memperbaiki *predesesor* / pendahulunya seperti Hydra atau Medusa. Untuk petunjuk penggunaan & instalasi, dapat dilihat pada [link repository berikut](https://github.com/lanjelot/patator)
+* **Patator**, adalah salah satu tools untuk *brute force* password yang lebih baru dari Medusa maupun Hydra. Pada repository resminya, patator ditulis menggunakan bahasa Python dan bersifat *multithread*, dan dituliskan untuk memperbaiki *predesesor* /pendahulunya seperti Hydra atau Medusa. Untuk petunjuk penggunaan & instalasi, dapat dilihat pada [link repository berikut](https://github.com/lanjelot/patator)
     
 *Defending Tool*
 
@@ -205,7 +205,7 @@ Anggota Kelompok
 #### 2. Langkah Instalasi Kali Linux (OS untuk Penetrasi)
 
 
-  1. Unduh ISO Kali Linux 32 bit / 64 bit   
+  1. Unduh ISO Kali Linux 32 bit /64 bit   
 ![Install Kali Linux](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Kali_Linux/0.png)
 
 
@@ -446,6 +446,75 @@ Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwo
 
 
 #### 1. Langkah Konfigurasi Fail2Ban
+
+  1. Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/1 .jpeg)
+
+  2. Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/2 .jpeg)
+
+  3. Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/3 .jpeg)
+
+  4. Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/4 .jpeg)
+
+  5. Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/5 .jpeg)
+
+  6. Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/6 .jpeg)
+
+  7. Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/7 .jpeg)
+
+  8. Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/8 .jpeg)
+
+  9. Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/9 .jpeg)
+
+  10 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/10.jpeg)
+
+  11 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/11.jpeg)
+
+  12 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/12.jpeg)
+
+  13 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/13.jpeg)
+
+  14 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/14.jpeg)
+
+  15 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/15.jpeg)
+
+  16 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/16.jpeg)
+
+  17 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/17.jpeg)
+
+  18 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/18.jpeg)
+
+  19 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/19.jpeg)
+
+  20 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/20.jpeg)
+
+  21 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/21.jpeg)
+
+  22 . Lorem Ipsum   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/22.jpeg)
+  
+
+
 #### 2. Langkah Konfigurasi Google Authenticator
 
   1. a  
