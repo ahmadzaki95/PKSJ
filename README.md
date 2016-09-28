@@ -38,7 +38,7 @@ Anggota Kelompok
 
 * **Hydra**, adalah salah satu tools brute force *password* dapat dicompile/digunakan Linux, Windows/Cygwin, Solaris 11, FreeBSD 8.1, OpenBSD, OSX, QNX/Blackberry. Tutorial instalasi dan penggunaannya dapat diliat pada website resminya ( [link](https://www.thc.org/thc-hydra/) )
 
-    b. Patator, adalah salah satu tools untuk *brute force* password yang lebih baru dari Medusa maupun Hydra. Pada repository resminya, patator ditulis menggunakan bahasa Python dan bersifat *multithread*, dan dituliskan untuk memperbaiki *predesesor* / pendahulunya seperti Hydra atau Medusa. Untuk petunjuk penggunaan & instalasi, dapat dilihat pada [link repository berikut](https://github.com/lanjelot/patator)
+* **Patator**, adalah salah satu tools untuk *brute force* password yang lebih baru dari Medusa maupun Hydra. Pada repository resminya, patator ditulis menggunakan bahasa Python dan bersifat *multithread*, dan dituliskan untuk memperbaiki *predesesor* / pendahulunya seperti Hydra atau Medusa. Untuk petunjuk penggunaan & instalasi, dapat dilihat pada [link repository berikut](https://github.com/lanjelot/patator)
     
 *Defending Tool*
 
@@ -332,147 +332,200 @@ Anggota Kelompok
 
 #### 3. Langkah Instalasi SSH Server
 
-  Pada terminal server, kita ketikkan : sudo apt-get install openssh-server . Lalu masukkan password untuk *root*
+  1. Pada terminal server, kita ketikkan : sudo apt-get install openssh-server . Lalu masukkan password untuk *root*  
 ![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/1.png)
 
-  Untuk mengecek bisa mengetik: service ssh status. Jika sudah berhasil, maka muncul seperti dibawah ini :
+  2. Untuk mengecek bisa mengetik: service ssh status. Jika sudah berhasil, maka muncul seperti dibawah ini :  
 ![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/2.png)  
 
 
 
 #### 4. Langkah Uji Penetrasi dengan SSH Brute Force Tools
 
-a. Tanpa Defense Tools (Fail2Ban tidak diinstal pada komputer server)
-
-Pada tahap ini , kami melakukan uji penetrasi dengan 4 skenario untuk setiap *attack tools*, yaitu :
+Pada tahap ini, kami melakukan uji penetrasi (tanpa *defense tools* di sisi server) dengan 4 skenario untuk setiap *attack tools*, yaitu :
 1. Dengan username "root" dan password "root"
 2. Dengan username "ardi" dan password "12344321"
 3. Dengan username di file username.txt dan password di file password_list.txt ( pada list password tidak ada password yang benar)
 4. Dengan username di file username.txt dan password di file password_list_true.txt ( pada list password terdapat password yang benar.
 
-* **Dengan Patator**
+* **Dengan Patator**  
 
-**Skenario 1** : Dengan username "root" dan password "root"
+  **Skenario 1** : Dengan username "root" dan password "root"
 
-Dilakukan dengan perintah : patator ssh_login host=10.151.34.170 port=3022 user=root password=root  
+  Dilakukan dengan perintah : patator ssh_login host=10.151.34.170 port=3022 user=root password=root  
 Hasilnya berupa pesan "Authentication failed" karena user dan password nya salah
 
-![Patator Skenario 1](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_1.JPG)
+  ![Patator Skenario 1](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_1.JPG)
 
-**Skenario 2** : Dengan username "ardi" dan password "12344321"
+  **Skenario 2** : Dengan username "ardi" dan password "12344321"
 
-Dilakukan dengan perintah : patator ssh_login host=10.151.34.170 port=3022 user=ardi password=12344321  
+  Dilakukan dengan perintah : patator ssh_login host=10.151.34.170 port=3022 user=ardi password=12344321  
 Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwordnya benar
 
-![Patator Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_2.JPG)
+  ![Patator Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_2.JPG)
 
-**Skenario 3** : Dengan username di file username.txt dan password di file password_list.txt 
+  **Skenario 3** : Dengan username di file username.txt dan password di file password_list.txt 
 
-Dilakukan dengan perintah : patator ssh_login host=10.151.34.170 port=3022 user=FILE0 password=FILE1 0=/root/Desktop/list_user_pass/username.txt 1=/root/Desktop/list_user_pass/password_list.txt
+  Dilakukan dengan perintah : patator ssh_login host=10.151.34.170 port=3022 user=FILE0 password=FILE1 0=/root/Desktop/list_user_pass/username.txt 1=/root/Desktop/list_user_pass/password_list.txt
 
-![Patator Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_3.JPG)
+  ![Patator Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_3.JPG)
 
-Hasilnya berupa daftar pesan "Authentication failed" dari kombinasi user dan password yang salah
+  Hasilnya berupa daftar pesan "Authentication failed" dari kombinasi user dan password yang salah
 
-![Patator Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_4.JPG)
+  ![Patator Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_4.JPG)
 
-**Skenario 4** : Dengan username di file username.txt dan password di file password_list_true.txt
+  **Skenario 4** : Dengan username di file username.txt dan password di file password_list_true.txt
 
-Dilakukan dengan perintah : patator ssh_login host=10.151.34.170 port=3022 user=FILE0 password=FILE1 0=/root/Desktop/list_user_pass/username.txt 1=/root/Desktop/list_user_pass/password_list_true.txt 
+  Dilakukan dengan perintah : patator ssh_login host=10.151.34.170 port=3022 user=FILE0 password=FILE1 0=/root/Desktop/list_user_pass/username.txt 1=/root/Desktop/list_user_pass/password_list_true.txt 
 
-![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_5.JPG)
+  ![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_5.JPG)
 
-Hasilnya berupa pesan informasi dari SSH yang dipenetrasi menggunakan kombinasi user dan password yang benar
+  Hasilnya berupa pesan informasi dari SSH yang dipenetrasi menggunakan kombinasi user dan password yang benar
 
-![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_6.JPG)
+  ![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_6.JPG)
 
-Baris terakhir dari perintah yang diinputkan tidak menunjukkan perbedaan apabila SSH berhasil dipenetrasi atau gagal, sehingga tentunya tidak efektif karena hasil tiap kombinasi user dan password harus dilihat satu per satu
+  Baris terakhir dari perintah yang diinputkan tidak menunjukkan perbedaan apabila SSH berhasil dipenetrasi atau gagal, sehingga tentunya tidak efektif karena hasil tiap kombinasi user dan password harus dilihat satu per satu
 
-![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_7.JPG)
+  ![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_7.JPG)
 
-Untuk mengatasi hal tersebut, ditambahkan perintah : -x ignore:fgrep='Authentication failed' agar setiap kombinasi user dan password yang menghasilkan pesan "Authentication Failed" tidak ditampilkan
+  Untuk mengatasi hal tersebut, ditambahkan perintah : -x ignore:fgrep='Authentication failed' agar setiap kombinasi user dan password yang menghasilkan pesan "Authentication Failed" tidak ditampilkan
 
-![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_8.JPG)
+  ![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_8.JPG)
 
 
 
 * **Dengan NCrack**
 
-**Skenario 1** : Dengan username "root" dan password "root"
+  **Skenario 1** : Dengan username "root" dan password "root"
 
-Dilakukan dengan perintah ncrack --user root --pass root 10.151.34.170 -p ssh:3022 -vvv
+  Dilakukan dengan perintah ncrack --user root --pass root 10.151.34.170 -p ssh:3022 -vvv
 
-![Ncrack Skenario 1](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk1.png)
+  ![Ncrack Skenario 1](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk1.png)
 
-**Skenario 2** : Dengan username "ardi" dan password "12344321"
+  **Skenario 2** : Dengan username "ardi" dan password "12344321"
 
-Dilakukan dengan perintah : ncrack --user ardi --pass 12344321 10.151.34.170 -p ssh:3022. Hasilnya adalah sebagai berikut :
+  Dilakukan dengan perintah : ncrack --user ardi --pass 12344321 10.151.34.170 -p ssh:3022. Hasilnya adalah sebagai berikut :
 
-![Ncrack Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk2.png)
+  ![Ncrack Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk2.png)
 
-**Skenario 3** : Dengan username di file username.txt dan password di file password_list.txt 
+  **Skenario 3** : Dengan username di file username.txt dan password di file password_list.txt 
 
-Dilakukan dengan perintah : ncrack -U list_user_pass/username.txt -P list_user_pass/password_list.txt 10.151.34.170 -p ssh:3022 
+  Dilakukan dengan perintah : ncrack -U list_user_pass/username.txt -P list_user_pass/password_list.txt 10.151.34.170 -p ssh:3022 
 
-![Ncrack Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk3.png)
+  ![Ncrack Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk3.png)
 
-**Skenario 4** : Dengan username di file username.txt dan password di file password_list_true.txt
+  **Skenario 4** : Dengan username di file username.txt dan password di file password_list_true.txt
 
-Dilakukan dengan perintah : ncrack -U list_user_pass/username.txt -P list_user_pass/password_list_true.txt 10.151.34.170 -p ssh:3022 
+  Dilakukan dengan perintah : ncrack -U list_user_pass/username.txt -P list_user_pass/password_list_true.txt 10.151.34.170 -p ssh:3022 
 
-![Ncrack Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk4.png)
+  ![Ncrack Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/ncrack_sk4.png)
 
 
 
 * **Dengan Hydra**
 
-**Skenario 1** : Dengan username "root" dan password "root"
+  **Skenario 1** : Dengan username "root" dan password "root"
 
-![Hydra Skenario 1](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk1.png)
+  ![Hydra Skenario 1](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk1.png)
 
-**Skenario 2** : Dengan username "ardi" dan password "12344321"
+  **Skenario 2** : Dengan username "ardi" dan password "12344321"
 
-![Hydra Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk2.png)
+  ![Hydra Skenario 2](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk2.png)
 
-**Skenario 3** : Dengan username di file username.txt dan password di file password_list.txt 
+  **Skenario 3** : Dengan username di file username.txt dan password di file password_list.txt 
 
-![Hydra Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk3.png)
+  ![Hydra Skenario 3](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk3.png)
 
-**Skenario 4** : Dengan username di file username.txt dan password di file password_list_true.txt
+  **Skenario 4** : Dengan username di file username.txt dan password di file password_list_true.txt
 
-![Hydra Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk4.png)
-
-
-
-b. Dengan Defense Tools
+  ![Hydra Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/hydra_sk4.png)
 
 
 
-
-* **Dengan Mengubah Konfigurasi SSH**
-
-  Untuk mengkonfigurasi, maka ubah file di /etc/ssh/sshd_config
-![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/4.png)    
+## Uji Penetrasi 2
 
 
-  Berikut adalah pengaturan yang dapat diterapkan :
-  * Ubah port untuk SSH. Ubah pada line yang "Port 22 " menjadi port lain yang tidak sedang digunakan oleh aplikasi lainnya. Pada contoh ini, misalnya diganti menjadi port 4222
-![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/5.png)      
+#### 1. Langkah Konfigurasi Fail2Ban
+#### 2. Langkah Konfigurasi Google Authenticator
+
+  1. a  
+![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/1.png)
 
 
-  * Mendisable Root Login dengan password. Login *root* hanya bisa login dengan menggunakan *SSH key*. Untuk membuatnya, maka diedit di bagian "PermitRootLogin yes" menjadi "PermitRootLogin without-password"
-![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/6.png)      
+  2. a  
+![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/2.png)
 
 
-  * Mendisable Password Authentication, berarti hanya SSH dengan SSH key yang bisa dijalankan. Cari baris yang berisi "PasswordAuthentication" , dan ubah menjadi seperti berikut:
-![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/9.png)   
+  3. a  
+![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/3.png)
 
 
-   Setelah selesai, ketik baris berikut untuk mereload pengaturan SSH yang telah diubah & merestart SSH *service* :
-![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/7.png)      
+  4. a  
+![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/4.png)
+
+
+  5. a  
+![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/5.png)
+
+
+  6. a  
+![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/6.png)
+
+
+  7. a  
+![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/7.png)
+
+
+  8. a  
+![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/8.png)
+
+
+  9. a  
+<img src="https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/9.png" alt="Konfigurasi Google Authenticator" width="300"> 
+
+
+  10. a  
+<img src="https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/10.png" alt="Konfigurasi Google Authenticator" width="300">
+
+
+  11. a  
+<img src="https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/11.png" alt="Konfigurasi Google Authenticator" width="300">
+
+
+  12. a  
+![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/12.png)
+
+
+  13. a  
+![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/13.png)
 
 
 
-   Jika settingannya sudah berhasil, jika anda SSH ke komputer server dengan menggunakan password ( SSH server belum terdaftar ), maka akan muncul sebagai berikut :
-![Install SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/10.png)      
+#### 3. Langkah Konfigurasi SSH Server (agar tidak default)
+
+  1. Untuk mengkonfigurasi, maka ubah file di /etc/ssh/sshd_config
+![Konfigurasi SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/4.png)
+
+
+  2. Mendisable Root Login dengan password. Login *root* hanya bisa login dengan menggunakan *SSH key*. Untuk membuatnya, maka diedit di bagian "PermitRootLogin yes" menjadi "PermitRootLogin without-password"  
+![Konfigurasi SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/6.png)
+
+
+  3. Mendisable Password Authentication, berarti hanya SSH dengan SSH key yang bisa dijalankan. Cari baris yang berisi "PasswordAuthentication" , dan ubah menjadi seperti berikut :
+![Konfigurasi SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/9.png)
+
+
+  4. Setelah selesai, ketik baris berikut untuk mereload pengaturan SSH yang telah diubah & merestart SSH *service* :
+![Konfigurasi SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/7.png)
+
+
+  5. Jika settingannya sudah berhasil, jika anda SSH ke komputer server dengan menggunakan password ( SSH server belum terdaftar ), maka akan muncul sebagai berikut :
+![Konfigurasi SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/10.png)
+
+
+#### 4. Langkah Uji Penetrasi dengan SSH Brute Force Tools
+
+
+
+## Kesimpulan dan Saran
 
