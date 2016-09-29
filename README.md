@@ -624,19 +624,14 @@ Dapat dilihat seperti pada gambar, meskipun kombinasi user dan password yang ben
 
 * **Hydra Menyerang SSH Server yang Menggunakan Fail2Ban**
 
-1. a
+1. Berikut adalah hasil jika kami mencoba login dengan ssh biasa setelah ip kami di banned :
 ![Hydra & Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/hydra_1.jpg)
 
-
-2. a
-![Hydra & Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/hydra_2.JPG)
-
-
-3. a
+2. Berikut adalah hasil jika kami menyerang dengan menggunakan hydra, nampak hydra tidak berhasil masuk ke sistem walaupun di dalam file username.txt terdapat username yang benar dan password_list_true.txt terdapat password yang benar. Namun kami meletakkannya di tengah file (baris 250).
 ![Hydra & Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/hydra_3.JPG)
 
 
-4. a
+3. Berikut adalah hasil iptables sebelum dan sesudah diserang pada ubuntu server :
 ![Hydra & Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/hydra_4.jpeg)
 
 
