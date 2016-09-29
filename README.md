@@ -39,6 +39,8 @@ Anggota Kelompok
 * **Hydra**, adalah salah satu tools brute force *password* dapat dicompile/digunakan Linux, Windows/Cygwin, Solaris 11, FreeBSD 8.1, OpenBSD, OSX, QNX/Blackberry. Tutorial instalasi dan penggunaannya dapat diliat pada website resminya ( [link](https://www.thc.org/thc-hydra/) )
 
 * **Patator**, adalah salah satu tools untuk *brute force* password yang lebih baru dari Medusa maupun Hydra. Pada repository resminya, patator ditulis menggunakan bahasa Python dan bersifat *multithread*, dan dituliskan untuk memperbaiki *predesesor* /pendahulunya seperti Hydra atau Medusa. Untuk petunjuk penggunaan & instalasi, dapat dilihat pada [link repository berikut](https://github.com/lanjelot/patator)
+
+* **NCrack** adalah :  alat berkecepatan tinggi untuk menscan jaringan .Ncrack dibuat untuk membantu perusahaan dan untuk mengamankan jaringan mereka secara proaktif menguji semua host dan perangkat jaringan dengan password yang buruk. Profesional keamanan juga mengandalkan Ncrack saat mengaudit klien mereka. Ncrack dirancang menggunakan pendekatan modular, sintaks baris perintah yang mirip dengan Nmap dan mesin dinamis yang dapat menyesuaikan perilakunya berdasarkan umpan balik jaringan. Hal ini memungkinkan untuk cepat, audit skala besar namun dapat diandalkan dari beberapa host.
     
 *Defending Tool*
 
@@ -572,7 +574,22 @@ Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwo
 
 
 
-#### 3. Langkah Konfigurasi SSH Server (agar tidak default)
+#### 3. Langkah Konfigurasi SSH Server dan membuat SSH Key
+
+  Untuk setting SSH Key, lakukan konfigurasi berikut.
+
+  1. Untuk setting SSH key, masukkan : *ssh-keygen -t rsa*, lalu muncul seperti ini. Jika tidak ingin menggunakan *passphrase* saat mengakses SSH Key (saat ingin tiap kali SSH ke server), ketik enter (tanpa password).
+![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_SSH_Key/1.png)
+
+
+ 2. Setelah itu, masukkan perintah : ssh-copy-id (username@host) , seperti gambar berikut (masukan -p untuk port). Lalu, ketikkan yes.
+![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_SSH_Key/2.png).
+
+
+Jika sudah berhasil, akan muncul keluaran "Number of keys added : (1)" yang berarti SSH key komputer anda berhasil dimasukkan. Untuk mengetes, coba ssh ke komputer server. Jika SSH berhasil masuk tanpa meminta password, maka SSH key sudah dimasukkan ke dalam komputer server, seperti gambar berikut.
+![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_SSH_Key/3.png).
+
+  Untuk setting server, lakukan konfigurasi berikut :
 
   1. Untuk mengkonfigurasi, maka ubah file di /etc/ssh/sshd_config
 ![Konfigurasi SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/4.png)
@@ -612,8 +629,6 @@ Dapat dilihat seperti pada gambar, meskipun kombinasi user dan password yang ben
 
 
 * **Ncrack Menyerang SSH Server yang Menggunakan SSH Key**
-
-* **SSH-Key dan diserang dengan NCrack**
 
   Dengan username di file username.txt dan password di file password_list_true.txt, server diserang, namun terjadi *prematurely closed*, seperti gambar berikut, yang berarti server gagal diserang
 
