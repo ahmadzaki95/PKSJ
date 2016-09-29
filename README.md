@@ -613,6 +613,13 @@ Dapat dilihat seperti pada gambar, meskipun kombinasi user dan password yang ben
 
 * **Ncrack Menyerang SSH Server yang Menggunakan SSH Key**
 
+* **SSH-Key dan diserang dengan NCrack**
+
+  Dengan username di file username.txt dan password di file password_list_true.txt, server diserang, namun terjadi *prematurely closed*, seperti gambar berikut, yang berarti server gagal diserang
+
+
+  ![Ncrack & SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/ncrack.png)
+
 
 
 * **Hydra Menyerang SSH Server yang Menggunakan Fail2Ban**
