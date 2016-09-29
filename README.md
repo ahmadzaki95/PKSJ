@@ -517,55 +517,55 @@ Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwo
 
 #### 2. Langkah Konfigurasi Google Authenticator
 
-  1. a  
+  1. Install Google Authenticator menggunakan perintah : apt-get install libpam-google-authenticator  
 ![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/1.png)
 
 
-  2. a  
+  2. Untuk menggunakan Google Authenticator harus mengedit 2 file konfigurasi, salah satunya yaitu file konfigurasi sshd  
 ![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/2.png)
 
 
-  3. a  
+  3. Tambahkan baris : auth required pam_google_authenticator.so di file sshd, yang fungsinya untuk mengaktifkan kebutuhan autentikasi dari Google Authenticator saat log in ke server  
 ![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/3.png)
 
 
-  4. a  
+  4. Edit file konfigurasi sshd_config  
 ![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/4.png)
 
 
-  5. a  
+  5. Cari dan ubah baris ChallengeResponseAuthentication no menjadi yes pada file sshd_config agar Google Authenticator dapat mengirimkan *challenge* dan mengecek *response*-nya  
 ![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/5.png)
 
 
-  6. a  
+  6. Konfigurasi Google Authenticator menggunakan perintah : google-authenticator. Kemudian jawab pertanyaan selanjutnya dengan y  
 ![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/6.png)
 
 
-  7. a  
+  7. Catat *secret key* dan *emergency scratch codes* yang didapat, *secret key* digunakan untuk proses autentikasi dan *emergency scratch codes* digunakan untuk log in ke server dalam keadaan darurat (*smartphone* hilang). Jawab pertanyaan selanjutnya dengan y, pertanyaan yang lain dapat dijawab sesuai kebutuhan  
 ![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/7.png)
 
 
-  8. a  
+  8. Restart SSH server  
 ![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/8.png)
 
 
-  9. a  
+  9. Install aplikasi Google Authenticator pada *smartphone*, kemudian jalankan aplikasi yang akan menampilkan *view* seperti di gambar, pilih "Enter a provided key"  
 <img src="https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/9.png" alt="Konfigurasi Google Authenticator" width="300"> 
 
 
-  10. a  
+  10. Masukkan nama akun terserah anda dan masukkan *secret key* yang didapatkan pada langkah 7. Terdapat 2 pilihan konfigurasi yang mengatur bagaimana token akan dihasilkan yaitu "Time-based" dan "Token-based". Dalam "Time-based" token yang dihasilkan akan valid dalam 30 detik, sedangkan dalam "Token-based" token yang dihasilkan akan valid hingga anda meminta token selanjutnya  
 <img src="https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/10.png" alt="Konfigurasi Google Authenticator" width="300">
 
 
-  11. a  
+  11. Setiap kali anda ingin log in ke server via SSH, gunakan token yang didapatkan dari Google Authenticator pada *smartphone* anda  
 <img src="https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/11.png" alt="Konfigurasi Google Authenticator" width="300">
 
 
-  12. a  
+  12. Seperti yang terlihat pada gambar, setiap kali ingin melakukan log in ke server via SSH dibutuhkan kode verifikasi. Pada contoh kasus seperti di gambar, telah dicoba untuk memasukkan kode verifikasi dan password yang salah, kode verifikasi yang benar namun password salah dan kode verifikasi yang salah namun password benar. Karena tidak ada kombinasi yang benar maka IP yang mengakses akan di ban selama 30 detik  
 ![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/12.png)
 
 
-  13. a  
+  13. Jika IP yang akan mengakses server masuk dalam daftar ban, maka ketika log in tidak akan dimintai kode verifikasi, sehingga tidak mungkin dapat log in karena selain password juga dibutuhkan kode verifikasi  
 ![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/13.png)
 
 
