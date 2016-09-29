@@ -347,10 +347,15 @@ Anggota Kelompok
 #### 4. Langkah Uji Penetrasi dengan SSH Brute Force Tools
 
 Pada tahap ini, kami melakukan uji penetrasi (tanpa *defense tools* di sisi server) dengan 4 skenario untuk setiap *attack tools*, yaitu :
+
 1. Dengan username "root" dan password "root"
+
 2. Dengan username "ardi" dan password "12344321"
+
 3. Dengan username di file username.txt dan password di file password_list.txt ( pada list password tidak ada password yang benar)
+
 4. Dengan username di file username.txt dan password di file password_list_true.txt ( pada list password terdapat password yang benar.
+
 
 * **Dengan Patator**  
 
@@ -579,15 +584,15 @@ Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwo
   Untuk setting SSH Key, lakukan konfigurasi berikut.
 
   1. Untuk setting SSH key, masukkan : *ssh-keygen -t rsa*, lalu muncul seperti ini. Jika tidak ingin menggunakan *passphrase* saat mengakses SSH Key (saat ingin tiap kali SSH ke server), ketik enter (tanpa password).
-![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_SSH_Key/1.png)
+![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Install_SSH_Key/1.png)
 
 
  2. Setelah itu, masukkan perintah : ssh-copy-id (username@host) , seperti gambar berikut (masukan -p untuk port). Lalu, ketikkan yes.
-![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_SSH_Key/2.png).
+![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Install_SSH_Key/2.png).
 
 
 Jika sudah berhasil, akan muncul keluaran "Number of keys added : (1)" yang berarti SSH key komputer anda berhasil dimasukkan. Untuk mengetes, coba ssh ke komputer server. Jika SSH berhasil masuk tanpa meminta password, maka SSH key sudah dimasukkan ke dalam komputer server, seperti gambar berikut.
-![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_SSH_Key/3.png).
+![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Install_SSH_Key/3.png).
 
   Untuk setting server, lakukan konfigurasi berikut :
 
