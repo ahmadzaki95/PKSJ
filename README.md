@@ -587,7 +587,7 @@ Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwo
 ![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Install_SSH_Key/1.png)
 
 
- 2. Setelah itu, masukkan perintah : ssh-copy-id (username@host) , seperti gambar berikut (masukan -p untuk port). Lalu, ketikkan yes.  
+  2. Setelah itu, masukkan perintah : ssh-copy-id (username@host) , seperti gambar berikut (masukan -p untuk port). Lalu, ketikkan yes.  
 ![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Install_SSH_Key/2.png).
 
 
@@ -627,7 +627,7 @@ Dapat dilihat seperti pada gambar, meskipun user dan password yang dimasukkan su
 ![Patator & Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/patator_1.png)
 
 
-2. Dilakukan dengan perintah : patator ssh_login host=192.168.116.1 port=3022 user=FILE0 password=FILE1 0=/root/Desktop/list_user_pass/username.txt 1=/root/Desktop/list_user_pass/password_list_true.txt -x ignore:fgrep='Authentication failed'  
+2. Dilakukan dengan perintah : patator ssh_login host=192.168.116.1 port=3022 user=FILE0 password=FILE1 0=/root/Desktop/list_user_pass/username.txt 1=/root/Desktop/list_user_pass/password_list_true.txt -x ignore:fgrep='Authentication failed'    
 Dapat dilihat seperti pada gambar, meskipun kombinasi user dan password yang benar terdapat pada *dictionary* yang diinputkan, namun serangan yang dilakukan tetap gagal (semua pesan serangan yang dihasilkan berisi "Authentication failed")
 ![Patator & Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/patator_2.png)
 
@@ -668,6 +668,7 @@ Setelah kami melakukan serangan brute force dengan 3 buah tools yang berbeda (Hy
   1. Menurut digitalocean.com [(sumber)](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets) SSH Key hampir tidak dapat di dekripsi dengan brute force. Jadi sampai saat ini, menurut kami SSH Key merupakan metode proteksi serangan brute force paling aman.
   2. Namun dengan adanya Google Authenticator, kami cenderung lebih memilih menggunakan Google Authenticator untuk mencegah serangan brute force, karena token yang digunakan untuk verifikasi hanya valid selama 30 detik sehingga akan sulit sekali untuk di brute force. Jika dengan SSH Key hanya bisa login dengan komputer yang telah terdaftar, Google Authenticator lebih fleksibel karena bisa login di banyak tempat selama pengguna memiliki aplikasi Google Authenticator di *smartphone*-nya.
   3. Meskipun Fail2Ban sudah cukup bagus karena mampu me-*reject request* login dari IP / subnet yang melakukan serangan brute force, namun dibandingkan dengan 2 metode sebelumnya (SSH Key dan Google Authenticator), menurut kami tingkat keamanan-nya masih kurang karena Fail2Ban hanya memperlambat proses brute force. 
+
 
 
 
