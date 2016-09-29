@@ -612,9 +612,29 @@ Dapat dilihat seperti pada gambar, meskipun kombinasi user dan password yang ben
 
 
 * **Ncrack Menyerang SSH Server yang Menggunakan SSH Key**
+
+
+
 * **Hydra Menyerang SSH Server yang Menggunakan Fail2Ban**
+
+1. a
+![Hydra & Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/hydra_1.jpg)
+
+
+2. a
+![Hydra & Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/hydra_2.JPG)
+
+
+3. a
+![Hydra & Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/hydra_3.JPG)
+
+
+4. a
+![Hydra & Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/hydra_4.jpeg)
+
 
 
 ## Kesimpulan dan Saran
+
 
 
