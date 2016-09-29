@@ -587,7 +587,7 @@ Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwo
 ![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Install_SSH_Key/1.png)
 
 
- 2. Setelah itu, masukkan perintah : ssh-copy-id (username@host) , seperti gambar berikut (masukan -p untuk port). Lalu, ketikkan yes.
+ 2. Setelah itu, masukkan perintah : ssh-copy-id (username@host) , seperti gambar berikut (masukan -p untuk port). Lalu, ketikkan yes.  
 ![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Install_SSH_Key/2.png).
 
 
