@@ -39,6 +39,8 @@ Anggota Kelompok
 * **Hydra**, adalah salah satu tools brute force *password* dapat dicompile/digunakan Linux, Windows/Cygwin, Solaris 11, FreeBSD 8.1, OpenBSD, OSX, QNX/Blackberry. Tutorial instalasi dan penggunaannya dapat diliat pada website resminya ( [link](https://www.thc.org/thc-hydra/) )
 
 * **Patator**, adalah salah satu tools untuk *brute force* password yang lebih baru dari Medusa maupun Hydra. Pada repository resminya, patator ditulis menggunakan bahasa Python dan bersifat *multithread*, dan dituliskan untuk memperbaiki *predesesor* /pendahulunya seperti Hydra atau Medusa. Untuk petunjuk penggunaan & instalasi, dapat dilihat pada [link repository berikut](https://github.com/lanjelot/patator)
+
+* **NCrack** adalah :  alat berkecepatan tinggi untuk menscan jaringan .Ncrack dibuat untuk membantu perusahaan dan untuk mengamankan jaringan mereka secara proaktif menguji semua host dan perangkat jaringan dengan password yang buruk. Profesional keamanan juga mengandalkan Ncrack saat mengaudit klien mereka. Ncrack dirancang menggunakan pendekatan modular, sintaks baris perintah yang mirip dengan Nmap dan mesin dinamis yang dapat menyesuaikan perilakunya berdasarkan umpan balik jaringan. Hal ini memungkinkan untuk cepat, audit skala besar namun dapat diandalkan dari beberapa host.
     
 *Defending Tool*
 
@@ -345,10 +347,15 @@ Anggota Kelompok
 #### 4. Langkah Uji Penetrasi dengan SSH Brute Force Tools
 
 Pada tahap ini, kami melakukan uji penetrasi (tanpa *defense tools* di sisi server) dengan 4 skenario untuk setiap *attack tools*, yaitu :
+
 1. Dengan username "root" dan password "root"
+
 2. Dengan username "ardi" dan password "12344321"
+
 3. Dengan username di file username.txt dan password di file password_list.txt ( pada list password tidak ada password yang benar)
+
 4. Dengan username di file username.txt dan password di file password_list_true.txt ( pada list password terdapat password yang benar.
+
 
 * **Dengan Patator**  
 
@@ -572,7 +579,22 @@ Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwo
 
 
 
-#### 3. Langkah Konfigurasi SSH Server (agar tidak default)
+#### 3. Langkah Konfigurasi SSH Server dan membuat SSH Key
+
+  Untuk setting SSH Key, lakukan konfigurasi berikut.
+
+  1. Untuk setting SSH key, masukkan : *ssh-keygen -t rsa*, lalu muncul seperti ini. Jika tidak ingin menggunakan *passphrase* saat mengakses SSH Key (saat ingin tiap kali SSH ke server), ketik enter (tanpa password).
+![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Install_SSH_Key/1.png)
+
+
+  2. Setelah itu, masukkan perintah : ssh-copy-id (username@host) , seperti gambar berikut (masukan -p untuk port). Lalu, ketikkan yes.  
+![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Install_SSH_Key/2.png).
+
+
+Jika sudah berhasil, akan muncul keluaran "Number of keys added : (1)" yang berarti SSH key komputer anda berhasil dimasukkan. Untuk mengetes, coba ssh ke komputer server. Jika SSH berhasil masuk tanpa meminta password, maka SSH key sudah dimasukkan ke dalam komputer server, seperti gambar berikut.
+![SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Install_SSH_Key/3.png).
+
+  Untuk setting server, lakukan konfigurasi berikut :
 
   1. Untuk mengkonfigurasi, maka ubah file di /etc/ssh/sshd_config
 ![Konfigurasi SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/4.png)
@@ -605,7 +627,7 @@ Dapat dilihat seperti pada gambar, meskipun user dan password yang dimasukkan su
 ![Patator & Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/patator_1.png)
 
 
-2. Dilakukan dengan perintah : patator ssh_login host=192.168.116.1 port=3022 user=FILE0 password=FILE1 0=/root/Desktop/list_user_pass/username.txt 1=/root/Desktop/list_user_pass/password_list_true.txt -x ignore:fgrep='Authentication failed'  
+2. Dilakukan dengan perintah : patator ssh_login host=192.168.116.1 port=3022 user=FILE0 password=FILE1 0=/root/Desktop/list_user_pass/username.txt 1=/root/Desktop/list_user_pass/password_list_true.txt -x ignore:fgrep='Authentication failed'    
 Dapat dilihat seperti pada gambar, meskipun kombinasi user dan password yang benar terdapat pada *dictionary* yang diinputkan, namun serangan yang dilakukan tetap gagal (semua pesan serangan yang dihasilkan berisi "Authentication failed")
 ![Patator & Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/patator_2.png)
 
@@ -613,28 +635,41 @@ Dapat dilihat seperti pada gambar, meskipun kombinasi user dan password yang ben
 
 * **Ncrack Menyerang SSH Server yang Menggunakan SSH Key**
 
+  Dengan username di file username.txt dan password di file password_list_true.txt, server diserang, namun terjadi *prematurely closed*, seperti gambar berikut, yang berarti server gagal diserang
+
+  ![Ncrack & SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/ncrack.png)
+
 
 
 * **Hydra Menyerang SSH Server yang Menggunakan Fail2Ban**
 
-1. a
+1. Berikut adalah hasil jika kami mencoba login dengan ssh biasa setelah ip kami di banned :
 ![Hydra & Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/hydra_1.jpg)
 
-
-2. a
-![Hydra & Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/hydra_2.JPG)
-
-
-3. a
+2. Berikut adalah hasil jika kami menyerang dengan menggunakan hydra, nampak hydra tidak berhasil masuk ke sistem walaupun di dalam file username.txt terdapat username yang benar dan password_list_true.txt terdapat password yang benar. Namun kami meletakkannya di tengah file (baris 250).
 ![Hydra & Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/hydra_3.JPG)
 
 
-4. a
+3. Berikut adalah hasil iptables sebelum dan sesudah diserang pada ubuntu server :
 ![Hydra & Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/hydra_4.jpeg)
 
 
 
 ## Kesimpulan dan Saran
+
+### Penyerangan :  
+Setelah kami melakukan serangan brute force dengan 3 buah tools yang berbeda (Hydra, Ncrack, dan Patator) kami sampai pada kesimpulan yaitu :
+  1. Ketiga tools yang digunakan memiliki performa yang kurang lebih sama dalam melakukan serangan brute force dengan *running time* 2-3 menit untuk 500 iterasi (5 user dan 100 password).
+  2. Dalam melakukan penyerangan, Patator menampilkan proses per serangan. Jadi kami mengetahui proses penyerangan sudah sampai mana.
+  3. Namun Patator memiliki kelemahan yakni tidak langsung menghentikan program ketika telah berhasil menemukan username dan password yang benar.
+  4. Ncrack memiliki opsi perintah yang cukup banyak (misal , "-f" untuk keluar dari proses brute force setelah ada password yang benar). Namun, kekurangannya adalah pesan error yang tidak spesifik, seperti hanya menampilkan "Scanning finished" tanpa menampilkan pesan error yang jelas.
+ 
+### Pertahanan :
+  1. Menurut digitalocean.com [(sumber)](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets) SSH Key hampir tidak dapat di dekripsi dengan brute force. Jadi sampai saat ini, menurut kami SSH Key merupakan metode proteksi serangan brute force paling aman.
+  2. Namun dengan adanya Google Authenticator, kami cenderung lebih memilih menggunakan Google Authenticator untuk mencegah serangan brute force, karena token yang digunakan untuk verifikasi hanya valid selama 30 detik sehingga akan sulit sekali untuk di brute force. Jika dengan SSH Key hanya bisa login dengan komputer yang telah terdaftar, Google Authenticator lebih fleksibel karena bisa login di banyak tempat selama pengguna memiliki aplikasi Google Authenticator di *smartphone*-nya.
+  3. Meskipun Fail2Ban sudah cukup bagus karena mampu me-*reject request* login dari IP / subnet yang melakukan serangan brute force, namun dibandingkan dengan 2 metode sebelumnya (SSH Key dan Google Authenticator), menurut kami tingkat keamanan-nya masih kurang karena Fail2Ban hanya memperlambat proses brute force. 
+
+
 
 
 
