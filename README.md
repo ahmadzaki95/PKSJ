@@ -637,7 +637,6 @@ Dapat dilihat seperti pada gambar, meskipun kombinasi user dan password yang ben
 
   Dengan username di file username.txt dan password di file password_list_true.txt, server diserang, namun terjadi *prematurely closed*, seperti gambar berikut, yang berarti server gagal diserang
 
-
   ![Ncrack & SSH Key](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/ncrack.png)
 
 
@@ -657,6 +656,19 @@ Dapat dilihat seperti pada gambar, meskipun kombinasi user dan password yang ben
 
 
 ## Kesimpulan dan Saran
+
+### Penyerangan :  
+Setelah kami melakukan serangan brute force dengan 3 buah tools yang berbeda (Hydra, Ncrack, dan Patator) kami sampai pada kesimpulan yaitu :
+  1. Ketiga tools yang digunakan memiliki performa yang kurang lebih sama dalam melakukan serangan brute force dengan *running time* 2-3 menit untuk 500 iterasi (5 user dan 100 password).
+  2. Dalam melakukan penyerangan, Patator menampilkan proses per serangan. Jadi kami mengetahui proses penyerangan sudah sampai mana.
+  3. Namun Patator memiliki kelemahan yakni tidak langsung menghentikan program ketika telah berhasil menemukan username dan password yang benar.
+  4. Ncrack memiliki opsi perintah yang cukup banyak (misal , "-f" untuk keluar dari proses brute force setelah ada password yang benar). Namun, kekurangannya adalah pesan error yang tidak spesifik, seperti hanya menampilkan "Scanning finished" tanpa menampilkan pesan error yang jelas.
+ 
+### Pertahanan :
+  1. Menurut digitalocean.com [(sumber)](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets) SSH Key hampir tidak dapat di dekripsi dengan brute force. Jadi sampai saat ini, menurut kami SSH Key merupakan metode proteksi serangan brute force paling aman.
+  2. Namun dengan adanya Google Authenticator, kami cenderung lebih memilih menggunakan Google Authenticator untuk mencegah serangan brute force, karena token yang digunakan untuk verifikasi hanya valid selama 30 detik sehingga akan sulit sekali untuk di brute force. Jika dengan SSH Key hanya bisa login dengan komputer yang telah terdaftar, Google Authenticator lebih fleksibel karena bisa login di banyak tempat selama pengguna memiliki aplikasi Google Authenticator di *smartphone*-nya.
+  3. Meskipun Fail2Ban sudah cukup bagus karena mampu me-*reject request* login dari IP / subnet yang melakukan serangan brute force, namun dibandingkan dengan 2 metode sebelumnya (SSH Key dan Google Authenticator), menurut kami tingkat keamanan-nya masih kurang karena Fail2Ban hanya memperlambat proses brute force. 
+
 
 
 
