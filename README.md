@@ -447,70 +447,70 @@ Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwo
 
 #### 1. Langkah Konfigurasi Fail2Ban
 
-  1. Lorem Ipsum   
-  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/1 .jpeg)
+  1. Karena pada layar virtualbox tidak dapat copy-paste, saya masuk ke ubuntu server dengan ssh.  
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/1.jpeg)
 
-  2. Lorem Ipsum   
-  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/2 .jpeg)
+  2. Buka file konfigurasi fail2ban dengan 'sudo nano /etc/fail2ban/jail.conf'.
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/2.jpeg)
 
-  3. Lorem Ipsum   
-  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/3 .jpeg)
+  3. Terlihat pada gambar, kita akan meng-ignore alamat local kita   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/3.jpeg)
 
-  4. Lorem Ipsum   
-  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/4 .jpeg)
+  4. Bantime berfungsi untuk mengatur waktu waktu ban, disini kita menting selama 600 menit.   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/4.jpeg)
 
-  5. Lorem Ipsum   
-  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/5 .jpeg)
+  5. Findtime berfungsi mirip dengan bantime, dan maxretry adalah jumlah kegagalan memasukkan password sebelum di banned.   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/5.jpeg)
 
-  6. Lorem Ipsum   
-  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/6 .jpeg)
+  6. Destemail adalah alamat email yang ditujukan pika terdapat pesan banned, sendername adalah nama pengirim yang akan tarter pada email, dan mta adalah konfigurasi email service apa yang akan digunakan.   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/6.jpeg)
 
-  7. Lorem Ipsum   
-  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/7 .jpeg)
+  7. Pada action = %(action_)s , fail2ban akan menggunakan settingan yg kita sudah atur dibagian header [DEFAULT].   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/7.jpeg)
 
-  8. Lorem Ipsum   
-  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/8 .jpeg)
+  8. Berikut adalah filter yang tersedia pada fail2ban.   
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/8.jpeg)
 
-  9. Lorem Ipsum   
-  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/9 .jpeg)
+  9. Pada gambar, kami menggaktifkan  [nginx-http-auth]. Ini tanya sebagai permisalan jika kita menginstal nginx dan ingin menghindari serangan brute force 
+  ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/9.jpeg)
 
-  10 . Lorem Ipsum   
+10 . Pada gambar, kami menginstal ngnx (web server), sendmail (until mengirim email), dan iptables-persisten (untuk menjaga settingan iptables agar ketiga machine di restart settingan fail2ban tidak whiling)   
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/10.jpeg)
 
-  11 . Lorem Ipsum   
+  11 . Lalu kita memasukkan settingan iptables seperti berikut :   
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/11.jpeg)
 
-  12 . Lorem Ipsum   
+  12 . Dan menggunakan perintah ‘sudo iptables -S’ untuk melihat settingan iptables yang telah diperbaharui   
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/12.jpeg)
 
-  13 . Lorem Ipsum   
+  13 . Lalu dents perintah berikut untuk menyimpan settingan firewall pada saat booting agar mash tetap :    
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/13.jpeg)
 
-  14 . Lorem Ipsum   
+  14 . Lalu mengaktifkan fail2ban   
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/14.jpeg)
 
-  15 . Lorem Ipsum   
+  15 . Jika kita melakukan ‘sudo iptables -S’, maka dalat dilihat port 22 telah dilindungi oleh fail2ban   
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/15.jpeg)
 
-  16 . Lorem Ipsum   
+  16 . Saya mencoba mengganti settingan menjadi 1800 menit (30 menit).   
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/16.jpeg)
 
-  17 . Lorem Ipsum   
+  17 . Jika terdapat banned, maka fail2ban akan langsung mengemail ke email saya.   
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/17.jpeg)
 
-  18 . Lorem Ipsum   
+  18 . Namun jika kita menggunakan setingan default, maka kita akan kesulitan dalam mendeteksi serangan karena tidak tercatat di log   
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/18.jpeg)
 
-  19 . Lorem Ipsum   
+  19 . Maka kami mengganti settingan seperti berikut, agar memudahkan dalam melihat serangan (tercatat dalam bentuk log file).  
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/19.jpeg)
 
-  20 . Lorem Ipsum   
+  20 . Setelah semua selesai, maka kami merestart fail2ban agar konfigurasi yang telah di setting dapat berjalan.  
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/20.jpeg)
 
-  21 . Lorem Ipsum   
+  21 . Dapat dilihat pada gambar, bahwa fail2ban telah terkonfigurasi dengan baik pada iptables  
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/21.jpeg)
 
-  22 . Lorem Ipsum   
+  22 . Berikut adalah iptables yang telah mereject IP yang mencoba brute force (Terdapat tulisan REJECT yang tidak ada pada iptables sebelumnya)   
   ![Installing Fail2Ban](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Fail2Ban/22.jpeg)
   
 
