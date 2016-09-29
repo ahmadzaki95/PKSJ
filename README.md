@@ -44,6 +44,8 @@ Anggota Kelompok
 
 * **Fail2Ban** adalah package keamanan yang digunakan untuk mencegah serangan brute-force dan DDoS pada linux. Fail2ban bekerja dengan memonitor jumlah kegagalan login untuk selanjutnya memblok ip address dari login yang gagal tersebut.[(sumber)](https://kpunikomlipi.wordpress.com/2012/07/30/konfigurasi-fail2ban-untuk-mengamankan-server/)
 
+* **Google Authenticator** adalah sebuah aplikasi yang mengimplementasikan layanan *two-step verification* menggunakan  Time-based One-time Password Algorithm (TOTP) dan HMAC-based One-time Password Algorithm (HOTP), untuk kebutuhan otentikasi pengguna aplikasi mobile oleh Google. Selain itu dapat digunakan untuk menambah keamanan SSH server (menggunakan Google Authenticator PAM), yang bekerja dengan cara meminta kode verifikasi setiap kali ingin log in ke server. Kode verifikasi didapatkan dari *smartphone* anda yang sudah terinstalasi aplikasi Google Authenticator. [(sumber)](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-two-factor-authentication)
+
 
 ## Uji Penetrasi 1
 
@@ -384,7 +386,7 @@ Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwo
 
   ![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_6.JPG)
 
-  Baris terakhir dari perintah yang diinputkan tidak menunjukkan perbedaan apabila SSH berhasil dipenetrasi atau gagal, sehingga tentunya tidak efektif karena hasil tiap kombinasi user dan password harus dilihat satu per satu
+  Baris terakhir dari hasil perintah yang diinputkan tidak menunjukkan perbedaan apabila SSH berhasil dipenetrasi atau gagal, sehingga tentunya tidak efektif karena hasil tiap kombinasi user dan password harus dilihat satu per satu
 
   ![Patator Skenario 4](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(No%20Countermeasures)/patator_7.JPG)
 
@@ -561,7 +563,7 @@ Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwo
 <img src="https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/11.png" alt="Konfigurasi Google Authenticator" width="300">
 
 
-  12. Seperti yang terlihat pada gambar, setiap kali ingin melakukan log in ke server via SSH dibutuhkan kode verifikasi. Pada contoh kasus seperti di gambar, telah dicoba untuk memasukkan kode verifikasi dan password yang salah, kode verifikasi yang benar namun password salah dan kode verifikasi yang salah namun password benar. Karena tidak ada kombinasi yang benar maka IP yang mengakses akan di ban selama 30 detik  
+  12. Seperti yang terlihat pada gambar, setiap kali ingin melakukan log in ke server via SSH dibutuhkan kode verifikasi. Pada contoh kasus seperti pada gambar, telah dicoba untuk memasukkan kode verifikasi dan password yang salah, kode verifikasi yang benar namun password salah dan kode verifikasi yang salah namun password benar. Karena tidak ada kombinasi yang benar maka IP yang mengakses akan di ban selama 30 detik  
 ![Konfigurasi Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Konfigurasi_Google_Authenticator/12.png)
 
 
@@ -580,7 +582,7 @@ Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwo
 ![Konfigurasi SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/6.png)
 
 
-  3. Mendisable Password Authentication, berarti hanya SSH dengan SSH key yang bisa dijalankan. Cari baris yang berisi "PasswordAuthentication" , dan ubah menjadi seperti berikut :
+  3. Mendisable Password Authentication, berarti hanya SSH dengan SSH key yang bisa dijalankan. Cari baris yang berisi "PasswordAuthentication" , dan ubah menjadi seperti berikut :  
 ![Konfigurasi SSH Server](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Installing_Openssh_Server/9.png)
 
 
@@ -594,7 +596,25 @@ Hasilnya berupa pesan informasi dari SSH yang dipenetrasi karena user dan passwo
 
 #### 4. Langkah Uji Penetrasi dengan SSH Brute Force Tools
 
+Pada tahap ini, kami melakukan uji penetrasi (dengan *defense tools* di sisi server) dengan skenario yang berbeda untuk setiap *attack tools*, yaitu :
+
+* **Patator Menyerang SSH Server yang Menggunakan Google Authenticator**
+
+1. Dilakukan dengan perintah : patator ssh_login host=192.168.116.1 port=3022 user=ubuntu password=reverse  
+Dapat dilihat seperti pada gambar, meskipun user dan password yang dimasukkan sudah benar, namun serangan yang dilakukan tetap gagal dengan pesan "Authentication failed"
+![Patator & Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/patator_1.png)
+
+
+2. Dilakukan dengan perintah : patator ssh_login host=192.168.116.1 port=3022 user=FILE0 password=FILE1 0=/root/Desktop/list_user_pass/username.txt 1=/root/Desktop/list_user_pass/password_list_true.txt -x ignore:fgrep='Authentication failed'  
+Dapat dilihat seperti pada gambar, meskipun kombinasi user dan password yang benar terdapat pada *dictionary* yang diinputkan, namun serangan yang dilakukan tetap gagal (semua pesan serangan yang dihasilkan berisi "Authentication failed")
+![Patator & Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/patator_2.png)
+
+
+
+* **Ncrack Menyerang SSH Server yang Menggunakan SSH Key**
+* **Hydra Menyerang SSH Server yang Menggunakan Fail2Ban**
 
 
 ## Kesimpulan dan Saran
+
 
