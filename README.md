@@ -628,7 +628,7 @@ Dapat dilihat seperti pada gambar, meskipun user dan password yang dimasukkan su
 
 
 2. Dilakukan dengan perintah : patator ssh_login host=192.168.116.1 port=3022 user=FILE0 password=FILE1 0=/root/Desktop/list_user_pass/username.txt 1=/root/Desktop/list_user_pass/password_list_true.txt -x ignore:fgrep='Authentication failed'    
-Dapat dilihat seperti pada gambar, meskipun kombinasi user dan password yang benar terdapat pada *dictionary* yang diinputkan, namun serangan yang dilakukan tetap gagal (semua pesan serangan yang dihasilkan berisi "Authentication failed")
+Dapat dilihat seperti pada gambar, meskipun kombinasi user dan password yang benar terdapat pada *dictionary* yang diinputkan, namun serangan yang dilakukan tetap gagal (semua pesan serangan yang dihasilkan berisi "Authentication failed")  
 ![Patator & Google Authenticator](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Bruteforce_Attack%20(With%20Countermeasures)/patator_2.png)
 
 
