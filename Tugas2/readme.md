@@ -70,7 +70,7 @@ Kelemahannya adalah parameter [ CP_CALENDAR_ID ] yang tidak divalidasi / *escape
   1. Pastikan LAMP (Linux, Apache, MySQL, and PHP) stack sudah terinstal
 
 
-  2. Log ke MySQL milik root  
+  2. Login ke MySQL milik user **root**  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_1.jpg)
 
 
@@ -82,67 +82,67 @@ Kelemahannya adalah parameter [ CP_CALENDAR_ID ] yang tidak divalidasi / *escape
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_3.jpg)
 
 
-  5. Memberikan akses database ke user yang baru dibuat  
+  5. Memberikan hak akses ke database untuk user yang baru dibuat  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_4.jpg)
 
 
-  6. Lorem Ipsum  
+  6. Flush aturan hak akses yang telah ditetapkan agar MySQL yang sedang berjalan dapat mengetahui perubahan aturan hak akses, kemudian keluar dari MySQL  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_5.jpg)
 
 
-  7. Lorem Ipsum  
+  7. Unduh versi terbaru dari Wordpress  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_6.jpg)
 
 
-  8. Lorem Ipsum  
+  8. Ekstrak file yang telah diunduh, yang menghasilkan direktori bernama **wordpress**  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_7.jpg)
 
 
-  9. Lorem Ipsum  
+  9. Unduh library tambahan seperti php5-gd agar dapat bekerja dengan gambar (upload, resizing) pada Wordpress   
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_8.jpg)
 
 
-  10. Lorem Ipsum  
+  10. Pindah ke direktori **wordpress** (dihasilkan dari langkah ke 8), kemudian salin contoh file konfigurasi default yang sudah tersedia agar menjadi file konfigurasi dari Wordpress   
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_9.jpg)
 
 
-  11. Lorem Ipsum  
+  11. Buka file konfigurasi menggunakan teks editor, kemudian ubah nilai dari 'DB_NAME', 'DB_USER'dan 'DB_PASSWORD' sesuai dengan nilai yang telah anda tentukan pada langkah 3 dan 4  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_10.jpg)
 
 
-  12. Lorem Ipsum  
+  12. Contoh tampilan dari konfigurasi Wordpress yang digunakan pada tutorial  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_11.jpg)
 
 
-  13. Lorem Ipsum  
+  13. Salin isi dari direktori **wordpress** ke **/var/www/html/**  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_12.jpg)
 
 
-  14. Lorem Ipsum  
+  14. Ubah hak kepemilikan dari file dan direktori Wordpress ke user yang berhak mengaksesnya  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_13.jpg)
 
 
-  15. Lorem Ipsum  
+  15. Buat direktori **uploads** dibawah direktori **wp-content** untuk menyimpan file yang diunggah, kemudian ubah hak kepemilikan (grup) dari direktori **uploads** ke web server agar web server dapat membuat file dan direktori dibawah direktori tersebut, sehingga user dapat mengunggah file ke Wordpress   
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_14.jpg)
 
 
-  16. Lorem Ipsum  
+  16. Buka web browser, kemudian masukkan alamat Wordpress anda, jika Wordpress berjalan maka akan muncul tampilan seperti di gambar, kemudian pilih bahasa yang akan digunakan Wordpress  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_15.jpg)
 
 
-  17. Lorem Ipsum  
+  17. Masukkan data-data yang akan digunakan untuk membuat akun admin pertama dari Wordpress  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_16.jpg)
 
 
-  18. Lorem Ipsum  
+  18. Tampilan instalasi Wordpress telah berhasil dilakukan  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_17.jpg)
 
 
-  19. Lorem Ipsum  
+  19. Login ke Wordpress anda menggunakan akun admin yang telah dibuat  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_18.jpg)
 
 
-  20. Lorem Ipsum  
+  20. Tampilan dashboard dari Wordpress  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_19.jpg)
 
 
@@ -306,3 +306,4 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
 ## 4. Kesimpulan dan Saran
 
   1. 
+
