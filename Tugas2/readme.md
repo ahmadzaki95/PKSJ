@@ -65,80 +65,84 @@ Kelemahannya adalah parameter [ CP_CALENDAR_ID ] yang tidak divalidasi / *escape
 ## Langkah Instalasi Wordpress & Plugin
 
 
-#### 1. Langkah Instalasi Wordpress
-  1. Lorem Ipsum
+#### 1. Langkah Instalasi Wordpress pada Kali Linux
+
+  1. Pastikan LAMP (Linux, Apache, MySQL, and PHP) stack sudah terinstal
+
+
+  2. Log ke MySQL milik root  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_1.jpg)
 
 
-  2. Lorem Ipsum
+  3. Membuat database yang akan digunakan Wordpress  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_2.jpg)
 
 
-  3. Lorem Ipsum
+  4. Membuat user untuk mengoperasikan database Wordpress  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_3.jpg)
 
 
-  4. Lorem Ipsum
+  5. Memberikan akses database ke user yang baru dibuat  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_4.jpg)
 
 
-  5. Lorem Ipsum
+  6. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_5.jpg)
 
 
-  6. Lorem Ipsum
+  7. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_6.jpg)
 
 
-  7. Lorem Ipsum
+  8. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_7.jpg)
 
 
-  8. Lorem Ipsum
+  9. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_8.jpg)
 
 
-  9. Lorem Ipsum
+  10. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_9.jpg)
 
 
-  10. Lorem Ipsum
+  11. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_10.jpg)
 
 
-  11. Lorem Ipsum
+  12. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_11.jpg)
 
 
-  12. Lorem Ipsum
+  13. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_12.jpg)
 
 
-  13. Lorem Ipsum
+  14. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_13.jpg)
 
 
-  14. Lorem Ipsum
+  15. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_14.jpg)
 
 
-  15. Lorem Ipsum
+  16. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_15.jpg)
 
 
-  16. Lorem Ipsum
+  17. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_16.jpg)
 
 
-  17. Lorem Ipsum
+  18. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_17.jpg)
 
 
-  18. Lorem Ipsum  
+  19. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_18.jpg)
 
 
-  19. Lorem Ipsum
+  20. Lorem Ipsum  
 ![Instal Wordpress](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_WordPress/Screenshot_19.jpg)
 
 
@@ -157,71 +161,55 @@ Kelemahannya adalah parameter [ CP_CALENDAR_ID ] yang tidak divalidasi / *escape
 
 * ##### Plugin Video Player 1.5.16
 
-  1. Lorem Ipsum
+  1. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_1.jpg)
 
-
-  2. Lorem Ipsum
+  2. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_2.jpg)
 
-
-  3. Lorem Ipsum
+  3. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_3.jpg)
 
-
-  4. Lorem Ipsum
+  4. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_4.jpg)
 
-
-  5. Lorem Ipsum
+  5. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_5.jpg)
 
-
-  6. Lorem Ipsum
+  6. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_6.jpg)
 
-
-  7. Lorem Ipsum
+  7. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_7.jpg)
 
-
-  8. Lorem Ipsum
+  8. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_8.jpg)
 
-
-  9. Lorem Ipsum
+  9. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_9.jpg)
 
-
-  10. Lorem Ipsum
+  10. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_10.jpg)
 
-
-  11. Lorem Ipsum
+  11. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_11.jpg)
 
-
-  12. Lorem Ipsum
+  12. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_12.jpg)
 
-
-  13. Lorem Ipsum
+  13. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_13.jpg)
 
-
-  14. Lorem Ipsum
+  14. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_14.jpg)
-
 
   15. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_15.jpg)
 
-
-  16. Lorem Ipsum
+  16. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_16.jpg)
 
-
-  17. Lorem Ipsum
+  17. Lorem Ipsum  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_17.jpg)
 
 
@@ -238,75 +226,75 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
 
 ##### 1. Plugin Video Player 1.5.16 dengan tools WPScan dan Mitmproxy
 
-  1. Lorem Ipsum
+  1. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_1.jpg)
 
 
-  2. Lorem Ipsum
+  2. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_2.jpg)
 
 
-  3. Lorem Ipsum
+  3. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_3.jpg)
 
 
-  4. Lorem Ipsum
+  4. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_4.jpg)
 
 
-  5. Lorem Ipsum
+  5. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_5.jpg)
 
 
-  6. Lorem Ipsum
+  6. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_6.jpg)
 
 
-  7. Lorem Ipsum
+  7. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_7.jpg)
 
 
-  8. Lorem Ipsum
+  8. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_8.jpg)
 
 
-  9. Lorem Ipsum
+  9. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_9.jpg)
 
 
-  10. Lorem Ipsum
+  10. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_10.jpg)
 
 
-  11. Lorem Ipsum
+  11. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_11.jpg)
 
 
-  12. Lorem Ipsum
+  12. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_12.jpg)
 
 
-  13. Lorem Ipsum
+  13. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_13.jpg)
 
 
-  14. Lorem Ipsum
+  14. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_14.jpg)
 
 
-  15. Lorem Ipsum
+  15. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_15.jpg)
 
 
-  16. Lorem Ipsum
+  16. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_16.jpg)
 
 
-  17. Lorem Ipsum
+  17. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_17.jpg)
 
 
-  18. Lorem Ipsum
+  18. Lorem Ipsum  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_18.jpg)
 
 
