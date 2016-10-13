@@ -45,7 +45,7 @@ function dex_reservations_get_option ($field, $default_value)
 
 Kelemahannya adalah parameter [ CP_CALENDAR_ID ] yang tidak divalidasi / *escape parameter* . Sumber : ([exploit-db](https://www.exploit-db.com/exploits/38187/))
 
-* **League Manager 3.9.1.1**
+* **League Manager 3.9.1.1** adalah plugin wordpress untuk management liga sepakbola di halaman wordpress.Ternyata plugin ini dapat dieksploitasi menggunakan blind SQL Injection. Pada referensi disebutkan bahwa dengan menggunakan multiple blind SQL Injenction, user yang dapat login ke dashboard Wordpress dapat mengekstrak informasi dari user lainnya, seperti panjang password bahkan seluruh hash password dari user tersebut. 
 
 * **Video Player 1.5.16** adalah plugin Wordpress untuk menambahkan, mengatur dan menampilkan video. Ternyata plugin ini dapat dieksploitasi menggunakan blind SQL Injection. Pada referensi disebutkan bahwa dengan menggunakan multiple blind SQL Injenction, user yang dapat login ke dashboard Wordpress dapat mengekstrak informasi dari user lainnya, seperti panjang password bahkan seluruh hash password dari user tersebut.  
 
@@ -239,6 +239,34 @@ Help :
 
   6. Tampilan dari daftar plugin yang sedang aktif, dapat dilihat plugin League Manager sudah aktif. Untuk menggunakan plugin, navigasi ke menu League Manager, kemudian buatlah pertandingan.
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/6.jpeg)
+
+  7. Setelah Plugin League Manager aktif, kita akan membuat liga baru. Disini saya membuat liga Malaysia.
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/7.png)
+
+  8. Setelah membuat liga, kita membuat season baru dengan mengklik 'add new season'.
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/8.png)
+
+  9. Masukkan tahun season baru dan jumlah pertandingan per hari.
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/9.png)
+
+  10. Berikut adalah tampilan season yang telah kita buat, langkah selanjutnya adalah membuat team.
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/10.png)
+
+  11. Saya membuat team yang bernama Malaysia United, dan isikan keterangan tentang team tersebut.
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/11.png)
+
+  12. Buat lagi team yang lain, karena minimal terdapat 2 team agar petandingan dapat terjadi.
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/12.png)
+
+  13. Setelah membuat team, kita membuat pertandingan. Silahkan masukkan pertandingan sesuai dengan team yang tersedia.
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/13.png)
+
+  14. Berikut adalah hasil setelah kita membuat team dan membuat pertandingan.
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/14.png)
+
+  15. Berikut adalah hasil akhir, akses vulnerability dengan parameter /?match=1 dapat diakses.
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/15.png)
+
 
 * ##### Plugin Video Player 1.5.16
 
