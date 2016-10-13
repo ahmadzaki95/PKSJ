@@ -200,8 +200,23 @@ Sumber : ([link](https://sumofpwn.nl/advisory/2016/multiple_sql_injection_vulner
 
 * ##### Plugin League Manager 3.9.1.1
 
-  1. Lorem Ipsum
-![Image]()
+  1. Unduh plugin Wordpress League Manager versi 3.9.1.1 di https://wordpress.org/plugins/leaguemanager/developers/
+![Install League Manager](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/1.jpeg)
+
+  2. Login ke Wordpress anda, pada dashboard navigasi ke menu Plugins, kemudian pilih Add New  
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/2.jpeg)
+
+  3. Unggah file yang diunduh pada langkah 1, kemudian pilih Install Now untuk menginstal plugin  
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/3.jpeg)
+
+  4. Lalu klik Install Now  
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/4.jpeg)
+
+  5. Tampilan ketika plugin berhasi diinstal, pilih Activate Plugin  
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/5.jpeg)
+
+  6. Tampilan dari daftar plugin yang sedang aktif, dapat dilihat plugin League Manager sudah aktif. Untuk menggunakan plugin, navigasi ke menu League Manager, kemudian buatlah pertandingan.
+![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/6.jpeg)
 
 * ##### Plugin Video Player 1.5.16
 
@@ -376,8 +391,29 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
   ![Skenario CPRes dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInj_CPRes/6.png)  Password berada di kolom user_pass dan password yang telah didekripsi terdapat di dalam tanda kurung()
 
 
-##### 3. Plugin X dengan tool Y
+##### 3. Plugin League Manager dengan tool SQLMap
+  1. Seperti yang dibahas dalam  ([exploit-db](https://www.exploit-db.com/exploits/37182/)), kelemahan terdapat pada Unauthenticated SQLi (http://localhost/?match=1).
 
+  2. Kita mencoba menggunakan SQLMap untuk mengecek apakah parameter /?match=1 bisa diinject :  
+  ![Skenario League Manager dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshoot_SQLInjection_SQLMap_LeagueManager/1.jpg).
+
+  3. Terlihat bahwa parameter 'match' mengandung 'vulnerable' :  
+  ![Skenario League Manager dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshoot_SQLInjection_SQLMap_LeagueManager/2.jpg).
+
+  4. Karena terdapat beberapa 'vulnerable', seperti error-based, AND/OR time-based blind, dan Union query, kami mencoba untuk melihat isi tabel nya :  
+  ![Skenario League Manager dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshoot_SQLInjection_SQLMap_LeagueManager/5.jpeg).
+
+  5. Kami menemukan nama tabel dan dapat melihat struktur table dari dataase tersebut :  
+  ![Skenario League Manager dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshoot_SQLInjection_SQLMap_LeagueManager/6.jpeg).
+
+  6. Kami melakukan dump pada database wordpress dan table wp_users, terlihat pada gambar SQLMap menemukan data user :  
+  ![Skenario League Manager dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshoot_SQLInjection_SQLMap_LeagueManager/9.png).
+
+  7. (2) Kami melakukan dump pada database wordpress dan table wp_users, terlihat pada gambar SQLMap menemukan data user :  
+  ![Skenario League Manager dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshoot_SQLInjection_SQLMap_LeagueManager/10.png).
+
+  8. SQLMap melakukan brute force dekript password pada tabel wp_users. Terlihat password yang di dekript berada disebelah password asli yang di salt oleh wordpress :  
+  ![Skenario League Manager dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshoot_SQLInjection_SQLMap_LeagueManager/11.png).
 
 ## 4. Kesimpulan dan Saran
 
