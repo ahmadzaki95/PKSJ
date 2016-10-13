@@ -330,7 +330,7 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
 
 2. Plugin CP Reservation Calendar 1.1.6 dengan tool SQLMap
 
-3. Plugin X dengan tools Y
+3. Plugin League Manager 3.9.1.1 dengan tool SQLMap
 
 
 ##### 1. Plugin Video Player 1.5.16 dengan tools WPScan dan Mitmproxy
@@ -441,7 +441,7 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
   ![Skenario CPRes dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInj_CPRes/6.png)  Password berada di kolom user_pass dan password yang telah didekripsi terdapat di dalam tanda kurung()
 
 
-##### 3. Plugin League Manager dengan tool SQLMap
+##### 3. Plugin League Manager 3.9.1.1 dengan tool SQLMap
   1. Seperti yang dibahas dalam  ([exploit-db](https://www.exploit-db.com/exploits/37182/)), kelemahan terdapat pada Unauthenticated SQLi (http://localhost/?match=1).
 
   2. Kita mencoba menggunakan SQLMap untuk mengecek apakah parameter /?match=1 bisa diinject :  
@@ -467,6 +467,11 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
 
 ## 4. Kesimpulan dan Saran
 
-  1. 
+* ### Attack
+
+* ### Defense dan Countermeasure
+  * WPScan merupakan tool yang sebaiknya digunakan untuk mengecek tingkat keamanan dari situs Wordpress anda, untuk mengetahui apakah plugin yang terinstal memiliki kelemahan
+  * Pelajaran yang dapat diambil dari kelemahan Wordpress Video Player adalah untuk selalu membuka dan menutup input dari user dengan quote('), meskipun input tersebut sudah merupakan escaped string
+
 
 
