@@ -58,11 +58,33 @@ Sumber : ([link](https://sumofpwn.nl/advisory/2016/multiple_sql_injection_vulner
 
 **3. Tools yang digunakan**
 
-* **SQLMap**, adalah tools opensource yang mendeteksi dan melakukan exploit pada bug SQL injection secara otomatis. dengan melakukan serangan SQL injection seorang attacker dapat mengambil alih serta memanipulasi sebuah database di dalam sebuah server. ( [link](www.sqlmap.org) )
+* **SQLMap**, adalah tool opensource yang mendeteksi dan melakukan exploit pada bug SQL injection secara otomatis. dengan melakukan serangan SQL injection seorang attacker dapat mengambil alih serta memanipulasi sebuah database di dalam sebuah server. ( [link](www.sqlmap.org) )
 
-* **WPScan** Lorem Ipsum [link](Lorem ipsum)
+* **WPScan** adalah tool bawaan yang disediakan oleh Kali Linux, yang berfungsi untuk memindai tingkat atau masalah keamanan dari CMS (Content Management System) Wordpress. ( [link](http://tools.kali.org/web-applications/wpscan) )  
+```
+Help :
 
-* **Mitmproxy** Lorem Ipsum [link](Lorem ipsum)
+ Some values are settable in a config file, see the example.conf.json
+
+ --update                            Update to the database to the latest version.
+ --url       | -u <target url>       The WordPress URL/domain to scan.
+ --force     | -f                    Forces WPScan to not check if the remote site is running WordPress.
+ --enumerate | -e [option(s)]        Enumeration.
+   option :
+     u        usernames from id 1 to 10
+     u[10-20] usernames from id 10 to 20 (you must write [] chars)
+     p        plugins
+     vp       only vulnerable plugins
+     ap       all plugins (can take a long time)
+     tt       timthumbs
+     t        themes
+     vt       only vulnerable themes
+     at       all themes (can take a long time)
+   Multiple values are allowed : "-e tt,p" will enumerate timthumbs and plugins
+   If no option is supplied, the default is "vt,tt,u,vp"
+```
+
+* **Mitmproxy** adalah tool yang mempunyai program konsol interaktif yang memungkinkan traffic HTTP  untuk di-intercept, diperiksa, dan dimodifikasi. Gunakan shortcut key **?** di layar Mitmproxy manapun untuk melihat dokumentasi cara penggunaan. ( [link](http://docs.mitmproxy.org/en/latest/mitmproxy.html) )  
 
 
 ## Langkah Instalasi Wordpress & Plugin
