@@ -22,7 +22,7 @@ Anggota Kelompok
 
 * **Wordpress**, adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun dengan bahasa pemrograman PHP dan basis data (database) MySQL. PHP dan MySQL, keduanya merupakan perangkat lunak sumber terbuka (open source software) ( [link](https://id.wikipedia.org/wiki/WordPress) )
 
-* **CP Reservation Calendar 1.1.6** adalah plugin wordpress untuk reservasi suatu tempat. Kelemahan pada plugin ini terdapat pada file dex_reservations.php, pada fungsi berikut
+* **CP Reservation Calendar 1.1.6** adalah plugin Wordpress untuk reservasi suatu tempat. Kelemahan pada plugin ini terdapat pada file dex_reservations.php, pada fungsi berikut
 
 ``` 
 function dex_reservations_get_option ($field, $default_value)
@@ -47,7 +47,14 @@ Kelemahannya adalah parameter [ CP_CALENDAR_ID ] yang tidak divalidasi / *escape
 
 * **League Manager 3.9.1.1**
 
-* **Video Player 1.5.16**
+* **Video Player 1.5.16** adalah plugin Wordpress untuk menambahkan, mengatur dan menampilkan video. Ternyata plugin ini dapat dieksploitasi menggunakan blind SQL Injection. Pada referensi disebutkan bahwa dengan menggunakan multiple blind SQL Injenction, user yang dapat login ke dashboard Wordpress dapat mengekstrak informasi dari user lainnya, seperti panjang password bahkan seluruh hash password dari user tersebut.  
+
+![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_4.jpg)
+
+Kelemahan terdapat pada fungsi show_tag(), spider_video_select_playlist(), dan spider_video_select_video(). Penulis mencoba untuk mencegah SQL Injection dengan memanggil fungsi esc_sql() dan esc_html() pada parameter order_by yang berfungsi membersihkan string dari karakter - karakter seperti ' " < > , . Namun parameter POST order_by sendiri tidak di quote ketika digunakan dengan query ORDER BY, sehingga masih dapat dieksploitasi menggunakan SQL Injection.  
+Sumber : ([link](https://sumofpwn.nl/advisory/2016/multiple_sql_injection_vulnerabilities_in_wordpress_video_player.html))
+
+![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_5.jpg)
 
 **3. Tools yang digunakan**
 
@@ -263,75 +270,68 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
 
 ##### 1. Plugin Video Player 1.5.16 dengan tools WPScan dan Mitmproxy
 
-  1. Lorem Ipsum  
+  1. Tutorial ini menggunakan Kali Linux, sehingga WPScan sudah terinstal. Gunakan perintah
+**wpscan --url < alamat situs Wordpress anda >** untuk melakukan pemindaian kelemahan dari situs Wordpress anda. Jika muncul pertanyaan seperti di gambar, maka dianjurkan untuk memperbaharui database dari WPScan dengan memasukkan **Y** 
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_1.jpg)
 
 
-  2. Lorem Ipsum  
+  2. Gunakan perintah **wpscan --url < alamat situs Wordpress anda > --enumerate vp** untuk memindai plugin yang memiliki kelemahan  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_2.jpg)
 
 
-  3. Lorem Ipsum  
+  3. Tampilan daftar plugin yang memiliki kelemahan (hasil pindai) beserta referensi yang mendukung pernyataan tersebut. Pada tutorial ini akan dilakukan blind SQL Injection terhadap plugin Wordpress Video Player versi 1.5.16, sehingga akan digunakan salah satu referensi ([link](https://sumofpwn.nl/advisory/2016/multiple_sql_injection_vulnerabilities_in_wordpress_video_player.html)) yang tersedia.  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_3.jpg)
 
 
-  4. Lorem Ipsum  
-![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_4.jpg)
-
-
-  5. Lorem Ipsum  
-![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_5.jpg)
-
-
-  6. Lorem Ipsum  
+  4. Gunakan perintah **mitmproxy --host** untuk menjalankan Mitmproxy yang menampilkan nama host  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_6.jpg)
 
 
-  7. Lorem Ipsum  
+  5. Tekan key **i** pada keyboard anda, masukkan perintah **~m POST** agar semua POST request yang ditangkap oleh Mitmproxy dapat di-intercept  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_7.jpg)
 
 
-  8. Lorem Ipsum  
+  6. Pasang penerusan port pada VirtualBox Kali Linux, menggunakan port 8080 karena Mitmproxy melakukan listen pada port tersebut secara default  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_8.jpg)
 
 
-  9. Lorem Ipsum  
+  7. Setting proxy pada browser yang ingin mengakses Wordpress dengan alamat host Kali Linux dan port sesuai dengan port host yang ditentukan pada penerusan port di langkah 6   
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_9.jpg)
 
 
-  10. Lorem Ipsum  
+  8. Tampilan Mitmproxy yang meng-intercept request POST ketika user melakukan login ke Wordpress. Tulisan berwarna jingga menandakan request tersebut ditahan pada proxy server, kemudian request tersebut dapat dilihat dan di-edit datanya, setelah itu dapat diteruskan ke server tujuan  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_10.jpg)
 
 
-  11. Lorem Ipsum  
+  9. Pada dashboard Wordpress, navigasi ke menu Video Player, kemudian pilih Tags, pada tabel yang berisi daftar tag, klik Order untuk mengirimkan request POST yang tujuannya untuk melakukan pengurutan tag berdasarkan nilai ordering  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_11.jpg)
 
 
-  12. Lorem Ipsum  
+  10. Tampilan request POST yang dikirimkan pada langkah 9, tekan key **e** pada keyboard untuk melihat detil request tersebut  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_12.jpg)
 
 
-  13. Lorem Ipsum  
+  11. Tampilan detil dari request, dapat dilihat form yang dikirim dan responsenya. Tekan key **e** kemudian key **f** pada keyboard untuk mengedit form dari request  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_13.jpg)
 
 
-  14. Lorem Ipsum  
+  12. Akan dilakukan blind SQL Injection dengan mengubah nilai dari key **order_by** dengan SQL query   
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_14.jpg)
 
 
-  15. Lorem Ipsum  
+  13. SQL query yang ditampilkan pada gambar berfungsi untuk mengecek panjang dari username user dengan id 1, jika panjangnya berada di range 3 - 5, maka **name** akan dijadikan nilai dari **order_by**, sedangkan jika panjangnya berada di luar range maka **id** akan dijadikan nilai dari **order_by**  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_15.jpg)
 
 
-  16. Lorem Ipsum  
+  14. Teruskan request POST yang telah di-edit dengan menekan key **a** pada keyboard  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_16.jpg)
 
 
-  17. Lorem Ipsum  
+  15. Tampilan tabel daftar tag yang diurutkan berdasarkan nama, bukan berdasarkan id atau ordering, sehingga dapat dipastikan bahwa panjang username berada di range 3 - 5  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_17.jpg)
 
 
-  18. Lorem Ipsum  
+  16. Informasi panjang username dapat diolah lebih lanjut untuk melakukan blind SQL Injection selanjutnya, yang bertujuan untuk mendapatkan setiap karakter dari username tersebut. Contohnya SQL query seperti pada gambar, yang berfungsi untuk mengecek apakah karakter pertama dari username user dengan id 1 memiliki nilai ASCII yang berada di range 102 - 104  
 ![Skenario WPScan dan Mitmproxy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInjection_WPScan_VideoPlayer/Screenshot_18.jpg)
 
 
