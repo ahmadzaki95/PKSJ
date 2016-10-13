@@ -147,72 +147,48 @@ Kelemahannya adalah parameter [ CP_CALENDAR_ID ] yang tidak divalidasi / *escape
 
 * ##### Plugin CP Reservation Calendar 1.1.6
 
-  1. Di command line/terminal/ SSH komputer webserver, pastikan anda berada di direktori wordpress anda
-
+  1. Di command line/terminal/ SSH komputer webserver, pastikan anda berada di direktori wordpress anda  
   ```
   $ cd {direktori web server}/{nama folder tempat wordpress diinstal}
 
   $ cd /var/www/html/wordpress
-
   ```
-
-
-  2. Pindah ke folder plugins dengan masukkan perintah berikut (jika pada Linux)
-
+  
+  2. Pindah ke folder plugins dengan masukkan perintah berikut (jika pada Linux)  
   ```
   $ cd wp-content/plugins
-
   ```
-
-
-  3. Untuk mendownload plugin CP Reservation Calendar versi 1.1.6 (jika install langsung dari halaman WP-Admin maka yang terinstall adalah versi paling baru) , masukkan perintah berikut :
-
+  
+  3. Untuk mendownload plugin CP Reservation Calendar versi 1.1.6 (jika install langsung dari halaman WP-Admin maka yang terinstall adalah versi paling baru) , masukkan perintah berikut :  
   ```
   $ wget https://downloads.wordpress.org/plugin/cp-reservation-calendar.1.1.6.zip
-
   ```
-
-   4. Jika download sudah selesai , *unzip* file tersebut dengan memasukkan perintah berikut :
-
+  
+  4. Jika download sudah selesai , *unzip* file tersebut dengan memasukkan perintah berikut :  
   ```
-  $ unzip cp-reservation-calendar.1.1.6.zip
-
-  ``` 
-
-  Jika unzip belum terinstall, install dengan masukkan perintah berikut :
-
-   ```
+  $ unzip cp-reservation-calendar.1.1.6.zip  
+  ```  
+  Jika unzip belum terinstall, install dengan masukkan perintah berikut :  
+  ```
   # apt-get install unzip
-
-  ``` 
-
-  5. Setelah selesai, login ke dalam wordpress yang telah diinstall. Setelah itu, pada sidebar bagian Plugins, klik di bagian Installed Plugin.
-
+  ```
+  
+  5. Setelah selesai, login ke dalam wordpress yang telah diinstall. Setelah itu, pada sidebar bagian Plugins, klik di bagian Installed Plugin.  
   ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/1.png)
 
-  6. Klik 'Activate' pada plugin Cp Reservation Calendar.
-
+  6. Klik 'Activate' pada plugin Cp Reservation Calendar.  
   ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/2.png)
 
-  7. Setelah diaktivasi , agar dapat di-injection, maka kita harus memasukkan konten CP Reservation calendar ke dalam wordpress agar dapat diakses. Maka, kita akan membuat post baru berisi konten CP Reservation Calendar.
-
-  Klik sidebar Post , lalu klik Add New.
-
+  7. Setelah diaktivasi , agar dapat di-injection, maka kita harus memasukkan konten CP Reservation calendar ke dalam wordpress agar dapat diakses. Maka, kita akan membuat post baru berisi konten CP Reservation Calendar. Klik sidebar Post , lalu klik Add New.  
   ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/3.png)
 
-  7. Setelah muncul halaman add new Post, klik icon kecil bergambar Kalender di sebelah tombol 'Add Media' untuk menambahkan konten Cp Reservation Calendar
-
-  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/4.png)
-
-  Jika sudah , maka akan muncul tulisan berikut di bagian isi Post. Setelah muncul , Klik Publish Post di sebelah kanan.
-
+  8. Setelah muncul halaman add new Post, klik icon kecil bergambar Kalender di sebelah tombol 'Add Media' untuk menambahkan konten Cp Reservation Calendar  
+  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/4.png)  
+  Jika sudah , maka akan muncul tulisan berikut di bagian isi Post. Setelah muncul , Klik Publish Post di sebelah kanan.  
   ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/5.png)
 
-
-  8. Jika berhasil, maka akan muncul post kira-kira seperti gambar berikut di halaman Wordpress anda.
-
+  9. Jika berhasil, maka akan muncul post kira-kira seperti gambar berikut di halaman Wordpress anda.  
   ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/6.png)
-
 
 
 * ##### Plugin League Manager 3.9.1.1
@@ -222,55 +198,55 @@ Kelemahannya adalah parameter [ CP_CALENDAR_ID ] yang tidak divalidasi / *escape
 
 * ##### Plugin Video Player 1.5.16
 
-  1. Lorem Ipsum  
+  1. Unduh plugin Wordpress Video Player versi 1.5.16 di https://wordpress.org/plugins/player/developers/  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_1.jpg)
 
-  2. Lorem Ipsum  
+  2. Login ke Wordpress anda, pada dashboard navigasi ke menu Plugins, kemudian pilih Add New  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_2.jpg)
 
-  3. Lorem Ipsum  
+  3. Unggah file yang diunduh pada langkah 1, kemudian pilih Install Now untuk menginstal plugin  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_3.jpg)
 
-  4. Lorem Ipsum  
+  4. Jika terdapat error seperti di gambar, lakukan langkah 5 - 7, jika tidak maka lanjut ke langkah 8  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_4.jpg)
 
-  5. Lorem Ipsum  
+  5. Buka Ubuntu Server tempat Wordpress di deploy, buka file **php.ini** yang terletak pada /etc/php5/apache2/ dengan teks editor  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_5.jpg)
 
-  6. Lorem Ipsum  
+  6. Ubah nilai dari **upload_max_filesize** sesuai besar file maksimal yang dapat diunggah yang anda inginkan (misal 64M)  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_6.jpg)
 
-  7. Lorem Ipsum  
+  7. Ubah nilai dari **post_max_filesize** sesuai besar data maksimal yang dapat di POST yang anda inginkan (misal 64M)  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_7.jpg)
 
-  8. Lorem Ipsum  
+  8. Tampilan ketika plugin berhasi diinstal, pilih Activate Plugin  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_8.jpg)
 
-  9. Lorem Ipsum  
+  9. Tampilan dari daftar plugin yang sedang aktif, dapat dilihat plugin Video Player sudah aktif. Untuk menggunakan plugin, navigasi ke menu Video Player, kemudian pilih Video Player  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_9.jpg)
 
-  10. Lorem Ipsum  
+  10. Pilih Add a player untuk menambahkan player yang dapat memutar playlist video  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_10.jpg)
 
-  11. Lorem Ipsum  
+  11. Masukkan Priority (prioritas), Title (judul), Theme (desain) dan Playlist dari player, kemudian pilih Save untuk menyimpan player. Playlist yang digunakan pada tutorial menggunakan playlist bawaan dari plugin  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_11.jpg)
 
-  12. Lorem Ipsum  
+  12. Tampilan player yang sudah tersimpan  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_12.jpg)
 
-  13. Lorem Ipsum  
+  13. Pada dashboard navigasi ke menu Posts, kemudian pilih post yang berjudul Hello World! (default dari Wordpress) untuk mengedit post tersebut  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_13.jpg)
 
-  14. Lorem Ipsum  
+  14. Untuk menampilkan plugin Video Player pada post, pilih Insert Spider Video Player  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_14.jpg)
 
-  15. Lorem Ipsum  
+  15. Pilih player yang ingin ditampilkan  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_15.jpg)
 
-  16. Lorem Ipsum  
+  16. Video Player telah ditambahkan pada post  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_16.jpg)
 
-  17. Lorem Ipsum  
+  17. Tampilan Video Player pada Wordpress  
 ![Instal Video Player](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_VideoPlayer/Screenshot_17.jpg)
 
 
@@ -377,34 +353,27 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
   parameter yang akan diinjeksi : dex_item
   data yang dikirimkan : dex_reservations_post=1&dex_item=1 (kedua parameter ini dibutuhkan agar tidak keluar dari fungsi dex_reservations_check_posted_data, karena pengecekan dilakukan jika kedua parameter tersebut kosong)
 
-  1. Maka dengan SQLMap, kita masukkan perintah berikut :
-
+  1. Maka dengan SQLMap, kita masukkan perintah berikut :  
   ```
   $ sqlmap --url="http://{alamat web wordpress}/?action=dex_reservations_check_posted_data" --data="dex_reservations_post=1&dex_item=1" -p dex_item --level=5 --risk=3
 
   ```
 
-  2. Tunggu script berjalan. Jika sudah selesai, maka SQLMap akan menginfokan arsitektur yang digunakan oleh server target , seperti gambar berikut :
-
+  2. Tunggu script berjalan. Jika sudah selesai, maka SQLMap akan menginfokan arsitektur yang digunakan oleh server target , seperti gambar berikut :  
   ![Skenario CPRes dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInj_CPRes/4.png)
 
 
-  3. Untuk mempermudah SQLMap dalam menscan, maka kita dapat menambahkan parameter dbms pada injection selanjutnya. Misalkan pada skenario ini, kita ingin mendapatkan data users dalam wordpress tersebut, karena wordpress biasanya menggunakan tabel wp_users untuk menyimpan daftar users, maka kita dapat mencoba meng*inject* dengan perintah berikut :
-
+  3. Untuk mempermudah SQLMap dalam menscan, maka kita dapat menambahkan parameter dbms pada injection selanjutnya. Misalkan pada skenario ini, kita ingin mendapatkan data users dalam wordpress tersebut, karena wordpress biasanya menggunakan tabel wp_users untuk menyimpan daftar users, maka kita dapat mencoba meng*inject* dengan perintah berikut :  
   ```
   $ sqlmap --url="http://192.168.56.1:81/wordpress/?action=dex_reservations_check_posted_data" --data="dex_reservations_post=1&dex_item=1" -p dex_item --dbms="MySQL" --level=5 --risk=3 -T wp_users --dump
 
   ```
 
-  4. Jika berhasil ,Selamat, anda akan mendapatkan data users dengan password yang masih di-enkripsi / di salt. Lalu SQLMap akan 'menanyakan' apakah anda ingin mencoba meng-crack password dengan dictionary yang ada.
-
+  4. Jika berhasil ,Selamat, anda akan mendapatkan data users dengan password yang masih di-enkripsi / di salt. Lalu SQLMap akan 'menanyakan' apakah anda ingin mencoba meng-crack password dengan dictionary yang ada.  
   ![Skenario CPRes dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInj_CPRes/5.png)
 
-  5. Jika anda ingin mengcrack passwordnya , maka anda dapat memasukkan data dictionary file tersebut. Dan jika anda beruntung file dictionary tersebut memuat password yang benar dari users tersebut, akan SQLMap akan menginfokannya seperti berikut :
-
-  ![Skenario CPRes dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInj_CPRes/6.png)
-
-  Password berada di kolom user_pass dan password yang telah didekripsi terdapat di dalam tanda kurung()
+  5. Jika anda ingin mengcrack passwordnya , maka anda dapat memasukkan data dictionary file tersebut. Dan jika anda beruntung file dictionary tersebut memuat password yang benar dari users tersebut, akan SQLMap akan menginfokannya seperti berikut :  
+  ![Skenario CPRes dan SQLMap](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_SQLInj_CPRes/6.png)  Password berada di kolom user_pass dan password yang telah didekripsi terdapat di dalam tanda kurung()
 
 
 ##### 3. Plugin X dengan tool Y
@@ -413,4 +382,5 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
 ## 4. Kesimpulan dan Saran
 
   1. 
+
 
