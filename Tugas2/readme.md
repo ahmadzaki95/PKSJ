@@ -177,30 +177,18 @@ Help :
 * ##### Plugin CP Reservation Calendar 1.1.6
 
   1. Di command line/terminal/ SSH komputer webserver, pastikan anda berada di direktori wordpress anda  
-  ```
-  $ cd {direktori web server}/{nama folder tempat wordpress diinstal}
-
-  $ cd /var/www/html/wordpress
-  ```
+  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/7.jpg)
   
   2. Pindah ke folder plugins dengan masukkan perintah berikut (jika pada Linux)  
-  ```
-  $ cd wp-content/plugins
-  ```
+  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/8.jpg)
   
   3. Untuk mendownload plugin CP Reservation Calendar versi 1.1.6 (jika install langsung dari halaman WP-Admin maka yang terinstall adalah versi paling baru) , masukkan perintah berikut :  
-  ```
-  $ wget https://downloads.wordpress.org/plugin/cp-reservation-calendar.1.1.6.zip
-  ```
+  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/9.jpg)
   
   4. Jika download sudah selesai , *unzip* file tersebut dengan memasukkan perintah berikut :  
-  ```
-  $ unzip cp-reservation-calendar.1.1.6.zip  
-  ```  
+  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/10.jpg)  
   Jika unzip belum terinstall, install dengan masukkan perintah berikut :  
-  ```
-  # apt-get install unzip
-  ```
+  ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/11.jpg)
   
   5. Setelah selesai, login ke dalam wordpress yang telah diinstall. Setelah itu, pada sidebar bagian Plugins, klik di bagian Installed Plugin.  
   ![Instal Cp-Res](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshow_Instalasi_Plugin_CPRes/1.png)
@@ -468,10 +456,12 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
 ## 4. Kesimpulan dan Saran
 
 * ### Attack
+  * Mitmproxy merupakan tool yang cocok digunakan untuk melakukan SQL Injection secara manual, karena tool ini memungkinkan traffic HTTP untuk di-intercept, diperiksa, dan dimodifikasi 
 
 * ### Defense dan Countermeasure
   * WPScan merupakan tool yang sebaiknya digunakan untuk mengecek tingkat keamanan dari situs Wordpress anda, untuk mengetahui apakah plugin yang terinstal memiliki kelemahan
   * Pelajaran yang dapat diambil dari kelemahan Wordpress Video Player adalah untuk selalu membuka dan menutup input dari user dengan quote('), meskipun input tersebut sudah merupakan escaped string
+
 
 
 
