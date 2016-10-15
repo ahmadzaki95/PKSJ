@@ -46,6 +46,9 @@ function dex_reservations_get_option ($field, $default_value)
 Kelemahannya adalah parameter [ CP_CALENDAR_ID ] yang tidak divalidasi / *escape parameter* . Sumber : ([exploit-db](https://www.exploit-db.com/exploits/38187/))
 
 * **League Manager 3.9.1.1** adalah plugin wordpress untuk management liga sepakbola di halaman wordpress.Ternyata plugin ini dapat dieksploitasi menggunakan blind SQL Injection. Pada referensi disebutkan bahwa dengan menggunakan multiple blind SQL Injenction, user yang dapat login ke dashboard Wordpress dapat mengekstrak informasi dari user lainnya, seperti panjang password bahkan seluruh hash password dari user tersebut. 
+POC league manager ini terdapat pada parameter match,
+![POC League Manager](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas2/Screenshot_Instalasi_Plugin_LeagueManager/POC.jpeg)
+Untuk selengkapnya dapat diakses di [sini](https://www.exploit-db.com/exploits/37182/)
 
 * **Video Player 1.5.16** adalah plugin Wordpress untuk menambahkan, mengatur dan menampilkan video. Ternyata plugin ini dapat dieksploitasi menggunakan blind SQL Injection. Pada referensi disebutkan bahwa dengan menggunakan multiple blind SQL Injenction, user yang dapat login ke dashboard Wordpress dapat mengekstrak informasi dari user lainnya, seperti panjang password bahkan seluruh hash password dari user tersebut.  
 
@@ -457,10 +460,12 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
 
 * ### Attack
   * Mitmproxy merupakan tool yang cocok digunakan untuk melakukan SQL Injection secara manual, karena tool ini memungkinkan traffic HTTP untuk di-intercept, diperiksa, dan dimodifikasi 
+  * SQLMap merupakan tool yang sangat memudahkan untuk melakukan SQL Injection. Karena SQL injection dapat mencari kelemahan dari suatu website hanya dengan memasukkan url dari target dan SQLMap akan mencari tahu kelemahannya. Jika terdapat kelemahan, user dapat memasukkan parameter yang spesifik untuk menyerang target
 
 * ### Defense dan Countermeasure
   * WPScan merupakan tool yang sebaiknya digunakan untuk mengecek tingkat keamanan dari situs Wordpress anda, untuk mengetahui apakah plugin yang terinstal memiliki kelemahan
   * Pelajaran yang dapat diambil dari kelemahan Wordpress Video Player adalah untuk selalu membuka dan menutup input dari user dengan quote('), meskipun input tersebut sudah merupakan escaped string
+  * Pelajaran yang dapat diambil dari kelemahan Plugin Wordpress League Manager adalah untuk selalu melakukan penyaringan parameter dan tidak menampilkan error query database pada saat production.
 
 
 
