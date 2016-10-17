@@ -460,12 +460,13 @@ Pada tahap ini, kami melakukan uji penetrasi berikut :
 
 * ### Attack
   * Mitmproxy merupakan tool yang cocok digunakan untuk melakukan SQL Injection secara manual, karena tool ini memungkinkan traffic HTTP untuk di-intercept, diperiksa, dan dimodifikasi 
-  * SQLMap merupakan tool yang sangat memudahkan untuk melakukan SQL Injection. Karena SQL injection dapat mencari kelemahan dari suatu website hanya dengan memasukkan url dari target dan SQLMap akan mencari tahu kelemahannya. Jika terdapat kelemahan, user dapat memasukkan parameter yang spesifik untuk menyerang target
+  * SQLMap merupakan tool yang sangat memudahkan untuk melakukan SQL Injection. Karena SQL injection dapat mencari kelemahan dari suatu website hanya dengan memasukkan URL dari target dan SQLMap akan mencari tahu kelemahannya. Jika terdapat kelemahan, user dapat memasukkan parameter yang spesifik untuk menyerang target
 
 * ### Defense dan Countermeasure
   * WPScan merupakan tool yang sebaiknya digunakan untuk mengecek tingkat keamanan dari situs Wordpress anda, untuk mengetahui apakah plugin yang terinstal memiliki kelemahan
-  * Pelajaran yang dapat diambil dari kelemahan Wordpress Video Player adalah untuk selalu membuka dan menutup input dari user dengan quote('), meskipun input tersebut sudah merupakan escaped string
-  * Pelajaran yang dapat diambil dari kelemahan Plugin Wordpress League Manager adalah untuk selalu melakukan penyaringan parameter dan tidak menampilkan error query database pada saat production.
+  * Pelajaran yang dapat diambil dari kelemahan plugin Wordpress Video Player adalah untuk selalu membuka dan menutup input dari user dengan quote('), meskipun input tersebut sudah merupakan escaped string
+  * Pelajaran yang dapat diambil dari kelemahan plugin Wordpress League Manager dan CP Reservation Calendar adalah untuk selalu melakukan pembersihan input dari user (escaped string) dan tidak menampilkan error query database pada halaman web setelah deployment
+
 
 
 
