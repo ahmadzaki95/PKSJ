@@ -1,0 +1,68 @@
+[2016-11-02 22:59:33] Adobe ARM 1.5.7.0 logging started.
+[2016-11-02 22:59:33] Command Line: 
+[2016-11-02 22:59:33] ProductCode: {AC76BA86-7AD7-1033-7B44-A95000000001}
+[2016-11-02 22:59:33] ProductName: Adobe Reader 9.5.0
+[2016-11-02 22:59:33] ProductVersion: 9.5.0
+[2016-11-02 22:59:33] ProductUACPatching: disabled
+[2016-11-02 22:59:33] EULA not yet accepted
+[2016-11-02 22:59:33] ** Setting Error Condition: 
+[2016-11-02 22:59:33]    Error Code: 100700
+[2016-11-02 22:59:33] ARM returns ERROR_SUCCESS
+[2016-11-02 22:59:33] Adobe ARM 1.5.7.0 logging finished.
+
+
+
+[2016-11-02 23:09:39] Adobe ARM 1.5.7.0 logging started.
+[2016-11-02 23:09:39] Command Line: 
+[2016-11-02 23:09:39] ProductCode: {AC76BA86-7AD7-1033-7B44-A95000000001}
+[2016-11-02 23:09:39] ProductName: Adobe Reader 9.5.0
+[2016-11-02 23:09:39] ProductVersion: 9.5.0
+[2016-11-02 23:09:39] ProductUACPatching: disabled
+[2016-11-02 23:09:39] EULA not yet accepted
+[2016-11-02 23:09:39] ** Setting Error Condition: 
+[2016-11-02 23:09:39]    Error Code: 100700
+[2016-11-02 23:09:39] ARM returns ERROR_SUCCESS
+[2016-11-02 23:09:39] Adobe ARM 1.5.7.0 logging finished.
+
+
+
+[2016-11-02 23:18:04] Adobe ARM 1.5.7.0 logging started.
+[2016-11-02 23:18:04] Command Line: 
+[2016-11-02 23:18:04] ProductCode: {AC76BA86-7AD7-1033-7B44-A95000000001}
+[2016-11-02 23:18:04] ProductName: Adobe Reader 9.5.0
+[2016-11-02 23:18:04] ProductVersion: 9.5.0
+[2016-11-02 23:18:04] ProductUACPatching: disabled
+[2016-11-02 23:18:04] EULA not yet accepted
+[2016-11-02 23:18:04] ** Setting Error Condition: 
+[2016-11-02 23:18:04]    Error Code: 100700
+[2016-11-02 23:18:04] ARM returns ERROR_SUCCESS
+[2016-11-02 23:18:04] Adobe ARM 1.5.7.0 logging finished.
+
+
+
+[2016-11-02 23:19:07] Adobe ARM 1.5.7.0 logging started.
+[2016-11-02 23:19:07] Command Line: 
+[2016-11-02 23:19:07] ProductCode: {AC76BA86-7AD7-1033-7B44-A95000000001}
+[2016-11-02 23:19:07] ProductName: Adobe Reader 9.5.0
+[2016-11-02 23:19:07] ProductVersion: 9.5.0
+[2016-11-02 23:19:07] ProductUACPatching: disabled
+[2016-11-02 23:19:07] EULA not yet accepted
+[2016-11-02 23:19:07] ** Setting Error Condition: 
+[2016-11-02 23:19:07]    Error Code: 100700
+[2016-11-02 23:19:07] ARM returns ERROR_SUCCESS
+[2016-11-02 23:19:07] Adobe ARM 1.5.7.0 logging finished.
+
+
+
+[2016-11-03 07:32:41] Adobe ARM 1.5.7.0 logging started.
+[2016-11-03 07:32:41] Command Line: /PRODUCT:Reader /VERSION:9.0 /MODE:2
+[2016-11-03 07:32:41] ProductCode: {AC76BA86-7AD7-1033-7B44-A95000000001}
+[2016-11-03 07:32:41] ProductName: Adobe Reader 9.5.0
+[2016-11-03 07:32:41] ProductVersion: 9.5.0
+[2016-11-03 07:32:41] ProductUACPatching: disabled
+[2016-11-03 07:32:42] Admin User, IsElevated returns 1
+[2016-11-03 07:32:42] Found CommandLine preference AUTO_DOWNLOAD.
+[2016-11-03 07:32:42] Time elapsed is less than time limit - returning 0
+[2016-11-03 07:32:42]    Error Code: 120300
+[2016-11-03 07:32:42] ARM returns ERROR_SUCCESS
+[2016-11-03 07:32:42] Adobe ARM 1.5.7.0 logging finished.

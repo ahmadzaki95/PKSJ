@@ -1,0 +1,6 @@
+2016-11-03 00:52:25,587 [lib.cuckoo.core.scheduler] INFO: Task #25: acquired machine win-xp-sp3 (label=win-xp-sp3)
+2016-11-03 00:52:25,624 [modules.auxiliary.sniffer] INFO: Started sniffer with PID 12864 (interface=vboxnet0, host=192.168.56.101, pcap=/home/ardi/cuckoo/storage/analyses/25/dump.pcap)
+2016-11-03 00:52:28,286 [lib.cuckoo.core.guest] INFO: Starting analysis on guest (id=win-xp-sp3, ip=192.168.56.101)
+2016-11-03 00:54:36,916 [lib.cuckoo.core.guest] INFO: win-xp-sp3: analysis completed successfully
+2016-11-03 00:54:42,077 [lib.cuckoo.core.scheduler] INFO: Task #25: reports generation completed (path=/home/ardi/cuckoo/storage/analyses/25)
+2016-11-03 00:54:42,162 [lib.cuckoo.core.scheduler] INFO: Task #25: analysis procedure completed

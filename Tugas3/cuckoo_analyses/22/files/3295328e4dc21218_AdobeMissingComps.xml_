@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AdobeUpdaterMissingCompsManager>
+<AdobeUpdaterMissingCompsApp AppID="reader9rdr-en_US" OperationType="1" RedoCFU="0">
+<DisplayName>Adobe Reader 9</DisplayName>
+<InstallPath>C:\Program Files\Adobe\Reader 9.0\Reader</InstallPath>
+<AMissingComponent category="LangPkg" name="SChn" version="0.0.0.0"></AMissingComponent>
+</AdobeUpdaterMissingCompsApp>
+</AdobeUpdaterMissingCompsManager>

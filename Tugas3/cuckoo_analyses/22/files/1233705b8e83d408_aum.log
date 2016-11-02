@@ -1,0 +1,10 @@
+2016-11-02T22:57:05: >>> Adobe Updater Log Begin >>>
+2016-11-02T22:57:05: Application Version: 6.2.0.1474
+2016-11-02T22:57:05: cmdline option: -logFile = C:\Documents and Settings\ardi\Local Settings\Application Data\Adobe\Updater6\aum.log
+2016-11-02T22:57:05: cmdline option: -logLevel = 2
+2016-11-02T22:57:05: Display Language requested = en_US
+2016-11-02T22:57:05: Valid AppID added from global xml file = reader9rdr-en_US
+2016-11-02T22:57:05: Could not load adobe_aum2pcd.dll
+2016-11-02T22:57:05: New AUM launched for express download...
+2016-11-02T22:57:05: Entering normal workflow...
+2016-11-02T22:57:05: GetAppIDUpdates: getting available update info for AppID: AdobeUpdater

@@ -1,0 +1,65 @@
+2016-11-03 00:38:02,000 [analyzer] DEBUG: Starting analyzer from: C:\immowuprb
+2016-11-03 00:38:02,000 [analyzer] DEBUG: Pipe server name: \\.\PIPE\ErqFhIQhTjZHoUvJgMPKwcUW
+2016-11-03 00:38:02,000 [analyzer] DEBUG: Log pipe server name: \\.\PIPE\sWBUScLXEtchEKpak
+2016-11-03 00:38:02,480 [analyzer] DEBUG: Started auxiliary module Disguise
+2016-11-03 00:38:02,619 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit kernel32.dll (with timestamp 0x4802a12c)
+2016-11-03 00:38:02,619 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit kernel32.dll (with timestamp 0x4802a12c)
+2016-11-03 00:38:02,670 [analyzer] DEBUG: Loaded monitor into process with pid 660
+2016-11-03 00:38:02,670 [analyzer] DEBUG: Started auxiliary module DumpTLSMasterSecrets
+2016-11-03 00:38:02,670 [analyzer] DEBUG: Started auxiliary module Human
+2016-11-03 00:38:02,670 [analyzer] DEBUG: Started auxiliary module InstallCertificate
+2016-11-03 00:38:02,670 [analyzer] DEBUG: Started auxiliary module Reboot
+2016-11-03 00:38:03,141 [analyzer] DEBUG: Started auxiliary module RecentFiles
+2016-11-03 00:38:03,141 [analyzer] DEBUG: Started auxiliary module Screenshots
+2016-11-03 00:38:03,220 [lib.api.process] INFO: Successfully executed process from path 'C:\\Program Files\\Adobe\\Reader 9.0\\Reader\\AcroRd32.exe' with arguments [u'C:\\DOCUME~1\\ardi\\LOCALS~1\\Temp\\100621.pdf'] and pid 1852
+2016-11-03 00:38:03,280 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit kernel32.dll (with timestamp 0x4802a12c)
+2016-11-03 00:38:03,280 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit kernel32.dll (with timestamp 0x4802a12c)
+2016-11-03 00:38:03,331 [analyzer] DEBUG: Loaded monitor into process with pid 1852
+2016-11-03 00:38:03,641 [analyzer] INFO: Added new file to list with pid 1852 and path \Device\NamedPipe\lsass
+2016-11-03 00:38:03,971 [analyzer] INFO: Added new file to list with pid 1852 and path C:\Documents and Settings\ardi\Application Data\Adobe\Acrobat\9.0\UserCache.bin
+2016-11-03 00:38:04,022 [analyzer] INFO: Added new file to list with pid 1852 and path C:\Documents and Settings\ardi\Local Settings\Application Data\Adobe\Color\ACECache10.lst
+2016-11-03 00:38:04,203 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit EScript.api (with timestamp 0x4f03e923)
+2016-11-03 00:38:04,203 [analyzer] INFO: io=NULL
+2016-11-03 00:38:04,203 [analyzer] DEBUG: Error resolving function escript.api!pdf_unescape through our custom callback.
+2016-11-03 00:38:04,203 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit EScript.api (with timestamp 0x4f03e923)
+2016-11-03 00:38:04,203 [analyzer] INFO: io=NULL
+2016-11-03 00:38:04,203 [analyzer] DEBUG: Error resolving function escript.api!pdf_eval through our custom callback.
+2016-11-03 00:38:04,733 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit EScript.api (with timestamp 0x4f03e923)
+2016-11-03 00:38:04,733 [analyzer] INFO: io=NULL
+2016-11-03 00:38:04,733 [analyzer] DEBUG: Error resolving function escript.api!pdf_unescape through our custom callback.
+2016-11-03 00:38:04,733 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit EScript.api (with timestamp 0x4f03e923)
+2016-11-03 00:38:04,733 [analyzer] INFO: io=NULL
+2016-11-03 00:38:04,733 [analyzer] DEBUG: Error resolving function escript.api!pdf_eval through our custom callback.
+2016-11-03 00:38:04,733 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit EScript.api (with timestamp 0x4f03e923)
+2016-11-03 00:38:04,743 [analyzer] INFO: io=NULL
+2016-11-03 00:38:04,743 [analyzer] DEBUG: Error resolving function escript.api!pdf_unescape through our custom callback.
+2016-11-03 00:38:04,743 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit EScript.api (with timestamp 0x4f03e923)
+2016-11-03 00:38:04,743 [analyzer] INFO: io=NULL
+2016-11-03 00:38:04,743 [analyzer] DEBUG: Error resolving function escript.api!pdf_eval through our custom callback.
+2016-11-03 00:38:04,743 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit EScript.api (with timestamp 0x4f03e923)
+2016-11-03 00:38:04,743 [analyzer] INFO: io=NULL
+2016-11-03 00:38:04,743 [analyzer] DEBUG: Error resolving function escript.api!pdf_unescape through our custom callback.
+2016-11-03 00:38:04,743 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit EScript.api (with timestamp 0x4f03e923)
+2016-11-03 00:38:04,743 [analyzer] INFO: io=NULL
+2016-11-03 00:38:04,743 [analyzer] DEBUG: Error resolving function escript.api!pdf_eval through our custom callback.
+2016-11-03 00:38:04,803 [analyzer] INFO: Added new file to list with pid 1852 and path C:\Documents and Settings\ardi\Local Settings\Temp\A9R8152.tmp
+2016-11-03 00:38:05,575 [analyzer] INFO: Added new file to list with pid 1852 and path C:\WINDOWS\system32\d3d9caps.dat
+2016-11-03 00:38:05,724 [analyzer] INFO: Added new file to list with pid 1852 and path C:\WINDOWS\system32\d3d9caps.tmp
+2016-11-03 00:38:08,048 [analyzer] INFO: Added new file to list with pid 1852 and path C:\Documents and Settings\ardi\Application Data\Adobe\Acrobat\9.0\SharedDataEvents-journal
+2016-11-03 00:38:08,048 [analyzer] INFO: Added new file to list with pid 1852 and path C:\Documents and Settings\ardi\Application Data\Adobe\Acrobat\9.0\SharedDataEvents
+2016-11-03 00:38:10,017 [analyzer] INFO: Added new file to list with pid 1852 and path C:\Documents and Settings\ardi\Local Settings\Temp\A9R8153.tmp
+2016-11-03 00:38:18,543 [analyzer] CRITICAL: Encountered an unknown process while in monitoring mode: "C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe" /PRODUCT:Reader /VERSION:9.0 /MODE:2!
+2016-11-03 00:38:18,576 [analyzer] INFO: Injected into process with pid 1368 and name u'AdobeARM.exe'
+2016-11-03 00:38:18,654 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit kernel32.dll (with timestamp 0x4802a12c)
+2016-11-03 00:38:18,654 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit kernel32.dll (with timestamp 0x4802a12c)
+2016-11-03 00:38:18,984 [analyzer] DEBUG: Loaded monitor into process with pid 1368
+2016-11-03 00:38:19,029 [analyzer] INFO: Added new file to list with pid 1368 and path C:\Documents and Settings\ardi\Local Settings\Temp\AdobeARM.log
+2016-11-03 00:38:19,039 [analyzer] INFO: Added new file to list with pid 1368 and path C:\Documents and Settings\ardi\Local Settings\Temp\ArmUI.ini
+2016-11-03 00:38:19,105 [analyzer] INFO: Added new file to list with pid 1368 and path \Device\NamedPipe\32B6B37A-4A7D-4e00-95F2-6F0BF3DE3E009524054672thsnYaVieBoda
+2016-11-03 00:38:19,249 [analyzer] INFO: Process with pid 1368 has terminated
+2016-11-03 00:40:11,388 [analyzer] INFO: Analysis timeout hit, terminating analysis.
+2016-11-03 00:40:11,388 [analyzer] WARNING: File at path "u'\\device\\namedpipe\\lsass'" does not exist, skip.
+2016-11-03 00:40:11,388 [analyzer] WARNING: File at path "u'c:\\documents and settings\\ardi\\application data\\adobe\\acrobat\\9.0\\shareddataevents-journal'" does not exist, skip.
+2016-11-03 00:40:11,404 [analyzer] WARNING: File at path "u'\\device\\namedpipe\\32b6b37a-4a7d-4e00-95f2-6f0bf3de3e009524054672thsnyavieboda'" does not exist, skip.
+2016-11-03 00:40:11,404 [analyzer] WARNING: File at path "u'c:\\windows\\system32\\d3d9caps.tmp'" does not exist, skip.
+2016-11-03 00:40:11,404 [analyzer] INFO: Analysis completed.

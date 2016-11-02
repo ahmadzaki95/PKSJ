@@ -1,0 +1,28 @@
+2016-11-02T11:22:12: >>> Adobe Updater Log Begin >>>
+2016-11-02T11:22:12: logFile: = C:\Documents and Settings\ardi\Local Settings\Application Data\Adobe\Updater6\aumLib.log
+2016-11-02T11:22:12: logLevel: = 2
+2016-11-02T11:22:12: Vista IE Protected Mode:No
+2016-11-02T11:22:12: In AUMRegisterApplication(...)
+2016-11-02T11:22:12: appIdentifierreader9rdr-en_US
+2016-11-02T11:22:12: appFolderPathC:\Program Files\Adobe\Reader 9.0\Reader
+2016-11-02T11:22:12: appDisplayNameAdobe Reader 9
+2016-11-02T11:22:12: Successfully registerred AppIdentifier: reader9rdr-en_US
+AppName: Adobe Reader 9
+AppFolder: C:\Program Files\Adobe\Reader 9.0\Reader
+2016-11-02T11:22:12: return code = 0(ESD_ERR_OK)
+2016-11-02T11:22:13: <<< Adobe Updater Log End <<<
+
+
+2016-11-02T17:17:04: >>> Adobe Updater Log Begin >>>
+2016-11-02T17:17:04: logFile: = C:\Documents and Settings\ardi\Local Settings\Application Data\Adobe\Updater6\aumLib.log
+2016-11-02T17:17:04: logLevel: = 2
+2016-11-02T17:17:04: Vista IE Protected Mode:No
+2016-11-02T17:17:04: In AUMDownloadMissingComponents(...)
+2016-11-02T17:17:04: appIdentifierreader9rdr-en_US
+2016-11-02T17:17:04: appFolderPathC:\Program Files\Adobe\Reader 9.0\Reader
+2016-11-02T17:17:04: appDisplayNameAdobe Reader 9
+2016-11-02T17:17:04: appDisplayLangen_US
+2016-11-02T17:17:04: bOverrideData= true
+2016-11-02T17:17:04: Has admin priv.
+2016-11-02T17:17:04: MissingMedia Path = C:\Documents and Settings\ardi\Local Settings\Application Data\Adobe\Updater6\AdobeMissingComps.xml
+2016-11-02T17:17:04: Launching AUM.
