@@ -2,7 +2,7 @@
 
 ## Pendahuluan
 
-Tugas ini dibuat untuk menyelesaikan Tugas 1 pada matakuliah Perancangan Keamanan & Sistem Jaringan (PKSJ) Semester Ganjil 2016/2017, Teknik Informatika ITS, Surabaya
+Repository ini dibuat untuk matakuliah Perancangan Keamanan & Sistem Jaringan (PKSJ) Semester Ganjil 2016/2017, Teknik Informatika ITS, Surabaya
  
 Anggota Kelompok
 - Ardi Nusawan      5113100096
