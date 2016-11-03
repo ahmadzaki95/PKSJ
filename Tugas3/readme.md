@@ -29,155 +29,158 @@ Anggota Kelompok
 
 ## Langkah Instalasi Cuckoo Sandbox
 
- 1. Download File Zip dari ([sini](https://github.com/cuckoosandbox/cuckoo))
-![Install Cuckoo Sandbox](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/0.png) lalu tempatkat di folder home anda
+1. Download File Zip dari ([sini](https://github.com/cuckoosandbox/cuckoo)) lalu tempatkan di folder home anda  
+![Install Cuckoo Sandbox](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/0.png)
 
 2. Install python
 * sudo apt-get install python
 
 3. Install python sqlalchemy sebagai toolkit database untuk python
-* sudo apt-get install python-sqlalchemy
+* sudo apt-get install python-sqlalchemy  
  ![Install Python SqlAlchemy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/1.png)
 
 4. Install python pip untuk memenage dependesi python yang diperlukan
 * sudo apt-get install python-pip
 
 5. Install dependensi python lainnya yang diperlukan
-* sudo pip install dpkt jinja2 pymongo bottle pefile
+* sudo pip install dpkt jinja2 pymongo bottle pefile  
  ![Install Dependensi](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/2.png)
 
 6. Install lagi dependensi python lainnya yang diperlukan
-* sudo apt-get install build-essential git libpcre3 libpcre3-dev libpcre++-dev
+* sudo apt-get install build-essential git libpcre3 libpcre3-dev libpcre++-dev  
  ![Install Dependensi](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/3.png)
 
 7. Install python pydeep
-* Dengan mengclone dari https://github.com/kbandla/pydeep.git
+* Dengan mengclone dari https://github.com/kbandla/pydeep.git  
  ![Install Python Pydeep](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/4.png)
 
 8. Install python pydeep
-* setelah mengclone, lalu di build
+* setelah mengclone, lalu di build  
  ![Install Python Pydeep](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/5.png)
 
 9. Install yara
-* Dengan mengclone dari https://github.com/VirusTotal/yara.git
+* Dengan mengclone dari https://github.com/VirusTotal/yara.git  
  ![Install Yara](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/6.png)
 
 10. Install tcpdump
-* sudo apt install tcpdump
+* sudo apt install tcpdump  
  ![Install TCPDump](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/7.png)
 
 11. Untuk memberikan hak akses cucko mengakses binary tanpa root
-* sudo setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
+* sudo setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump  
  ![Hak Akses](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/8.png)
 
 12. Masuk ke dalam folder tempat cuckoo diunduh, lalu install dependensi yang dibutuhkan
-* sudo pip install -r requirements.txt
+* sudo pip install -r requirements.txt  
  ![Install Requirement Cuckoo](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/10.png)
 
 13. Setelah semua terinstal, lalu setting ntworking VM pada virtualbox(selanjutnya disebut Guest OS) agar dapat terhubung dengan Host OS 
-* File > Preferences
+* File > Preferences  
  ![Setting Networking](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/11.png)
 
 14. Lalu setting jaringan
-* File > Preferences > Networking
+* File > Preferences > Networking  
  ![Setting Networking](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/12.png)
 
 15. Lalu setting jaringan pada Guest OS
-* Klik Kanan pada Guest OS, lalu klik networking. Pilih adapeter 1, lalu ganti Attached to dari NAT dengan Host-only Adapter, dan namanya vboknet0
+* Klik Kanan pada Guest OS, lalu klik networking. Pilih adapeter 1, lalu ganti Attached to dari NAT dengan Host-only Adapter, dan namanya vboknet0  
  ![Setting Networking](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/13.png)
 
 16. Buat shared folder untuk mengirim data dari Host OS ke Guest OS
-* Jalankan Guest OS, lalu kelik Device > Shared Folders > Shared Folders Settings.
+* Jalankan Guest OS, lalu kelik Device > Shared Folders > Shared Folders Settings  
  ![Setting Shared Folder](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/14.png)
 
 17. Buat shared folder untuk mengirim data dari Host OS ke Guest OS
-* Lalu pada Virtual Box, klik kanan pada guest OS, lalu klik shared folder, klik add shared folder.
+* Lalu pada Virtual Box, klik kanan pada guest OS, lalu klik shared folder, klik add shared folder  
  ![Setting Shared Folder](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/15.png)
 
 18. Buat shared folder untuk mengirim data dari Host OS ke Guest OS
-* Klik Kanan pada Guest OS, lalu Shared Folder. Sebelumnya tentukan terlebih dahulu folder yang akan di share dengan guest OS. Lalu atur Folder Path sesuai dengan tempat folder berada dan Folder Name seusai dengan nama folder yang akan dibagikan.
+* Klik Kanan pada Guest OS, lalu Shared Folder. Sebelumnya tentukan terlebih dahulu folder yang akan di share dengan guest OS. Lalu atur Folder Path sesuai dengan tempat folder berada dan Folder Name seusai dengan nama folder yang akan dibagikan  
  ![Setting Shared Folder](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/16.png)
 
 19. Buat shared folder untuk mengirim data dari Host OS ke Guest OS
-* Pada Guest OS, klik Start > Klik Kanan Pada MY Computer > Map Network Drive. Lalu pilih Drive yang diinginkan serta Pada box Folder masukkan \\vboksrv\'nama folder yang di share'
+* Pada Guest OS, klik Start > Klik Kanan Pada MY Computer > Map Network Drive. Lalu pilih Drive yang diinginkan serta Pada box Folder masukkan \\vboksrv\'nama folder yang di share'  
  ![Setting Shared Folder](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/17.png)
 
 20. Buat shared folder untuk mengirim data dari Host OS ke Guest OS
-* Jika berhasil, maka tampak seperti berikut.
+* Jika berhasil, maka tampak seperti berikut  
  ![Setting Shared Folder](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/18.png)
 
 21. Taruh agent.py pada guest OS melalui shared folder
-* Melalui shared folder, copy agent.py ke C:\Python27. Sebelumnya install terlebih dahulu python 2.7 dan adobe reader pada Guest OS.
+* Melalui shared folder, copy agent.py ke C:\Python27. Sebelumnya install terlebih dahulu python 2.7 dan adobe reader pada Guest OS  
  ![Setting Agent.py](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/19.png)
 
 22. Pindahkan agent.py ke folder Start Up agar tetap program dijalankan setiap booting
-* Taruh Pada C:\Document  and Settings\'nama user'\Start Menu\Programs\Startup. Ubah extensi file dari agent.py menjadi agent.pyw. Ini bertujuan agar ketika program dijalankan, program tidak memunculkan jendel. Program ini sebagai jembatan penghubung antara Guest OS dengan Host OS sebagai media pengiriman virus.
+* Taruh Pada C:\Document  and Settings\'nama user'\Start Menu\Programs\Startup. Ubah extensi file dari agent.py menjadi agent.pyw. Ini bertujuan agar ketika program dijalankan, program tidak memunculkan jendel. Program ini sebagai jembatan penghubung antara Guest OS dengan Host OS sebagai media pengiriman virus  
  ![Setting Agent.py](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/20.png)
 
 23. Periksa apakah agen.py sudah berjalan
-* Tekan Start > Run > ketik cmd > ketik 'netsat -aon'. Jika port 8000 terbuka, maka Guest OS siap untuk menerima file malicious.
+* Tekan Start > Run > ketik cmd > ketik 'netsat -aon'. Jika port 8000 terbuka, maka Guest OS siap untuk menerima file malicious  
  ![Setting Agent.py](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/21.png)
 
-24. Pastikan iptables pada Host OS membolehkan koneksi dengan vboknet0 (Guest OS)
+24. Pastikan iptables pada Host OS membolehkan koneksi dengan vboknet0 (Guest OS)  
  ![Setting Agent.py](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/22.png)
 
-25. Pastikan iptables pada Host OS membolehkan koneksi dengan vboknet0 (Guest OS)
+25. Pastikan iptables pada Host OS membolehkan koneksi dengan vboknet0 (Guest OS)  
  ![Setting Agent.py](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/23.png)
 
 26. Gunakan Snapshot untuk menyimpan state image saat ini
-* Ketika cuckoo dijalankan, maka secara otomatis akan menggunakan snapshot ini. Ini bertujuan ketika menjalankan serangkaian test, cukup menjalankan VM dari snapshoot dan Guest OS akan kembali bersih seperti sedia kala.
+* Ketika cuckoo dijalankan, maka secara otomatis akan menggunakan snapshot ini. Ini bertujuan ketika menjalankan serangkaian test, cukup menjalankan VM dari snapshoot dan Guest OS akan kembali bersih seperti sedia kala  
  ![Setting Agent.py](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/24.png)
 
 27. Jalankan Cuckoo
-* Jalankan cuckoo pada host OS dengan perintah ./cuckoo.py. Cuckoo sandbox akan otomatis menjalankan VM, dan menunggu file diterima oleh agent.py pada Guest OS
+* Jalankan cuckoo pada host OS dengan perintah ./cuckoo.py. Cuckoo sandbox akan otomatis menjalankan VM, dan menunggu file diterima oleh agent.py pada Guest OS  
  ![Menjalankan Sanbox](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/26.png)
 
 28. Mengirim malicious file
-* Pada Host, jalankan perintah untuk mengirim file ke Guest OS seperti pada gambar berikut :
+* Pada Host, jalankan perintah untuk mengirim file ke Guest OS seperti pada gambar berikut :  
  ![Menjalankan Sanbox](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/27.png)
 
 29. Mengirim malicious file
-* Ketika Cuckoo Sanbox telah selesai menganalisis, maka akan ada text berwarna biru muda seperti "Task #26: analysis procedure complete" :
+* Ketika Cuckoo Sanbox telah selesai menganalisis, maka akan ada text berwarna biru muda seperti "Task #26: analysis procedure complete" :  
  ![Menjalankan Sanbox](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/28.png)
  
 
 ## Analisis Malware
 
 * **APT_military procurement.pdf**
-1. Lorem ipsum  
+
+1. Berikut adalah keterangan mengenai malicious PDF yang dianalisis   
 ![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/1.PNG)
 
-2. Lorem ipsum  
+2. Berikut adalah rangkuman file-file yang diakses/dibuat/dihapus oleh malware  
 ![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/2.PNG)
 
-3. Lorem ipsum  
+3. Daftar Dropped Files dari langkah 2 didapatkan dari analysis.log  
 ![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/3.PNG)
 
-4. Lorem ipsum  
+4. Malware hanya bekerja pada localhost, sehingga analisa network tidak ditampilkan  
 ![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/4.PNG)
 
-5. Lorem ipsum  
+5. Berikut adalah daftar lengkap dari file, folder dan registry yang diakses/dibuat/dihapus oleh malware  
 ![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/5.PNG)
 
-6. Lorem ipsum  
-![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/6.PNG)
+	![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/6.PNG)
 
-7. Lorem ipsum  
-![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/7.PNG)
+	![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/7.PNG)
 
-8. Lorem ipsum  
-![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/8.PNG)
+	![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/8.PNG)
 
-9. Lorem ipsum  
+6. Mutex yang dibuat oleh malware (biasanya mutex dibuat oleh malware untuk mencegah dua instansi malware berjalan bersamaan)  
 ![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/9.PNG)
 
-10. Lorem ipsum  
+7. Cuckoo mengirimkan malware ke website [VirusTotal](https://www.virustotal.com/) untuk mendeteksi jenis malware (dibantu oleh berbagai software anti-virus)  
 ![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/10.PNG)
 
-11. Lorem ipsum  
+8. Dari berbagai hasil deteksi software anti-virus, akan kami ambil 2 contoh hasil deteksi malware dari 2 software anti-virus yaitu Microsoft dan Symantec   
 ![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/11.PNG)
 
+	Jenis malware yang terdeteksi oleh Microsoft adalah "Exploit:Win32/Pdfjsc.XD", malware ini termasuk jenis dari malicious PDF yang mengeksploitasi kerentanan dalam Adobe Acrobat dan Adobe Reader, malware ini bekerja dengan mengunduh dan menjalankan file sewenang-wenang ([sumber](http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Exploit%3aWin32%2fPdfjsc))  
+    
+    Jenis malware yang terdeteksi oleh Symantec adalah "Trojan.Pidief", malware ini termasuk jenis Trojan yang mengeksploitasi kerentanan dalam Adobe Acrobat dan Adobe Reader, malware ini bekerja dengan mengunduh malware tambahan ke komputer yang diserang ([sumber](https://www.symantec.com/security_response/writeup.jsp?docid=2009-121708-1022-99))
+
 * **APT_ATT11990.pdf**
+
 1. Lorem ipsum  
 ![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/1.PNG)
 
@@ -200,6 +203,7 @@ Anggota Kelompok
 ![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/7.PNG)
 
 * **100621.pdf**
+
 1. Lorem ipsum  
 ![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/1.PNG)
 
@@ -222,6 +226,7 @@ Anggota Kelompok
 ![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/7.PNG)
 
 * **IPR in China FINAL.pdf**
+
 1. Lorem ipsum  
 ![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/1.PNG)
 
