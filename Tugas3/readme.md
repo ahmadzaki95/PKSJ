@@ -142,10 +142,17 @@ Anggota Kelompok
 6. Mutex yang dibuat oleh malware (biasanya mutex dibuat oleh malware untuk mencegah dua instansi malware berjalan bersamaan)  
 ![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/9.PNG)
 
-7. Cuckoo mengirimkan malware ke website [VirusTotal](https://www.virustotal.com/) untuk mendeteksi jenis malware (dibantu oleh berbagai software anti-virus)  
+7. Beberapa hasil screenshot dari Cuckoo pada Guest OS saat menjalankan malware  
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/0001.jpg)
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/0002.jpg)
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/0003.jpg)
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/0004.jpg)
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/0005.jpg)
+
+8. Cuckoo mengirimkan malware ke website [VirusTotal](https://www.virustotal.com/) untuk mendeteksi jenis malware (dibantu oleh berbagai software anti-virus)  
 ![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/10.PNG)
 
-8. Dari berbagai hasil deteksi software anti-virus, akan kami ambil 2 contoh hasil deteksi malware dari 2 software anti-virus yaitu Microsoft dan Symantec   
+9. Dari berbagai hasil deteksi software anti-virus, akan kami ambil 2 contoh hasil deteksi malware dari 2 software anti-virus yaitu Microsoft dan Symantec   
 ![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/11.PNG)
 
 	Jenis malware yang terdeteksi oleh Microsoft adalah "Exploit:Win32/Pdfjsc.XD", malware ini termasuk jenis dari malicious PDF yang mengeksploitasi kerentanan dalam Adobe Acrobat dan Adobe Reader, malware ini bekerja dengan mengunduh dan menjalankan file sewenang-wenang ([sumber](http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Exploit%3aWin32%2fPdfjsc))  
@@ -168,10 +175,17 @@ Anggota Kelompok
 
 	![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/5.PNG)
 
-5. Cuckoo mengirimkan malware ke website [VirusTotal](https://www.virustotal.com/) untuk mendeteksi jenis malware (dibantu oleh berbagai software anti-virus)  
+5. Beberapa hasil screenshot dari Cuckoo pada Guest OS saat menjalankan malware  
+![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/0001.jpg)
+![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/0002.jpg)
+![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/0003.jpg)
+![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/0004.jpg)
+![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/0005.jpg)
+
+6. Cuckoo mengirimkan malware ke website [VirusTotal](https://www.virustotal.com/) untuk mendeteksi jenis malware (dibantu oleh berbagai software anti-virus)  
 ![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/6.PNG)
 
-6. Dari berbagai hasil deteksi software anti-virus, akan kami ambil 2 contoh hasil deteksi malware dari 2 software anti-virus yaitu Microsoft dan Symantec  
+7. Dari berbagai hasil deteksi software anti-virus, akan kami ambil 2 contoh hasil deteksi malware dari 2 software anti-virus yaitu Microsoft dan Symantec  
 ![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/7.PNG)
 
 	Jenis malware yang terdeteksi oleh Microsoft adalah "Exploit:JS/ShellCode.AG", malware ini termasuk jenis objek JavaScript yang melakukan tindakan malicious, malware ini bekerja dengan menjalankan kode malicious sewenang-wenang ([sumber](http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Exploit:JS/ShellCode.gen))  
@@ -194,10 +208,17 @@ Anggota Kelompok
 
 	![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/5.PNG)
 
-5. Cuckoo mengirimkan malware ke website [VirusTotal](https://www.virustotal.com/) untuk mendeteksi jenis malware (dibantu oleh berbagai software anti-virus)  
+5. Beberapa hasil screenshot dari Cuckoo pada Guest OS saat menjalankan malware  
+![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/0001.jpg)
+![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/0002.jpg)
+![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/0003.jpg)
+![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/0004.jpg)
+![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/0005.jpg)
+
+6. Cuckoo mengirimkan malware ke website [VirusTotal](https://www.virustotal.com/) untuk mendeteksi jenis malware (dibantu oleh berbagai software anti-virus)  
 ![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/6.PNG)
 
-6. Dari berbagai hasil deteksi software anti-virus, akan kami ambil 2 contoh hasil deteksi malware dari 2 software anti-virus yaitu Avast dan Baidu  
+7. Dari berbagai hasil deteksi software anti-virus, akan kami ambil 2 contoh hasil deteksi malware dari 2 software anti-virus yaitu Avast dan Baidu  
 ![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/7.PNG)
 
 	Jenis malware yang terdeteksi oleh Avast adalah "JS:Pdfka-gen [Expl]", malware ini termasuk jenis objek JavaScript Trojan yang melakukan tindakan malicious, malware ini bekerja dengan menjalankan kode malicious dan file registery sewenang-wenang untuk merusak komputer yang terinfeksi ([sumber](http://fixingcomputervirus.blogspot.sg/2013/02/best-way-to-remove-jspdfka-genexpl.html))  
@@ -219,6 +240,13 @@ Anggota Kelompok
 ![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/4.PNG)
 
 	![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/5.PNG)
+
+5. Beberapa hasil screenshot dari Cuckoo pada Guest OS saat menjalankan malware  
+![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/0001.jpg)
+![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/0002.jpg)
+![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/0003.jpg)
+![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/0004.jpg)
+![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/0005.jpg)
 
 5. Cuckoo mengirimkan malware ke website [VirusTotal](https://www.virustotal.com/) untuk mendeteksi jenis malware (dibantu oleh berbagai software anti-virus)  
 ![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/6.PNG)
