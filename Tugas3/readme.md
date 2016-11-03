@@ -150,7 +150,7 @@ Anggota Kelompok
 
 	Jenis malware yang terdeteksi oleh Microsoft adalah "Exploit:Win32/Pdfjsc.XD", malware ini termasuk jenis dari malicious PDF yang mengeksploitasi kerentanan dalam Adobe Acrobat dan Adobe Reader, malware ini bekerja dengan mengunduh dan menjalankan file sewenang-wenang ([sumber](http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Exploit%3aWin32%2fPdfjsc))  
     
-    Jenis malware yang terdeteksi oleh Symantec adalah "Trojan.Pidief", malware ini termasuk jenis Trojan yang mengeksploitasi kerentanan dalam Adobe Acrobat dan Adobe Reader, malware ini bekerja dengan mengunduh malware tambahan ke komputer yang diserang ([sumber](https://www.symantec.com/security_response/writeup.jsp?docid=2009-121708-1022-99))
+    Jenis malware yang terdeteksi oleh Symantec adalah "Trojan.Pidief", malware ini termasuk jenis Trojan yang mengeksploitasi kerentanan dalam Adobe Acrobat dan Adobe Reader, malware ini bekerja dengan mengunduh malware tambahan ke komputer yang terinfeksi ([sumber](https://www.symantec.com/security_response/writeup.jsp?docid=2009-121708-1022-99))
 
 * **APT_ATT11990.pdf**
 
@@ -176,53 +176,58 @@ Anggota Kelompok
 
 	Jenis malware yang terdeteksi oleh Microsoft adalah "Exploit:JS/ShellCode.AG", malware ini termasuk jenis objek JavaScript yang melakukan tindakan malicious, malware ini bekerja dengan menjalankan kode malicious sewenang-wenang ([sumber](http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Exploit:JS/ShellCode.gen))  
     
-    Jenis malware yang terdeteksi oleh Symantec adalah "Bloodhound.Pdexe", malware ini termasuk jenis dari malicious PDF yang didalamnya mengandung embedded executable file  ([sumber](https://www.symantec.com/security_response/writeup.jsp?docid=2008-092604-1756-99))
+    Jenis malware yang terdeteksi oleh Symantec adalah "Bloodhound.Pdexe", malware ini termasuk jenis dari malicious PDF yang didalamnya mengandung embedded executable file yang bersifat malicious ([sumber](https://www.symantec.com/security_response/writeup.jsp?docid=2008-092604-1756-99))
 
 * **100621.pdf**
 
-1. Lorem ipsum  
+1. Berikut adalah keterangan mengenai malicious PDF yang dianalisis  
 ![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/1.PNG)
 
-2. Lorem ipsum  
+2. Berikut adalah rangkuman file-file yang diakses/dibuat/dihapus oleh malware  
 ![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/2.PNG)
 
-3. Lorem ipsum  
+3. Malware hanya bekerja pada localhost, sehingga analisa network tidak ditampilkan  
 ![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/3.PNG)
 
-4. Lorem ipsum  
+4. Berikut adalah daftar lengkap dari file, folder dan registry yang diakses/dibuat/dihapus oleh malware  
 ![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/4.PNG)
 
-5. Lorem ipsum  
-![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/5.PNG)
+	![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/5.PNG)
 
-6. Lorem ipsum  
+5. Cuckoo mengirimkan malware ke website [VirusTotal](https://www.virustotal.com/) untuk mendeteksi jenis malware (dibantu oleh berbagai software anti-virus)  
 ![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/6.PNG)
 
-7. Lorem ipsum  
+6. Dari berbagai hasil deteksi software anti-virus, akan kami ambil 2 contoh hasil deteksi malware dari 2 software anti-virus yaitu Avast dan Baidu  
 ![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/7.PNG)
+
+	Jenis malware yang terdeteksi oleh Avast adalah "JS:Pdfka-gen [Expl]", malware ini termasuk jenis objek JavaScript Trojan yang melakukan tindakan malicious, malware ini bekerja dengan menjalankan kode malicious dan file registery sewenang-wenang untuk merusak komputer yang terinfeksi ([sumber](http://fixingcomputervirus.blogspot.sg/2013/02/best-way-to-remove-jspdfka-genexpl.html))  
+    
+    Jenis malware yang terdeteksi oleh Baidu adalah "JS.Exploit.pdfka.cg", malware ini termasuk jenis objek JavaScript yang melakukan tindakan malicious, malware ini memanfaatkan stack-based buffer overflow di Adobe Reader and Adobe Acrobat untuk menjalankan kode malicious sewenang-wenang ([sumber](http://www.virusradar.com/en/JS_Exploit.Pdfka/description))
 
 * **IPR in China FINAL.pdf**
 
-1. Lorem ipsum  
+1. Berikut adalah keterangan mengenai malicious PDF yang dianalisis  
 ![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/1.PNG)
 
-2. Lorem ipsum  
+2. Berikut adalah rangkuman file-file yang diakses/dibuat/dihapus oleh malware  
 ![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/2.PNG)
 
-3. Lorem ipsum  
+3. Malware hanya bekerja pada localhost, sehingga analisa network tidak ditampilkan  
 ![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/3.PNG)
 
-4. Lorem ipsum  
+4. Berikut adalah daftar lengkap dari file, folder dan registry yang diakses/dibuat/dihapus oleh malware  
 ![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/4.PNG)
 
-5. Lorem ipsum  
-![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/5.PNG)
+	![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/5.PNG)
 
-6. Lorem ipsum  
+5. Cuckoo mengirimkan malware ke website [VirusTotal](https://www.virustotal.com/) untuk mendeteksi jenis malware (dibantu oleh berbagai software anti-virus)  
 ![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/6.PNG)
 
-7. Lorem ipsum  
+6. Dari berbagai hasil deteksi software anti-virus, akan kami ambil 2 contoh hasil deteksi malware dari 2 software anti-virus yaitu Microsoft dan Symantec  
 ![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/7.PNG)
 
+	Jenis malware yang terdeteksi oleh Microsoft adalah "Exploit:JS/Mult.CM", malware ini termasuk jenis objek JavaScript yang melakukan tindakan malicious, malware ini bekerja dengan mengunduh malware atau software lain yang tidak diinginkan ke komputer yang terinfeksi ([sumber](http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?name=EXPLOIT:JS/MULT.CM))  
+    
+    Jenis malware yang terdeteksi oleh Symantec adalah "Bloodhound.Flash.9", malware ini mengeksploitasi kerentanan dalam Adobe Flash Player untuk melakukan tindakan malicious atau tindakan yang tidak diinginkan ([sumber](https://www.symantec.com/security_response/writeup.jsp?docid=2011-050208-1645-99))
 
 ## Kesimpulan dan Saran
