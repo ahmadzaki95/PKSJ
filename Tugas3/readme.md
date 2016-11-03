@@ -262,7 +262,7 @@ Anggota Kelompok
 
 * Dengan menggunakan Cuckoo Sandbox, analisis malware dapat dilakukan dengan mudah dan aman. Pengguna tidak perlu lagi menggunakan data binary untuk menganalisis malware, semua analisa telah dilakukan oleh Cuckoo Sandbox dengan GUI yang interaktif dan mudah dipahami. Selain dapat menganalisa perilaku dari malware, Cuckoo Sandbox juga mengupload malware ke VirusTotal, sehingga pengguna dapat mengetahui jenis dari malware tersebut (dapat dicari informasi lebih lanjut mengenai jenis malware tersebut)
 * Untuk menghindari atau mengurangi resiko terkena malware, pastikan agar selalu memperbaharui versi dari software, anti-virus, OS dan mengunduh file hanya dari sumber yang terpercaya
-*  Untuk mengurangi resiko terkena malware pada PDF, dapat dilakukan beberapa hal berikut :
+*  Untuk mengurangi resiko terserang malicious PDF, dapat dilakukan beberapa hal berikut :
 	*  Matikan plugin PDF untuk web browser
 	*  Konfigurasi PDF reader untuk tidak menjalankan file lampiran yang bertipe non-PDF dengan aplikasi eksternal / aplikasi lain
 	*  Menonaktifkan Acrobat JavaScript di Adobe Reader karena banyak malware yang menggunakan fitur ini untuk mengeksekusi kode malicious
