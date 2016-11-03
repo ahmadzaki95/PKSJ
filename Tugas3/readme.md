@@ -23,8 +23,8 @@ Anggota Kelompok
 * **Sumber Malware** yang kami gunakan berasal dari [Contagio](http://contagiodump.blogspot.co.id/), merupakan website yang kontennya adalah sampel-sampel dari berbagai malware. Untuk membuka zip dari file malware tersebut dibutuhkan password yang didapatkan dengan cara mengkontak pemilik web melalui email. Link yang digunakan untuk mengunduh file malware sedang diperbaharui dan untuk sementara file malware dapat dicari pada [Dropbox](https://www.dropbox.com/sh/i6ed6v32x0fp94z/AAAQvOsOvbWrOs8T3_ZTXqQya?dl=0) milik pemilik web.
 * **APT_military procurement.pdf** adalah malicious PDF pertama yang kami analisis, file terletak dalam 30APTpdfcuckoo.zip ([sumber](https://www.dropbox.com/sh/i6ed6v32x0fp94z/AAB7nUZTiI6Xk0i6Zg663kDga/CVE?dl=0))
 * **APT_ATT11990.pdf** adalah malicious PDF kedua yang kami analisis, file terletak dalam 30APTpdfcuckoo.zip ([sumber](https://www.dropbox.com/sh/i6ed6v32x0fp94z/AAB7nUZTiI6Xk0i6Zg663kDga/CVE?dl=0))
-* **100621.pdf** adalah malicious PDF ketiga yang kami analisis, file terletak dalam ^CVE-2010-1297 PDF 2010-06-21 E3F5EF4FA17B4E08…73728 100621.zip ([sumber](https://www.cuckoosandbox.org/))
-* **IPR in China FINAL.pdf** adalah malicious PDF keempat yang kami analisis, file terletak dalam CVE-2009-0927 CVE-2007-5659 PDF 2010-04-02 C497C…in China final.zip ([sumber](https://www.cuckoosandbox.org/))
+* **100621.pdf** adalah malicious PDF ketiga yang kami analisis, file terletak dalam ^CVE-2010-1297 PDF 2010-06-21 E3F5EF4FA17B4E08…73728 100621.zip ([sumber](https://www.dropbox.com/sh/i6ed6v32x0fp94z/AABK9_PZiMpGG6LbIGaGJiiPa/BADINFECT?dl=0))
+* **IPR in China FINAL.pdf** adalah malicious PDF keempat yang kami analisis, file terletak dalam CVE-2009-0927 CVE-2007-5659 PDF 2010-04-02 C497C…in China final.zip ([sumber](https://www.dropbox.com/sh/i6ed6v32x0fp94z/AABK9_PZiMpGG6LbIGaGJiiPa/BADINFECT?dl=0))
 
 
 ## Langkah Instalasi Cuckoo Sandbox
