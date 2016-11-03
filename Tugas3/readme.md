@@ -29,16 +29,117 @@ Anggota Kelompok
 
 ## Langkah Instalasi Cuckoo Sandbox
 
-1. Download File Zip dari ([sini](https://github.com/cuckoosandbox/cuckoo))
-![Install Cuckoo Sandbox](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/Instalasi_Cuckoo/1.png)
+ 1. Download File Zip dari ([sini](https://github.com/cuckoosandbox/cuckoo))
+![Install Cuckoo Sandbox](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/0.png) lalu tempatkat di folder home anda
 
-2. Setelah download selesai, *unzip* file cuckoo-master.zip di folder. ([sini](https://github.com/cuckoosandbox/cuckoo))
-![Install Cuckoo Sandbox](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/Instalasi_Cuckoo/1.png)
+2. Install python
+* sudo apt-get install python
+
+3. Install python sqlalchemy sebagai toolkit database untuk python
+* sudo apt-get install python-sqlalchemy
+ ![Install Python SqlAlchemy](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/1.png)
+
+4. Install python pip untuk memenage dependesi python yang diperlukan
+* sudo apt-get install python-pip
+
+5. Install dependensi python lainnya yang diperlukan
+* sudo pip install dpkt jinja2 pymongo bottle pefile
+ ![Install Dependensi](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/2.png)
+
+6. Install lagi dependensi python lainnya yang diperlukan
+* sudo apt-get install build-essential git libpcre3 libpcre3-dev libpcre++-dev
+ ![Install Dependensi](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/3.png)
+
+7. Install python pydeep
+* Dengan mengclone dari https://github.com/kbandla/pydeep.git
+ ![Install Python Pydeep](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/4.png)
+
+8. Install python pydeep
+* setelah mengclone, lalu di build
+ ![Install Python Pydeep](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/5.png)
+
+9. Install yara
+* Dengan mengclone dari https://github.com/VirusTotal/yara.git
+ ![Install Yara](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/6.png)
+
+10. Install tcpdump
+* sudo apt install tcpdump
+ ![Install TCPDump](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/7.png)
+
+11. Untuk memberikan hak akses cucko mengakses binary tanpa root
+* sudo setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
+ ![Hak Akses](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/8.png)
+
+12. Masuk ke dalam folder tempat cuckoo diunduh, lalu install dependensi yang dibutuhkan
+* sudo pip install -r requirements.txt
+ ![Install Requirement Cuckoo](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/10.png)
+
+13. Setelah semua terinstal, lalu setting ntworking VM pada virtualbox(selanjutnya disebut Guest OS) agar dapat terhubung dengan Host OS 
+* File > Preferences
+ ![Setting Networking](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/11.png)
+
+14. Lalu setting jaringan
+* File > Preferences > Networking
+ ![Setting Networking](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/12.png)
+
+15. Lalu setting jaringan pada Guest OS
+* Klik Kanan pada Guest OS, lalu klik networking. Pilih adapeter 1, lalu ganti Attached to dari NAT dengan Host-only Adapter, dan namanya vboknet0
+ ![Setting Networking](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/13.png)
+
+16. Buat shared folder untuk mengirim data dari Host OS ke Guest OS
+* Jalankan Guest OS, lalu kelik Device > Shared Folders > Shared Folders Settings.
+ ![Setting Shared Folder](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/14.png)
+
+17. Buat shared folder untuk mengirim data dari Host OS ke Guest OS
+* Lalu pada Virtual Box, klik kanan pada guest OS, lalu klik shared folder, klik add shared folder.
+ ![Setting Shared Folder](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/15.png)
+
+18. Buat shared folder untuk mengirim data dari Host OS ke Guest OS
+* Klik Kanan pada Guest OS, lalu Shared Folder. Sebelumnya tentukan terlebih dahulu folder yang akan di share dengan guest OS. Lalu atur Folder Path sesuai dengan tempat folder berada dan Folder Name seusai dengan nama folder yang akan dibagikan.
+ ![Setting Shared Folder](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/16.png)
+
+19. Buat shared folder untuk mengirim data dari Host OS ke Guest OS
+* Pada Guest OS, klik Start > Klik Kanan Pada MY Computer > Map Network Drive. Lalu pilih Drive yang diinginkan serta Pada box Folder masukkan \\vboksrv\'nama folder yang di share'
+ ![Setting Shared Folder](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/17.png)
+
+20. Buat shared folder untuk mengirim data dari Host OS ke Guest OS
+* Jika berhasil, maka tampak seperti berikut.
+ ![Setting Shared Folder](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/18.png)
+
+21. Taruh agent.py pada guest OS melalui shared folder
+* Melalui shared folder, copy agent.py ke C:\Python27. Sebelumnya install terlebih dahulu python 2.7 dan adobe reader pada Guest OS.
+ ![Setting Agent.py](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/19.png)
+
+22. Pindahkan agent.py ke folder Start Up agar tetap program dijalankan setiap booting
+* Taruh Pada C:\Document  and Settings\'nama user'\Start Menu\Programs\Startup. Ubah extensi file dari agent.py menjadi agent.pyw. Ini bertujuan agar ketika program dijalankan, program tidak memunculkan jendel. Program ini sebagai jembatan penghubung antara Guest OS dengan Host OS sebagai media pengiriman virus.
+ ![Setting Agent.py](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/20.png)
+
+23. Periksa apakah agen.py sudah berjalan
+* Tekan Start > Run > ketik cmd > ketik 'netsat -aon'. Jika port 8000 terbuka, maka Guest OS siap untuk menerima file malicious.
+ ![Setting Agent.py](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/21.png)
+
+24. Pastikan iptables pada Host OS membolehkan koneksi dengan vboknet0 (Guest OS)
+ ![Setting Agent.py](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/22.png)
+
+25. Pastikan iptables pada Host OS membolehkan koneksi dengan vboknet0 (Guest OS)
+ ![Setting Agent.py](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/23.png)
+
+26. Gunakan Snapshot untuk menyimpan state image saat ini
+* Ketika cuckoo dijalankan, maka secara otomatis akan menggunakan snapshot ini. Ini bertujuan ketika menjalankan serangkaian test, cukup menjalankan VM dari snapshoot dan Guest OS akan kembali bersih seperti sedia kala.
+ ![Setting Agent.py](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/24.png)
+
+27. Jalankan Cuckoo
+* Jalankan cuckoo pada host OS dengan perintah ./cuckoo.py. Cuckoo sandbox akan otomatis menjalankan VM, dan menunggu file diterima oleh agent.py pada Guest OS
+ ![Menjalankan Sanbox](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/26.png)
+
+28. Mengirim malicious file
+* Pada Host, jalankan perintah untuk mengirim file ke Guest OS seperti pada gambar berikut :
+ ![Menjalankan Sanbox](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/27.png)
+
+29. Mengirim malicious file
+* Ketika Cuckoo Sanbox telah selesai menganalisis, maka akan ada text berwarna biru muda seperti "Task #26: analysis procedure complete" :
+ ![Menjalankan Sanbox](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_installation/28.png)
  
- 	Jika sudah selesai, anda dapat memindahkan folder cuckoo ke folder mana yang lebih mudah diakses (dalam contoh ini, dipindahkan ke ~/cuckoo)
-    
-3. Untuk konfigurasi cuckoo, lakukan langkah berikut :
-    
 
 ## Analisis Malware
 
