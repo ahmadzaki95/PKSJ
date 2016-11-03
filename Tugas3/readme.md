@@ -3,7 +3,6 @@
 
 ## Pendahuluan
 
-
 Tugas ini dibuat untuk menyelesaikan Tugas 3 yaitu "Analisa Malware Menggunakan Cuckoo Sandbox" pada matakuliah Perancangan Keamanan & Sistem Jaringan (PKSJ) Semester Ganjil 2016/2017, Teknik Informatika ITS, Surabaya
  
 Anggota Kelompok
@@ -30,8 +29,7 @@ Anggota Kelompok
 
 ## Langkah Instalasi Cuckoo Sandbox
 
-
- 1. Download File Zip dari ([sini](https://github.com/cuckoosandbox/cuckoo))
+1. Download File Zip dari ([sini](https://github.com/cuckoosandbox/cuckoo))
 ![Install Cuckoo Sandbox](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/Instalasi_Cuckoo/1.png)
 
 2. Setelah download selesai, *unzip* file cuckoo-master.zip di folder. ([sini](https://github.com/cuckoosandbox/cuckoo))
@@ -44,7 +42,105 @@ Anggota Kelompok
 
 ## Analisis Malware
 
+* **APT_military procurement.pdf**
+1. Lorem ipsum  
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/1.PNG)
+
+2. Lorem ipsum  
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/2.PNG)
+
+3. Lorem ipsum  
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/3.PNG)
+
+4. Lorem ipsum  
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/4.PNG)
+
+5. Lorem ipsum  
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/5.PNG)
+
+6. Lorem ipsum  
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/6.PNG)
+
+7. Lorem ipsum  
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/7.PNG)
+
+8. Lorem ipsum  
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/8.PNG)
+
+9. Lorem ipsum  
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/9.PNG)
+
+10. Lorem ipsum  
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/10.PNG)
+
+11. Lorem ipsum  
+![Analisis APT_military procurement.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/22/shots/11.PNG)
+
+* **APT_ATT11990.pdf**
+1. Lorem ipsum  
+![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/1.PNG)
+
+2. Lorem ipsum  
+![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/2.PNG)
+
+3. Lorem ipsum  
+![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/3.PNG)
+
+4. Lorem ipsum  
+![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/4.PNG)
+
+5. Lorem ipsum  
+![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/5.PNG)
+
+6. Lorem ipsum  
+![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/6.PNG)
+
+7. Lorem ipsum  
+![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/7.PNG)
+
+* **100621.pdf**
+1. Lorem ipsum  
+![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/1.PNG)
+
+2. Lorem ipsum  
+![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/2.PNG)
+
+3. Lorem ipsum  
+![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/3.PNG)
+
+4. Lorem ipsum  
+![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/4.PNG)
+
+5. Lorem ipsum  
+![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/5.PNG)
+
+6. Lorem ipsum  
+![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/6.PNG)
+
+7. Lorem ipsum  
+![Analisis 100621.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/24/shots/7.PNG)
+
+* **IPR in China FINAL.pdf**
+1. Lorem ipsum  
+![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/1.PNG)
+
+2. Lorem ipsum  
+![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/2.PNG)
+
+3. Lorem ipsum  
+![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/3.PNG)
+
+4. Lorem ipsum  
+![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/4.PNG)
+
+5. Lorem ipsum  
+![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/5.PNG)
+
+6. Lorem ipsum  
+![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/6.PNG)
+
+7. Lorem ipsum  
+![Analisis IPR in China FINAL.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/25/shots/7.PNG)
 
 
 ## Kesimpulan dan Saran
-
