@@ -154,26 +154,29 @@ Anggota Kelompok
 
 * **APT_ATT11990.pdf**
 
-1. Lorem ipsum  
+1. Berikut adalah keterangan mengenai malicious PDF yang dianalisis  
 ![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/1.PNG)
 
-2. Lorem ipsum  
+2. Berikut adalah rangkuman file-file yang diakses/dibuat/dihapus oleh malware  
 ![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/2.PNG)
 
-3. Lorem ipsum  
+3. Malware hanya bekerja pada localhost, sehingga analisa network tidak ditampilkan  
 ![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/3.PNG)
 
-4. Lorem ipsum  
+4. Berikut adalah daftar lengkap dari file, folder dan registry yang diakses/dibuat/dihapus oleh malware  
 ![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/4.PNG)
 
-5. Lorem ipsum  
-![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/5.PNG)
+	![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/5.PNG)
 
-6. Lorem ipsum  
+5. Cuckoo mengirimkan malware ke website [VirusTotal](https://www.virustotal.com/) untuk mendeteksi jenis malware (dibantu oleh berbagai software anti-virus)  
 ![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/6.PNG)
 
-7. Lorem ipsum  
+6. Dari berbagai hasil deteksi software anti-virus, akan kami ambil 2 contoh hasil deteksi malware dari 2 software anti-virus yaitu Microsoft dan Symantec  
 ![Analisis APT_ATT11990.pdf](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas3/cuckoo_analyses/23/shots/7.PNG)
+
+	Jenis malware yang terdeteksi oleh Microsoft adalah "Exploit:JS/ShellCode.AG", malware ini termasuk jenis objek JavaScript yang melakukan tindakan malicious, malware ini bekerja dengan menjalankan kode malicious sewenang-wenang ([sumber](http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Exploit:JS/ShellCode.gen))  
+    
+    Jenis malware yang terdeteksi oleh Symantec adalah "Bloodhound.Pdexe", malware ini termasuk jenis dari malicious PDF yang didalamnya mengandung embedded executable file  ([sumber](https://www.symantec.com/security_response/writeup.jsp?docid=2008-092604-1756-99))
 
 * **100621.pdf**
 
