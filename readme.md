@@ -12,14 +12,16 @@ Anggota Kelompok
 
 ## Daftar Tugas
 
-Deskripsi Tugas 1
+**Tugas 1**
 
- * [Tugas 1](https://github.com/ronayumik/PKSJ/tree/master/Tugas1)
+ Dokumentasi dapat dilihat pada link berikut : 
+ [Tugas 1](https://github.com/ronayumik/PKSJ/tree/master/Tugas1)
 
-Deskripsi Tugas 2
+**Tugas 2**
 
-* [Tugas 2](https://github.com/ronayumik/PKSJ/tree/master/Tugas2)
+Dokumentasi dapat dilihat pada link berikut : 
+[Tugas 2](https://github.com/ronayumik/PKSJ/tree/master/Tugas2)
 
-Deskripsi Tugas 3
+**Tugas 3**
 
-* [Tugas 3](https://github.com/ronayumik/PKSJ/tree/master/Tugas3)
+Dokumentasi dapat dilihat pada link berikut : (https://github.com/ronayumik/PKSJ/tree/master/Tugas3)
