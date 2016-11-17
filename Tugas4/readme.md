@@ -212,7 +212,7 @@ Glastopf juga memiliki database ( SQLite3 ) yang berisi data dummy dan event log
 	35. Selanjutnya adalah [X-Frame options Header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) [not set](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options), dimana jika server tidak mereturn X-Frame-Options, kemungkinan besar dapat diattack dengan [Clickjacking](http://javascript.info/tutorial/clickjacking) / Ui Redress attack.      
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/29.png)
 
-	36.  Detail header request 
+	36.  Detail header request  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/30.png)
 
 	37. Response dari server  
