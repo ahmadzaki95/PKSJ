@@ -224,5 +224,20 @@ Glastopf juga memiliki database ( SQLite3 ) yang berisi data dummy dan event log
 
 ## Kesimpulan dan Saran
 
-* 
+### Kesimpulan
+* Hacker dengan pengalaman menengah seharusnya tahu bahwa itu adalah umpan
+sistem
+* Glastopf mampu menipu bots, namun belum tentu jika yang menyerang adalah manusia.
+* Hacker tidak bermain sesuai aturan, mereka mencoba untuk mengambil alih
+mesin dengan meluncurkan serangan brute force terhadap sshd
+
+### Saran
+* Login ke sistem dan memantau keadaan server setiap hari
+1. Mengecek sukses/gagal login pada hari itu
+2. rootkit checks (rkhunter, rootkitchck)
+
+* Melawan bots dan backdoors
+1. Memonitor semua koneksi yang keluar
+2. Memonitor semua port yang terbuka
+
 
