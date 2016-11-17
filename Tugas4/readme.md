@@ -125,7 +125,7 @@ Glastopf juga memiliki database ( SQLite3 ) yang berisi data dummy dan event log
 	6. Active Scan telah berhasil dilakukan pada host  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/34.png)
 
-	7. Contoh salah satu serangan Cross Site Scripting (XSS). XSS merupakan salah satu jenis serangan injeksi code (code injection attack). XSS dilakukan oleh penyerang dengan cara memasukkan kode HTML atau client script code lainnya ke suatu situs. ([sumber](https://id.wikipedia.org/wiki/XSS))  
+	7. Contoh salah satu serangan **Cross Site Scripting (XSS)**. XSS merupakan salah satu jenis serangan injeksi code (code injection attack). XSS dilakukan oleh penyerang dengan cara memasukkan kode HTML atau client script code lainnya ke suatu situs. ([sumber](https://id.wikipedia.org/wiki/XSS))  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/1.png)
 
 	8. Request dari Zaproxy sebagai berikut, dengan parameter body dan code yang diinject adalah '"< script >1< /script >"   
@@ -137,107 +137,105 @@ Glastopf juga memiliki database ( SQLite3 ) yang berisi data dummy dan event log
 	10. Request dari attacker dapat dilihat pada glastopf.log    
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/4.png)
 
-	11. Serangan lain yang terlihat adalah Path Traversal Attack, dimana serangan ini dapat menampilkan / mengakses folder yang berada di luar folder/subfolder *web application* yang ada. Pada gambar ini, tampak Zaproxy sedang menyerang dengan memasukkan parameter /index.php , yang berarti jika berhasil seharusnya menampilkan isi file dari index.php  
+	11. Serangan lain yang dilakukan adalah **Path Traversal**, dimana serangan ini dapat menampilkan / mengakses folder yang berada di luar folder / subfolder *web application* yang ada. Pada gambar ini, tampak Zaproxy sedang menyerang dengan memasukkan /index.php pada parameter principal , yang berarti jika berhasil seharusnya menampilkan isi file dari index.php  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/5.png)
 
-	12. Detail Header Request pada gambar berikut :  
+	12. Detail header request  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/6.png)
 
-	13. Tampak response dari request tersebut OK (kode : 200), namun tidak tampak bahwa server mereturn script php (tidak ada tag php / code php tampak dari gambar ), namun pengujian ini berhasil pada contoh awal yang diberikan di awal subbab ini (path traversal ke /etc/passwd)  
+	13. Tampak response dari request tersebut OK (kode : 200), namun tidak tampak bahwa server mereturn script php (tidak ada tag php / code php tampak dari gambar ), namun pengujian ini berhasil pada contoh kasus lain yang diberikan di awal subbab ini (Path Traversal ke /etc/passwd)  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/7.png)
 
-	14.  Berikut adalah log akses dari glastopf   
+	14.  Malicious request tersebut tercatat pada glastopf.log  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/8.png)
 
-	15. Selanjutnya adalah **Remote OS Command Injection** , dimana tujuan dari attack ini adalah mengeksekusi perintah dalam OS host lewat *vulnerable* application, termasuk juga web application. Ini mungkin dilakukan dengan mengirimkan argumen beserta end command, diconcat dengan command OS (misal : ls pada linux)  
+	15. Selanjutnya adalah **Remote OS Command Injection** , dimana tujuan dari attack ini adalah mengeksekusi perintah dalam OS host lewat *vulnerable* application, termasuk juga web application. Ini mungkin dilakukan dengan mengirimkan argumen beserta end command, diconcat dengan command OS. Pada kasus ini command sleep akan di-inject pada parameter id  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/9.png)
 
-	16. Detail header serangan  
+	16. Detail header request  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/10.png)
 
-	17. Tampak hasilnya tetap 200 OK , namun semestinya jika sukses, perintah ini tidak mengembalikan perintah apapun, dan selanjutnya server tidak akan lagi dapat diakses karena sudah dalam kondisi sleep.  
+	17. Tampak response-nya tetap 200 OK , namun semestinya jika sukses, server akan tertidur / sleep selama 5 detik sebelum dapat mengembalikan response ke attacker  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/11.png)
 
-	18. Log dari Glastopf seperti gambar berikut :  
+	18. Malicious request tersebut tercatat pada glastopf.log  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/12.png)
 
-	19. Serangan selanjutnya adalah SQL injection untuk DB Oracle, yaitu memasukkan nilai %27 (') pada parameter id  
+	19. Serangan selanjutnya adalah **SQL injection - Oracle**, dengan memasukkan nilai %27 atau (') pada parameter id untuk memanfaatkan eksploitasi escape character yang tidak di filter dengan baik  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/13.png)
 
-	20. Detail header serangan  
+	20. Detail header request  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/14.png)
 
-	21. Response dari server. Jika berhasil, ada error SQL (jika perkiraan SQL salah), atau mengembalikan halaman yang telah ter-otorisasi, dalam kasus ini mengembalikan halaman HTML (zaproxy mendeteksi bahwa SQL injection berhasil)  
+	21. Response dari server. Jika berhasil, ada error SQL (jika SQL statement salah), atau mengembalikan halaman yang telah ter-otorisasi, dalam kasus ini mengembalikan halaman HTML  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/15.png)
 
-	22. Log dari glastopf  
+	22. Malicious request tersebut tercatat pada glastopf.log  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/16.png)
 
-	23. Serangan selanjutnya adalah SQL injection dengan parameter yang berbeda , dimana mengakses semua file php di folder webserver dan menginject nilai layout dengan parameter 'and '1' = '1'  
+	23. Serangan selanjutnya adalah **SQL Injection** dengan parameter yang berbeda , dengan melakukan injeksi pada parameter layout dengan nilai 'AND '1' = '1'-- (menambahkan SQL statement yang nilainya selalu TRUE) 
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/17.png)
 
-	24. Detail Header Request  
+	24. Detail header request  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/18.png)
 
-	25. Response dari Glastopf, kurang lebih kemungkinannya sama dengan nomor 21  
+	25. Response dari server. Jika berhasil, ada error SQL (jika SQL statement salah), atau mengembalikan halaman yang telah ter-otorisasi, dalam kasus ini mengembalikan halaman HTML  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/19.png)
 
-	26. Log dari file glastopf  
+	26. Malicious request tersebut tercatat pada glastopf.log  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/20.png)
 
-	27. Serangan selanjutnya adalah Application error disclosure [penjelasan](https://www.acunetix.com/vulnerabilities/web/application-error-message), dimana ini bertujuan untuk menampilkan pesan error yang akan menampilkan informasi *vulnerable* seperti letak file yang terkena exception ( misal, menganalisa framework apa yg digunakan dengan pattern file dan exception yang dihasilkan)   
+	27. Serangan selanjutnya adalah **Application Error Disclosure** , dimana serangan ini bertujuan untuk menampilkan pesan error yang akan menampilkan informasi *vulnerable* seperti letak file yang terkena exception (misal, menganalisa framework apa yg digunakan dengan pattern file dan exception yang dihasilkan) ([sumber](https://www.acunetix.com/vulnerabilities/web/application-error-message))  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/21.png)
 
 	28. Detail header request  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/22.png)
 
-	29. Response yang dihasilkan (200 OK). Tampak bahwa Glastopf mereturn error 'You have an error in your SQL syntax near ...' namun tidak menampilkan error lain yang semestinya dimunculkan jika server adalah benar-benar server (bukan honeypot) , seperti error/warning khas PHP
+	29. Response dari server. Tampak bahwa Glastopf menampilkan error 'You have an error in your SQL syntax near ...' pada halaman view  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/23.png)
 
-	30. Log akses dari Glastopf seperti berikut  
+	30. Malicious request tersebut tercatat pada glastopf.log  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/24.png)
 
-	31. Selanjutnya adalah directory browsing, yaitu serangan untuk me-list direktori apa saja yang ada didalam webserver tersebut. Hal ini tentu saja berbahaya, dimana attacker dapat melihat file-file yang memuat *vulnerable* information, seperti alur authentikasi (dari nama file), file-file backup, assets dll.  
+	31. Selanjutnya adalah **Directory Browsing**, yaitu serangan untuk me-list direktori apa saja yang ada didalam webserver tersebut. Hal ini tentu saja berbahaya, dimana attacker dapat melihat file-file yang memuat *vulnerable* information, seperti alur authentikasi (dari nama file), file-file backup, assets dll  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/25.png)
 
 	32. Detail header request  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/26.png)
 
-	33. Response yang dihasilkan.  
+	33. Response dari server  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/27.png)
 
-	34. Log pada file Glastopf  
+	34. Malicious request tersebut tercatat pada glastopf.log  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/28.png)
 
-	35. Selanjutnya adalah [X-Frame options Header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) [not set](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options), dimana jika server tidak mereturn X-Frame-Options, kemungkinan besar dapat diattack dengan [Clickjacking](http://javascript.info/tutorial/clickjacking) / Ui Redress attack.      
+	35. Selanjutnya adalah [X-Frame Options Header Not Set](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) , dimana jika server tidak mereturn X-Frame-Options, kemungkinan besar dapat diserang dengan [Clickjacking](http://javascript.info/tutorial/clickjacking) / UI Redress Attack  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/29.png)
 
 	36.  Detail header request  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/30.png)
 
-	37. Response dari server  
+	37. Response dari server, dapat dilihat bahwa header response tidak memiliki parameter X-Frame-Options  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/31.png)
 
-	38. Log dalam glastopf  
+	38. Request dari attacker tercatat pada glastopf.log  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/32.png)
 
 
 ## Kesimpulan dan Saran
 
 ### Kesimpulan
-1. Hacker dengan pengalaman menengah seharusnya tahu bahwa itu adalah umpan
-sistem
-2. Glastopf mampu menipu bots, namun belum tentu jika yang menyerang adalah manusia.
-3. Hacker tidak bermain sesuai aturan, mereka mencoba untuk mengambil alih
-mesin dengan meluncurkan serangan brute force terhadap sshd
+1. Glastopf mampu menipu bots, namun belum tentu jika yang menyerang adalah manusia. Hacker dengan pengalaman menengah seharusnya tahu bahwa yang diserang adalah sebuah Honeypot (dari respon yang diberikan server)
+2. Zaproxy adalah tools yang digunakan untuk mengetahui celah keamanan dari aplikasi web, berbagai serangan brute force seperti XSS, SQL Injection, Remote File Inclusion, dll akan dilakukan untuk mencari celah tersebut. Hasil serangan juga ditampilkan agar dapat dianalisa lebih lanjut
 
 ### Saran
 **Login ke sistem dan memantau keadaan server setiap hari** 
 *  Mengecek sukses/gagal login pada hari itu
 *  rootkit checks (rkhunter, rootkitchck)
 
-**Melawan Bots dan Backdoors**
+**Mencegah Bots dan Backdoors**
 *  Memonitor semua koneksi yang keluar
 *  Memonitor semua port yang terbuka
-
+*  Memonitor request yang masuk
+*  Menetapkan tindakan preventif apabila terdapat anomali pada network / sistem
 
