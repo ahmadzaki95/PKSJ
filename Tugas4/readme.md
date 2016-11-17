@@ -137,25 +137,25 @@ Glastopf juga memiliki database ( SQLite3 ) yang berisi data dummy dan event log
 	10. Request dari attacker dapat dilihat pada glastopf.log  
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/4.png)
 
-	11. Lorem ipsum  
+	11. Serangan lain yang terlihat adalah Path Traversal Attack, dimana serangan ini dapat menampilkan / mengakses folder yang berada di luar folder/subfolder *web application* yang ada. Pada gambar ini, tampak Zaproxy sedang menyerang dengan memasukkan parameter /index.php , yang berarti jika berhasil seharusnya menampilkan isi file dari index.php
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/5.png)
 
-	12. Lorem ipsum  
+	12. Tampak response dari request tersebut OK (kode : 200), namun tidak tampak bahwa server mereturn script php (tidak ada tag php / code php tampak dari gambar ), namun pengujian ini berhasil pada contoh awal yang diberikan di awal subbab ini (path traversal ke /etc/passwd)
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/6.png)
 
-	13. Lorem ipsum  
+	13. Berikut adalah log akses dari glastopf
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/7.png)
 
-	14. Lorem ipsum  
+	14. Selanjutnya adalah **Remote OS Command Injection** , dimana tujuan dari attack ini adalah mengeksekusi perintah dalam OS host lewat *vulnerable* application, termasuk juga web application. Ini mungkin dilakukan dengan mengirimkan argumen beserta end command, diconcat dengan command OS (misal : ls pada linux)
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/8.png)
 
-	15. Lorem ipsum  
+	15. Detail header serangan
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/9.png)
 
-	16. Lorem ipsum  
+	16. Tampak hasilnya tetap 200 OK , namun semestinya jika sukses, perintah ini tidak mengembalikan perintah apapun, dan selanjutnya server tidak akan lagi dapat diakses karena sudah dalam kondisi sleep.
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/10.png)
 
-	17. Lorem ipsum  
+	17. Log dari Glastopf pada gambar berikut
 ![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/11.png)
 
 	18. Lorem ipsum  
