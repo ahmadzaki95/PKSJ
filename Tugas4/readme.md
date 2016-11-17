@@ -27,86 +27,85 @@ Anggota Kelompok
 
 Untuk instalasi Docker, kami merujuk dari tutorial DigitalOcean ([ini](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)) , dengan tahapan berikut :
 
-1. Update *package database* dengan perintah : apt-get update
+1. Update *package database* dengan perintah : apt-get update  
 
-2. Tambahkan GPG Key untuk Official Docker Repository dengan perintah : sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+2. Tambahkan GPG Key untuk Official Docker Repository dengan perintah : sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Glastopf/1.png)
 
-3. Dan tambahkan repository Docker ke daftar sources APT dng perintah : sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+3. Dan tambahkan repository Docker ke daftar sources APT dng perintah : sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Glastopf/2.png)
 
-4. Kembali update *package database* : sudo apt-get update 
+4. Kembali update *package database* : sudo apt-get update  
 
-5. Install docker dengan perintah : sudo apt-get install docker-engine
+5. Install docker dengan perintah : sudo apt-get install docker-engine  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Glastopf/4.png)
 
-6. Agar docker dapat digunakan oleh username anda tanpa harus mengganti *prilege* ke root , masukkan perintah berikut : sudo usermod -aG docker $(whoami)
+6. Agar docker dapat digunakan oleh username anda tanpa harus mengganti *prilege* ke root , masukkan perintah berikut : sudo usermod -aG docker $(whoami)  
 
-7. Reboot / restart server .
+7. Reboot / restart server  
 
-8. Untuk mengetes apakah docker sudah dapat berjalan dengan benar ,   dapat dijalankan perintah : docker run hello-world. Jika berhasil, tampilannya akan seperti berikut :
+8. Untuk mengetes apakah docker sudah dapat berjalan dengan benar ,   dapat dijalankan perintah : docker run hello-world. Jika berhasil, tampilannya akan seperti berikut :  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Glastopf/5.png)
 
-    Jika sudah berhasil, maka kita lanjutkan dengan instalasi Glastopf, dengan merujuk pada dokumentasi dari Glastopf ([berikut](http://www.binushacker.net/hacker-tools-zed-attack-proxy.html))
+    Jika sudah berhasil, maka kita lanjutkan dengan instalasi Glastopf, dengan merujuk pada dokumentasi dari Glastopf ([berikut](http://www.binushacker.net/hacker-tools-zed-attack-proxy.html))  
 
-9. Clone file dari Github Glastopf dengan perintah : git clone https://github.com/mushorg/glastopf.git atau git@github.com:mushorg/glastopf.git
+9. Clone file dari Github Glastopf dengan perintah : git clone https://github.com/mushorg/glastopf.git atau git@github.com:mushorg/glastopf.git  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Glastopf/6.png)
 
-10. cd ke directory glastopf dengan perintah : cd glastopf
+10. cd ke directory glastopf dengan perintah : cd glastopf  
 
-11. Run perintah berikut : docker build --rm --tag glastopf .
+11. Run perintah berikut : docker build --rm --tag glastopf  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Glastopf/7.png)
 
-    Perintah ini akan menarik / *pull* file docker glastopf , sehingga akan berlangsung cukup lama tergantung kualitas kecepatan internet anda. Jika berhasil , maka akan muncul seperti berikut :
+    Perintah ini akan menarik / *pull* file docker glastopf , sehingga akan berlangsung cukup lama tergantung kualitas kecepatan internet anda. Jika berhasil , maka akan muncul seperti berikut :  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Glastopf/8.png)
 
-12. Jika sudah selesai , buat sebuah folder bebas, misal pada contoh ini nama foldernya adalah honeypot dengan perintah : mkdir {nama folder}
+12. Jika sudah selesai , buat sebuah folder bebas, misal pada contoh ini nama foldernya adalah honeypot dengan perintah : mkdir {nama folder}  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Glastopf/9.png)
 
-13. Untuk menjalankan docker Glastopf , kita masukkan perintah berikut : docker run --detach --publish 80:80 --volume honeypot:/opt/honeypot glastopf
+13. Untuk menjalankan docker Glastopf , kita masukkan perintah berikut : docker run --detach --publish 80:80 --volume honeypot:/opt/honeypot glastopf  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Glastopf/10.png)
 
-14. Untuk melihat apakah sudah benar berjalan atau tidak, anda dapat melihat lewat browser dengan memasukkan alamat : localhost (karena portnya 80 sehingga tidak perlu dimasukkan portnya). Jika sudah benar, maka akan muncul halaman seperti berikut . Jika anda refresh, maka konten didalamnya juga ikut berubah.
+14. Untuk melihat apakah sudah benar berjalan atau tidak, anda dapat melihat lewat browser dengan memasukkan alamat : localhost (karena portnya 80 sehingga tidak perlu dimasukkan portnya). Jika sudah benar, maka akan muncul halaman seperti berikut . Jika anda refresh, maka konten didalamnya juga ikut berubah.  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Glastopf/11.png)
+
 
 ## Langkah Instalasi Zaproxy
 
-Untuk instalasi Zaproxy sendiri cukup mudah, untuk Windows sudah ada *installer* yang mudah diinstal. Untuk OS Linux, pastikan di pc anda sudah terinstall Java 7 atau keatas. Untuk instalasi pada windows, dapat mengikuti tahapan berikut :
+Untuk instalasi Zaproxy sendiri cukup mudah, untuk Windows sudah ada *installer* yang mudah diinstal. Untuk OS Linux, pastikan di pc anda sudah terinstall Java 7 atau keatas. Untuk instalasi pada Windows, dapat mengikuti tahapan berikut :
 
-1. Download file installer dari halaman [wiki Zaproxy di Github](https://github.com/zaproxy/zaproxy/wiki/Downloads) , atau klik [link berikut](https://github.com/zaproxy/zaproxy/releases/download/2.5.0/ZAP_2.5.0_Windows.exe)
+1. Download file installer dari halaman [wiki Zaproxy di Github](https://github.com/zaproxy/zaproxy/wiki/Downloads) , atau klik [link berikut](https://github.com/zaproxy/zaproxy/releases/download/2.5.0/ZAP_2.5.0_Windows.exe)  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Zaproxy/1.png)
 
-2. Jika sudah selesai, *double* klik pada installer Zaproxy dan klik Next Next seperti biasa:
+2. Jika sudah selesai, *double* klik pada installer Zaproxy dan klik Next Next seperti biasa:  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Zaproxy/2.png)
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Zaproxy/3.png)
 
-3. Setelah selesai, anda dapat melihat launcher / icon Zaproxy pada menu di 
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Glastopf/4.png)
+3. Setelah selesai, anda dapat melihat launcher / icon Zaproxy pada menu di  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Installing_Zaproxy/4.png)
 
 
-## Metode Analisa & Hasil
+## Analisa Hasil
 
-* Analisa Glastopf
+Glastopf akan mencatat semua request yang dilakukan pada host, terlihat dari file log/glastopf.log , dari file tersebut dapat dianalisis untuk mengetahui apabila ada request yang malicious
+![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/1.png)
 
-  Zaproxy akan mencoba semua kemungkinan URL yang ada pada host yang sedang diattack, terlihat dari log pada glastopf ( di folder log/glastopf.log) :
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/1.png)
+Glastopf juga memiliki database ( SQLite3 ) yang berisi data dummy dan event log yang dapat dilihat pada file db/glastopf.db , seperti pada gambar berikut :
+![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/2.png)
+![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/7.png)
 
-  Dan log pada database ( SQLite3 ) dapat dilihat pada folder db/glastopf.db , seperti pada gambar berikut :
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/2.png)
+* **Contoh Serangan Menggunakan Browser**
 
-  Misal, pada satu skenario serangan , kita mengakses {host}/x?id=../../../etc/passwd , attacker akan mendapatkan tampilan seperti ini :
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/3.png)
+	Misal, pada satu skenario serangan jenis Path Traversal, kita mengakses {host}/x?id=../../../etc/passwd , attacker akan mendapatkan tampilan seperti ini :
+![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/3.png)
 
-  Padahal, sebenarnya yang diakses adalah file dari data/virtualdocs/linux/etc/passwd (ssh dulu ke dalam docker dengan cara : docker exec -it {nama docker} /bin/bash
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/4.png)
+	Padahal, sebenarnya yang diakses adalah file dari data/virtualdocs/linux/etc/passwd (ssh dulu ke dalam docker dengan cara : docker exec -it {nama docker} /bin/bash)
+![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/4.png)
 
-* Analisa Zaproxy
+	Contoh serangan jenis SQL Injection :  
+![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/33.png)
 
-  Pada tampilan Zaproxy , tampak berbagai serangan dilakukan, dan diklasifikasikan sesuai dengan alertnya , seperti pada gambar berikut :
-  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/5.png)
-  
-  Jika dilihat salah satu hasil serangan, tampak seperti berikut :
-  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/6.png)
+* **Serangan Menggunakan Zaproxy**
 
 
 
