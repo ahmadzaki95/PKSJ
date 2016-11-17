@@ -232,12 +232,12 @@ sistem
 mesin dengan meluncurkan serangan brute force terhadap sshd
 
 ### Saran
-1. Login ke sistem dan memantau keadaan server setiap hari
-- Mengecek sukses/gagal login pada hari itu
-- rootkit checks (rkhunter, rootkitchck)
+**Login ke sistem dan memantau keadaan server setiap hari** 
+*  Mengecek sukses/gagal login pada hari itu
+*  rootkit checks (rkhunter, rootkitchck)
 
-2. Melawan bots dan backdoors
-- Memonitor semua koneksi yang keluar
-- Memonitor semua port yang terbuka
+**Melawan Bots dan Backdoors**
+*  Memonitor semua koneksi yang keluar
+*  Memonitor semua port yang terbuka
 
 
