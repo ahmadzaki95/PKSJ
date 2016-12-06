@@ -31,3 +31,8 @@ Dokumentasi dapat dilihat pada link berikut :
 
 Dokumentasi dapat dilihat pada link berikut : 
 [Tugas 4](https://github.com/ronayumik/PKSJ/tree/master/Tugas4)
+
+**Tugas 5**
+
+Dokumentasi dapat dilihat pada link berikut : 
+[Tugas 5](https://github.com/ronayumik/PKSJ/tree/master/Tugas5)
