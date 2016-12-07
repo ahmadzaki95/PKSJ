@@ -95,6 +95,11 @@ Untuk vulnerability scanning, kita dapat menggunakan tools Open VAS , yaitu tool
 11. Lorem Ipsum  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_24.jpg)
 
+##Penggunaan Metasploit
+
+Untuk penggunaan metasploit, pada Kali Linux sudah terinstall secara bawaan, dan untuk mengaksesnya dapat menggunakan perintah msfconsole  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_25.png)
+
 
 ## Intelligence Gathering Process
 
@@ -104,152 +109,55 @@ Untuk vulnerability scanning, kita dapat menggunakan tools Open VAS , yaitu tool
 2. Setelah selesai , kita dapat melihat detail OS metasploitable seperti versi kernel, dkk. Dari versi tersebut, kita dapat mencari *vulnerabilities* yang ada di website cvedetails.com    
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_12.jpg)
 
-3. Lorem Ipsum
+3. Lorem Ipsum  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_13.jpg)
 
 
-## Analisa Hasil
+## Exploit SSH Login PubKey
 
-Glastopf akan mencatat semua request yang dilakukan pada host, terlihat dari file log/glastopf.log , dari file tersebut dapat dianalisis untuk mengetahui apabila ada request yang malicious
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/1.jpg)
 
-Glastopf juga memiliki database ( SQLite3 ) yang berisi data dummy dan event log yang dapat dilihat pada file db/glastopf.db , seperti pada gambar berikut :
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/2.jpg)
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/7.jpg)
+1. Pada hasil nmap , kita melihat ada open port NFS pada Metasploitable  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/1.png)
 
-* **Serangan Menggunakan Browser**
+2. Kita coba lihat di mount apa yang disediakan oleh komputer target, ternyata menyediakan langsung ke direktori root (/*)  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/2.png)
 
-	Misal, pada satu skenario serangan jenis Path Traversal, kita mengakses {host}/x?id=../../../etc/passwd , attacker akan mendapatkan tampilan seperti ini :
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/3.jpg)
+3. Untuk bisa mengakses mount NFS, kita harus menyalakan service rpcbind  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/3.png)
 
-	Padahal, sebenarnya yang diakses adalah file dari data/virtualdocs/linux/etc/passwd (ssh dulu ke dalam docker dengan command : docker exec -it {nama docker} /bin/bash)
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Analysis/4.jpg)
+4. Kita buat folder sementara untuk mount NFS komputer target  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/4.png)
 
-	Contoh serangan jenis SQL Injection (URL yang dipakai {host}/.br/components/com_forum/editor/home.php?path=SELECT%20database()%20AND%201%3D1%20--%20) :  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/33.jpg)
+5. Lalu kita mount folder yang telah kita buat ke NFS target  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/5.png)
 
-* **Serangan Menggunakan Zaproxy**
+6. Jika berhasil, coba tes apakah sudah berhasil me-mount apa belum dengan cd ke folder sementara dan lakukan ls.  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/6.png)
 
-	1. Jalankan Zaproxy, masukkan alamat host yang ingin di attack  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/0_1.jpg)
+Tentu saja ini berbahaya, karena kita bisa melihat file apa saja yang ada di dalam komputer, bahkan file sensitif seperti key untuk ssh, file passwd dan lainlain.
 
-	2. Zaproxy akan menjalankan Spider agar secara otomatis dapat menemukan URL lain yang terdapat pada host  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/0_2.jpg)
+Post exploit yang dirancang adalah dengan mengambil private SSH key komputer target, dan dengan metasploit kita dapat mengakses komputer target dengan hak akses root **tanpa wordlist dan bruteforce**,  dengan menggunakan metasploit.
 
-	3. Setelah Spider selesai, Zaproxy akan menjalan Active Scan untuk melakukan berbagai macam serangan terhadap host  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/0_3.jpg)
+1. Kita ambil private key komputer target dengan copy file di ~/.ssh/id_rsa , misal ke file /tmp/r00tprivatekey  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/7.png)
 
-	4. Window teratas menampilkan log dari Glasoptf yang di tail  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/0_4.jpg)
+2. Kita ingin menanam private keys di komputer target, namun kita harus punya hak akses untuk manage file di folder home user target. Untuk mensiasatinya, kita masukkan key (namun sebenarnya adalah path folder) kita ke file *authorized_keys* komputer target.  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/8.png)
 
-	5. Serangan-serangan yang dilakukan oleh Zaproxy dikategorikan berdasarkan jenisnya untuk dianalisa lebih lanjut  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/0_5.jpg)
+3. Hasil cat file authorized_keys  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/9.png)
 
-	6. Active Scan telah berhasil dilakukan pada host  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/34.jpg)
+4. Setelah ini, kita coba menggunakan metasploit auxiliary/scanner/ssh/ssh_login_pubkey untuk menyerang. Kita ketik use auxiliary/scanner/ssh/ssh_login_pubkey untuk menggunakan modul tersebut dalam console metasploit.  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/10.png)
 
-	7. Contoh salah satu serangan **Cross Site Scripting (XSS)**. XSS merupakan salah satu jenis serangan injeksi code (code injection attack). XSS dilakukan oleh penyerang dengan cara memasukkan kode HTML atau client script code lainnya ke suatu situs. ([sumber](https://id.wikipedia.org/wiki/XSS))  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/1.jpg)
 
-	8. Request dari Zaproxy sebagai berikut, dengan parameter body dan code yang diinject adalah '"< script >1< /script >"   
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/2.jpg)
-
-	9. Response yang diberikan oleh Glastopf kepada Zaproxy, dapat dilihat bahwa untuk melakukan XSS dilakukan eksploitasi escape character yang tidak di filter dengan baik    
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/3.jpg)
-
-	10. Request dari attacker dapat dilihat pada glastopf.log    
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/4.jpg)
-
-	11. Serangan lain yang dilakukan adalah **Path Traversal**, dimana serangan ini dapat menampilkan / mengakses folder yang berada di luar folder / subfolder *web application* yang ada. Pada gambar ini, tampak Zaproxy sedang menyerang dengan memasukkan /index.php pada parameter principal , yang berarti jika berhasil seharusnya menampilkan isi file dari index.php  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/5.jpg)
-
-	12. Detail header request  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/6.jpg)
-
-	13. Tampak response dari request tersebut OK (kode : 200), namun tidak tampak bahwa server mereturn script php (tidak ada tag php / code php tampak dari gambar ), namun pengujian ini berhasil pada contoh kasus lain yang diberikan di awal subbab ini (Path Traversal ke /etc/passwd)  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/7.jpg)
-
-	14.  Malicious request tersebut tercatat pada glastopf.log  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/8.jpg)
-
-	15. Selanjutnya adalah **Remote OS Command Injection** , dimana tujuan dari attack ini adalah mengeksekusi perintah dalam OS host lewat *vulnerable* application, termasuk juga web application. Ini mungkin dilakukan dengan mengirimkan argumen beserta end command, diconcat dengan command OS. Pada kasus ini command sleep akan di-inject pada parameter id  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/9.jpg)
-
-	16. Detail header request  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/10.jpg)
-
-	17. Tampak response-nya tetap 200 OK , namun semestinya jika sukses, server akan tertidur / sleep selama 5 detik sebelum dapat mengembalikan response ke attacker  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/11.jpg)
-
-	18. Malicious request tersebut tercatat pada glastopf.log  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/12.jpg)
-
-	19. Serangan selanjutnya adalah **SQL injection - Oracle**, dengan memasukkan nilai %27 atau (') pada parameter id untuk memanfaatkan eksploitasi escape character yang tidak di filter dengan baik  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/13.jpg)
-
-	20. Detail header request  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/14.jpg)
-
-	21. Response dari server. Jika berhasil, ada error SQL (jika SQL statement salah), atau mengembalikan halaman yang telah ter-otorisasi, dalam kasus ini mengembalikan halaman HTML  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/15.jpg)
-
-	22. Malicious request tersebut tercatat pada glastopf.log  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/16.jpg)
-
-	23. Serangan selanjutnya adalah **SQL Injection** dengan parameter yang berbeda , dengan melakukan injeksi pada parameter layout dengan nilai 'AND '1' = '1'-- (menambahkan SQL statement yang nilainya selalu TRUE) 
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/17.jpg)
-
-	24. Detail header request  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/18.jpg)
-
-	25. Response dari server. Jika berhasil, ada error SQL (jika SQL statement salah), atau mengembalikan halaman yang telah ter-otorisasi, dalam kasus ini mengembalikan halaman HTML  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/19.jpg)
-
-	26. Malicious request tersebut tercatat pada glastopf.log  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/20.jpg)
-
-	27. Serangan selanjutnya adalah **Application Error Disclosure** , dimana serangan ini bertujuan untuk menampilkan pesan error yang akan menampilkan informasi *vulnerable* seperti letak file yang terkena exception (misal, menganalisa framework apa yg digunakan dengan pattern file dan exception yang dihasilkan) ([sumber](https://www.acunetix.com/vulnerabilities/web/application-error-message))  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/21.jpg)
-
-	28. Detail header request  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/22.jpg)
-
-	29. Response dari server. Tampak bahwa Glastopf menampilkan error 'You have an error in your SQL syntax near ...' pada halaman view  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/23.jpg)
-
-	30. Malicious request tersebut tercatat pada glastopf.log  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/24.jpg)
-
-	31. Selanjutnya adalah **Directory Browsing**, yaitu serangan untuk me-list direktori apa saja yang ada didalam webserver tersebut. Hal ini tentu saja berbahaya, dimana attacker dapat melihat file-file yang memuat *vulnerable* information, seperti alur authentikasi (dari nama file), file-file backup, assets dll  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/25.jpg)
-
-	32. Detail header request  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/26.jpg)
-
-	33. Response dari server  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/27.jpg)
-
-	34. Malicious request tersebut tercatat pada glastopf.log  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/28.jpg)
-
-	35. Selanjutnya adalah [X-Frame Options Header Not Set](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) , dimana jika server tidak mereturn X-Frame-Options, kemungkinan besar dapat diserang dengan [Clickjacking](http://javascript.info/tutorial/clickjacking) / UI Redress Attack  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/29.jpg)
-
-	36.  Detail header request  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/30.jpg)
-
-	37. Response dari server, dapat dilihat bahwa header response tidak memiliki parameter X-Frame-Options  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/31.jpg)
-
-	38. Request dari attacker tercatat pada glastopf.log  
-![Analisa](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas4/Screenshot_Analisis_Glastopf_Zap/32.jpg)
 
 
 ## Kesimpulan dan Saran
 
 ### Kesimpulan
-1. Glastopf mampu menipu bots, namun belum tentu jika yang menyerang adalah manusia. Hacker dengan pengalaman menengah seharusnya tahu bahwa yang diserang adalah sebuah Honeypot (dari respon yang diberikan server)
-2. Zaproxy adalah tools yang digunakan untuk mengetahui celah keamanan dari aplikasi web, berbagai serangan brute force seperti XSS, SQL Injection, Remote File Inclusion, dll akan dilakukan untuk mencari celah tersebut. Hasil serangan juga ditampilkan agar dapat dianalisa lebih lanjut
+1. Lorem Ipsum
+2. Lorem Ipsum
 
 ### Saran
 **Login ke sistem dan memantau keadaan server setiap hari** 
