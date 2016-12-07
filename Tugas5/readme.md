@@ -41,8 +41,6 @@ Beberapa modul dari Metasploit yang kami gunakan adalah sebagai berikut :
 
 * **ssh_login_pubkey**
 
-* **Armitage**
- 
 **3. Metasploitable**
 
 **Metasploitable**  adalah mesin virtual Linux yang sengaja dirancang agar memiliki banyak vulnerabilities. VM ini dapat digunakan untuk melakukan pelatihan keamanan, alat tes keamanan, dan praktek penetration testing. Image file dari Metasploitable dapat diunduh pada [Sourceforge](https://sourceforge.net/projects/metasploitable/files/Metasploitable2/). ([sumber](http://ch06-blackers.blogspot.co.id/2013/04/5-vulnerable-distro-untuk-berlatih.html))
