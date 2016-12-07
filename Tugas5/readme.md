@@ -117,67 +117,67 @@ Untuk penggunaan metasploit, pada Kali Linux sudah terinstall secara bawaan, dan
 
 
 1. Pada hasil nmap , kita melihat ada open port NFS pada Metasploitable  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/1.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/1.png)
 
 2. Kita coba lihat di mount apa yang disediakan oleh komputer target, ternyata menyediakan langsung ke direktori root (/*)  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/2.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/2.png)
 
 3. Untuk bisa mengakses mount NFS, kita harus menyalakan service rpcbind  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/3.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/3.png)
 
 4. Kita buat folder sementara untuk mount NFS komputer target  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/4.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/4.png)
 
 5. Lalu kita mount folder yang telah kita buat ke NFS target  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/5.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey5.png)
 
 6. Jika berhasil, coba tes apakah sudah berhasil me-mount apa belum dengan cd ke folder sementara dan lakukan ls.  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/6.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/6.png)
 
 Tentu saja ini berbahaya, karena kita bisa melihat file apa saja yang ada di dalam komputer, bahkan file sensitif seperti key untuk ssh, file passwd dan lainlain.
 
 Post exploit yang dirancang adalah dengan mengambil private SSH key komputer target, dan dengan metasploit kita dapat mengakses komputer target dengan hak akses root **tanpa wordlist dan bruteforce**,  dengan menggunakan metasploit.
 
 1. Kita ambil private key komputer target dengan copy file di ~/.ssh/id_rsa , misal ke file /tmp/r00tprivatekey  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/7.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/7.png)
 
 2. Kita ingin menanam private keys di komputer target, namun kita harus punya hak akses untuk manage file di folder home user target. Untuk mensiasatinya, kita masukkan key (namun sebenarnya adalah path folder) kita ke file *authorized_keys* komputer target.  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/8.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/8.png)
 
 3. Hasil cat file authorized_keys  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/9.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/9.png)
 
 4. Setelah ini, kita coba menggunakan metasploit auxiliary/scanner/ssh/ssh_login_pubkey untuk menyerang. Kita ketik use auxiliary/scanner/ssh/ssh_login_pubkey untuk menggunakan modul tersebut dalam console metasploit.  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/10.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/10.png)
 
 5. Kita coba lihat info dari exploit tersebut. Parameter yang dibutuhkan adalah KEY_PATH, USER, dan RHOSTS  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/11.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/11.png)
 
 6. Masukkan KEY_PATH atau file private key komputer server yang tadi telah kita copy  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/12.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/12.png)
 
 7. Masukkan USER yang kita inginkan, yaitu root  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/13.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/13.png)
 
 8. Masukkan RHOSTS yaitu IP Komputer target  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/14.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/14.png)
 
 9. Masukkan perintah run untuk menjalankan exploit.   
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/15.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/15.png)
 
 10. Pada bagian bawah, tampak bahwa metasploit telah membuka session ssh di session 1   
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/16.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/16.png)
 
 11. Kita masuk ke session 1 dengan perintah session -i 1   
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/17.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/17.png)
 
 12. Untuk memastikan apakah kita benar login sebagai root, kita ketikkan perintah id  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/30.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/30.png)
 
 13. Coba masukkan perintah lain seperti uname -a , dan perintah lain. Selamat ! Kita sudah bisa mengakses root di komputer target!   
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/18.png)
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/19.png)
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/20.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/18.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/19.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/20.png)
 
 
 
