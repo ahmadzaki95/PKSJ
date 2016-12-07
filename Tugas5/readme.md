@@ -129,7 +129,7 @@ Untuk penggunaan metasploit, pada Kali Linux sudah terinstall secara bawaan, dan
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/4.png)
 
 5. Lalu kita mount folder yang telah kita buat ke NFS target  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/5.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey5.png)
 
 6. Jika berhasil, coba tes apakah sudah berhasil me-mount apa belum dengan cd ke folder sementara dan lakukan ls.  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/6.png)
@@ -175,11 +175,12 @@ Post exploit yang dirancang adalah dengan mengambil private SSH key komputer tar
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/30.png)
 
 13. Coba masukkan perintah lain seperti uname -a , dan perintah lain. Selamat ! Kita sudah bisa mengakses root di komputer target!   
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/18.png)  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/18.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/19.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/20.png)
 
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/19.png)  
 
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/20.png)  
+
 
 ## Kesimpulan dan Saran
 
