@@ -1,9 +1,9 @@
-# **Tugas 5 PKSJ - Analisa Exploit dengan Metasploitable, Metasploit dan Nmap**
+# **Tugas 5 PKSJ - Analisa Penetration Testing Menggunakan Metasploit dan Metasploitable**
 
 
 ## Pendahuluan
 
-Tugas ini dibuat untuk menyelesaikan Tugas 5 yaitu "Analisa Exploit dengan Metasploitable, Metasploit Nmap" pada matakuliah Perancangan Keamanan & Sistem Jaringan (PKSJ) Semester Ganjil 2016/2017, Teknik Informatika ITS, Surabaya
+Tugas ini dibuat untuk menyelesaikan Tugas 5 yaitu "Analisa Penetration Testing Menggunakan Metasploit dan Metasploitable" pada matakuliah Perancangan Keamanan & Sistem Jaringan (PKSJ) Semester Ganjil 2016/2017, Teknik Informatika ITS, Surabaya.
  
 Anggota Kelompok
 - Ardi Nusawan      5113100096
@@ -13,13 +13,49 @@ Anggota Kelompok
 
 ## Dasar Teori
 
-**1. Metasploit**
+**1. Penetration Testing**
 
-**Metasploit** adalah sebuah framework, sebagai platform pengembangan untuk menciptakan alat keamanan dan eksploitasi. Kerangka ini digunakan oleh profesional keamanan jaringan untuk melakukan tes penetrasi, administrator sistem untuk memverifikasi instalasi patch, vendor produk untuk melakukan pengujian regresi, dan peneliti keamanan di seluruh dunia. Kerangka ditulis dalam bahasa pemrograman Ruby dan termasuk komponen yang ditulis dalam C dan assembler.. ([sumber](https://aakdhimas.wordpress.com/2011/08/09/apa-sih-metasploit-untuk-apa-sih/))
- 
+**Penetration Testing** adalah serangan yang dilakukan secara sengaja kepada sistem dengan tujuan mencari celah keamanan dari sistem yang dapat diperbaiki atau dieksploitasi oleh penyerang. Terdapat beberapa tahapan yang dilakukan dalam penetration testing, tahapan-tahapan tersebut adalah sebagai berikut :
+
+* **Preinteractions**
+
+* **Intelligence Gathering**
+
+* **Threat Modeling**
+
+* **Vulnerability Analysis**
+
+* **Exploitation**
+
+* **Post Exploitation**
+
+* **Reporting**
+
 **2. Metasploit**
 
-* **Metasploitable**  adalah mesin secara sengaja rentan virtual Linux. VM ini dapat digunakan untuk melakukan pelatihan keamanan, alat tes keamanan, dan praktek penetrasi Versi pengujian umum teknik ini 2 dari mesin virtual yang tersedia untuk di-download dari Sourceforge dan kapal dengan kerentanan bahkan lebih dari gambar asli ([sumber](http://ch06-blackers.blogspot.co.id/2013/04/5-vulnerable-distro-untuk-berlatih.html))
+**Metasploit** adalah sebuah framework, sebagai platform pengembangan untuk menciptakan alat keamanan dan eksploitasi. Kerangka ini digunakan oleh profesional keamanan jaringan untuk melakukan penetration testing, administrator sistem untuk memverifikasi instalasi patch, vendor produk untuk melakukan pengujian regresi, dan peneliti keamanan di seluruh dunia. Kerangka ditulis dalam bahasa pemrograman Ruby dan termasuk komponen yang ditulis dalam C dan assembler. ([sumber](https://aakdhimas.wordpress.com/2011/08/09/apa-sih-metasploit-untuk-apa-sih/))
+
+Beberapa modul dari Metasploit yang kami gunakan adalah sebagai berikut :
+
+* **usermap_script**
+
+* **ssh_login_pubkey**
+
+* **Armitage**
+ 
+**3. Metasploitable**
+
+**Metasploitable**  adalah mesin virtual Linux yang sengaja dirancang agar memiliki banyak vulnerabilities. VM ini dapat digunakan untuk melakukan pelatihan keamanan, alat tes keamanan, dan praktek penetration testing. Image file dari Metasploitable dapat diunduh pada [Sourceforge](https://sourceforge.net/projects/metasploitable/files/Metasploitable2/). ([sumber](http://ch06-blackers.blogspot.co.id/2013/04/5-vulnerable-distro-untuk-berlatih.html))
+
+**4. Tools Lainnya**
+
+* **Nmap**
+
+* **OpenVAS**
+
+* **John the Ripper**
+
+* **Ingreslock**
 
 
 ## Langkah Instalasi  Metasploitable
@@ -27,45 +63,45 @@ Anggota Kelompok
 1. Download file .vmdk Metasploitable dari [link berikut](http://sourceforge.net/projects/metasploitable)  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_1.jpg)
 
-2. Setelah selesai didownload, extract file ke dalam folder bebas, dan pastikan ada file berekstensi .vmdk dalam hasil kompresi.  
+2. Setelah selesai didownload, extract file ke dalam folder bebas, dan pastikan ada file berekstensi .vmdk dalam folder hasil ekstraksi  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_2.jpg)
 
-3. Setelah itu, buka VirtualBox. Buat VM baru dengan nama Metasploitable, OS Type Linux dan versi Ubuntu 32 bit  
+3. Setelah itu, buka VirtualBox. Buat VM baru dengan OS Type Linux dan versi Ubuntu 32 bit  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_3.jpg)
 
 4. Masukkan ukuran RAM dari VM yang kita inginkan, misal 1 GB  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_4.jpg)
 
-5. Pada opsi selanjutnya, pilih *use an existing virtual hard drive*, dan browse ke file .vmdk yang tadi telah diekstrak   
+5. Pada opsi selanjutnya, pilih *Use an existing virtual hard drive*, dan browse ke file Metasploitable.vmdk yang telah diekstrak pada langkah 2  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_5.jpg)
 
-6. Setelah VM Selesai dibuat, mulai jalankan VM dengan cara klik tombol start pada panel atas Virtualbox.  
+6. Setelah VM selesai dibuat, mulai jalankan VM dengan cara klik tombol Start / Mulai pada menubar VirtualBox  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_6.jpg)
 
-7. Jendela yang menampilkan *console* vm akan tampil. Untuk test, masuk dengan menggunakan akun msfadmin , password : msfadmin (*account* default)  
+7. Jendela yang menampilkan VM akan tampil. Untuk login, masuk dengan menggunakan akun msfadmin (akun default) dengan password : msfadmin  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_7.jpg)
 
-8. Jika berhasil, maka anda berhasil login ke dalam metasploitable  
+8. Anda berhasil login ke dalam VM Metasploitable  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_8.jpg)
 
-  Setelah berhasil, kita perlu men-*setting* konfigurasi jaringan pada Virtualbox agar VM Metasploitable juga mendapatkan IP dari DHCP, sehingga testing bisa dilakukan lewat IP tersebut.
+  Setelah berhasil, kita perlu men-*setting* konfigurasi jaringan pada VirtualBox agar VM Metasploitable juga mendapatkan IP dari DHCP
 
   Langkah-langkahnya adalah sebagai berikut :
 
-1. Masuk ke pengaturan / *Preferences* pada menubar Virtualbox, dari menu File. Pilih nama dari *interface* jaringan yang dihubungkan dengan VM.   
+1. Masuk ke Pengaturan / *Preferences* VM Metasploitable pada menubar VirtualBox. Pilih opsi terpasang pada Adaptor Ter-bridge dan tentukan nama dari *interface* jaringan yang dihubungkan dengan VM, kemudian pilih opsi Ijinkan Semua pada Mode Promiscuous  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_9.jpg)
 
-2. Setelah selesai , ketikkan *dhclient* pada Metasploitable untuk meminta alamat IP ulang dari DHCP server. Jika berhasil, maka hasil keluaran ifconfig akan sesuai dengan subnet jaringan yang *interface* yang tadi dipilih.  
+2. Ketikkan *dhclient* pada VM Metasploitable untuk meminta alamat IP ulang dari DHCP server. Jika berhasil, maka hasil keluaran ifconfig akan sesuai dengan subnet jaringan *interface* yang dipilih  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_10.jpg)
 
-##Instalasi Open VAS
+## Langkah Instalasi OpenVAS
 
-Untuk vulnerability scanning, kita dapat menggunakan tools Open VAS , yaitu tools *open source* untuk *scan vulnerabilities* langsung ke komputer target. Oleh karena itu, kami menyertakan instalasi OpenVAS
+Untuk tahap vulnerability analysis, dapat menggunakan bantuan tools OpenVAS, yaitu *free software* untuk *scan vulnerabilities* langsung ke komputer target. Oleh karena itu, kami menyertakan langkah-langkah instalasi OpenVAS.
 
-1. Kita dapat mengetikkan perintah **# apt-get install openvas**  
+1. Ketikkan perintah **apt-get install openvas** untuk memulai proses instalasi  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_14.jpg)
 
-2. Pilih OK untuk *enable* redis unix socket (konfigurasi openvas)  
+2. Pilih OK untuk mengaktifkan redis unix socket agar OpenVAS scanner dapat mengakses redis database  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_15.jpg)
 
 3. Lorem ipsum  
@@ -86,35 +122,41 @@ Untuk vulnerability scanning, kita dapat menggunakan tools Open VAS , yaitu tool
 8. Lorem Ipsum  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_21.jpg)
 
-9. Kita masukkan IP target seperti di gambar berikut   
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_22.jpg)
 
-10. Kita dapat melihat hasil *scanning*	nya seperti gambar berikut  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_23.jpg)
+## Langkah Penetration Testing
 
-11. Lorem Ipsum  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_24.jpg)
+### Preinteractions
 
-##Penggunaan Metasploit
+### Intelligence Gathering
 
-Untuk penggunaan metasploit, pada Kali Linux sudah terinstall secara bawaan, dan untuk mengaksesnya dapat menggunakan perintah msfconsole  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_25.png)
-
-
-## Intelligence Gathering Process
-
-1. Untuk memulai analisa *exploit* apa saja yang bisa diterapkan, kita dapat melihat *list* port terbuka di Metasploitable. Lakukan perintah nmap -O < IP Metasploitable >  
+Untuk memulai analisa *exploit* apa saja yang bisa diterapkan, kita dapat melihat *list* port terbuka di Metasploitable. Lakukan perintah nmap -O < IP Metasploitable >  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_11.jpg)
 
-2. Setelah selesai , kita dapat melihat detail OS metasploitable seperti versi kernel, dkk. Dari versi tersebut, kita dapat mencari *vulnerabilities* yang ada di website cvedetails.com    
+### Threat Modeling
+
+1. Kita dapat melihat detail OS metasploitable seperti versi kernel, dkk. Dari versi tersebut, kita dapat mencari *vulnerabilities* yang ada di website cvedetails.com    
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_12.jpg)
 
-3. Lorem Ipsum  
+2. Lorem Ipsum  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_13.jpg)
 
+### Vulnerability Analysis
 
-## Exploit SSH Login PubKey
+1. Kita masukkan IP target seperti di gambar berikut   
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_22.jpg)
 
+2. Kita dapat melihat hasil *scanning*	nya seperti gambar berikut  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_23.jpg)
+
+3. Lorem Ipsum  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_24.jpg)
+
+### Exploitation & Post Exploitation
+
+Untuk penggunaan Metasploit, pada Kali Linux sudah terinstall secara bawaan, dan untuk mengaksesnya dapat menggunakan perintah **msfconsole**  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_25.png)
+
+* #### Exploit Menggunakan showmount & Post Exploit Menggunakan ssh_login_pubkey
 
 1. Pada hasil nmap , kita melihat ada open port NFS pada Metasploitable  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/1.png)
@@ -129,7 +171,7 @@ Untuk penggunaan metasploit, pada Kali Linux sudah terinstall secara bawaan, dan
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/4.png)
 
 5. Lalu kita mount folder yang telah kita buat ke NFS target  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey5.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/5.png)
 
 6. Jika berhasil, coba tes apakah sudah berhasil me-mount apa belum dengan cd ke folder sementara dan lakukan ls.  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/6.png)
@@ -179,7 +221,7 @@ Post exploit yang dirancang adalah dengan mengambil private SSH key komputer tar
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/19.png)
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/20.png)
 
-
+### Reporting
 
 
 ## Kesimpulan dan Saran
@@ -198,4 +240,5 @@ Post exploit yang dirancang adalah dengan mengambil private SSH key komputer tar
 *  Memonitor semua port yang terbuka
 *  Memonitor request yang masuk
 *  Menetapkan tindakan preventif apabila terdapat anomali pada network / sistem
+
 
