@@ -22,9 +22,7 @@ Anggota Kelompok
 * **Metasploitable**  adalah mesin secara sengaja rentan virtual Linux. VM ini dapat digunakan untuk melakukan pelatihan keamanan, alat tes keamanan, dan praktek penetrasi Versi pengujian umum teknik ini 2 dari mesin virtual yang tersedia untuk di-download dari Sourceforge dan kapal dengan kerentanan bahkan lebih dari gambar asli ([sumber](http://ch06-blackers.blogspot.co.id/2013/04/5-vulnerable-distro-untuk-berlatih.html))
 
 
-## Langkah Instalasi Glastopf dengan menggunakan Docker
-
-Untuk instalasi Docker, kami merujuk dari tutorial DigitalOcean ([ini](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)) , dengan tahapan berikut :
+## Langkah Instalasi  Metasploitable
 
 1. Download file .vmdk Metasploitable dari [link berikut](http://sourceforge.net/projects/metasploitable)  
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_1.png)
@@ -57,12 +55,8 @@ Untuk instalasi Docker, kami merujuk dari tutorial DigitalOcean ([ini](https://w
 1. Masuk ke pengaturan / *Preferences* pada menubar Virtualbox, dari menu File. Pilih nama dari *interface* jaringan yang dihubungkan dengan VM.   
  ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_9.png)
 
-2. Setelah selesai didownload, extract file ke dalam folder bebas, dan pastikan ada file berekstensi .vmdk dalam hasil kompresi.  
- ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_2.png)
-
-3. Setelah itu, buka VirtualBox. Buat VM baru dengan nama Metasploitable, OS Type Linux dan versi Ubuntu 32 bit  
- ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_3.png)
-
+2. Setelah selesai , ketikkan *dhclient* pada Metasploitable untuk meminta alamat IP ulang dari DHCP server. Jika berhasil, maka hasil keluaran ifconfig akan sesuai dengan subnet jaringan yang *interface* yang tadi dipilih.  
+ ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_10.png)
 
 
 
