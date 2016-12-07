@@ -150,6 +150,35 @@ Post exploit yang dirancang adalah dengan mengambil private SSH key komputer tar
 4. Setelah ini, kita coba menggunakan metasploit auxiliary/scanner/ssh/ssh_login_pubkey untuk menyerang. Kita ketik use auxiliary/scanner/ssh/ssh_login_pubkey untuk menggunakan modul tersebut dalam console metasploit.  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/10.png)
 
+5. Kita coba lihat info dari exploit tersebut. Parameter yang dibutuhkan adalah KEY_PATH, USER, dan RHOSTS  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/11.png)
+
+6. Masukkan KEY_PATH atau file private key komputer server yang tadi telah kita copy  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/12.png)
+
+7. Masukkan USER yang kita inginkan, yaitu root  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/13.png)
+
+8. Masukkan RHOSTS yaitu IP Komputer target  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/14.png)
+
+9. Masukkan perintah run untuk menjalankan exploit.   
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/15.png)
+
+10. Pada bagian bawah, tampak bahwa metasploit telah membuka session ssh di session 1   
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/16.png)
+
+11. Kita masuk ke session 1 dengan perintah session -i 1   
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/17.png)
+
+12. Untuk memastikan apakah kita benar login sebagai root, kita ketikkan perintah id  
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/30.png)
+
+13. Coba masukkan perintah lain seperti uname -a , dan perintah lain. Selamat ! Kita sudah bisa mengakses root di komputer target!   
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/18.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/19.png)
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/20.png)
+
 
 
 
