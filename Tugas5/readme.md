@@ -154,7 +154,7 @@ Untuk memulai analisa *exploit* apa saja yang bisa diterapkan, kita dapat meliha
 Untuk penggunaan Metasploit, pada Kali Linux sudah terinstall secara bawaan, dan untuk mengaksesnya dapat menggunakan perintah **msfconsole**  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_25.png)
 
-* #### Exploit Menggunakan showmount & Post Exploit Menggunakan ssh_login_pubkey
+* #### Exploit Menggunakan mount NFS(Network Files System) & Post Exploit Menggunakan ssh_login_pubkey
 
 1. Pada hasil nmap , kita melihat ada open port NFS pada Metasploitable  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/1.png)
