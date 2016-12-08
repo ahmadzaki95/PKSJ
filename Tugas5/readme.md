@@ -18,8 +18,10 @@ Anggota Kelompok
 **Penetration Testing** adalah serangan yang dilakukan secara sengaja kepada sistem dengan tujuan mencari celah keamanan dari sistem yang dapat diperbaiki atau dieksploitasi oleh penyerang. Terdapat beberapa tahapan yang dilakukan dalam penetration testing, tahapan-tahapan tersebut adalah sebagai berikut :
 
 * **Preinteractions**
+Tahap dimana seorang pentester menjelaskan kegiatan pentest yang akan dilakukan kepada client (perusahaan). Disini seorang pentester harus bisa menjelaskan kegiatan-kegiatan yang akan dilakukan dan tujuan akhir yang akan dicapai.
 
 * **Intelligence Gathering**
+Tahap dimana seorang pentester berusaha mengumpulkan sebanyak mungkin informasi mengenai perusahaan target yang bisa didapatkan dengan berbagai metode dan berbagai media. Hal yang perlu dijadikan dasar dalam pengumpulan informasi adalah : karakteristik sistem jaringan, cara kerja sistem jaringan, dan metode serangan yang bisa digunakan.
 
 * **Threat Modeling**
 
@@ -40,6 +42,7 @@ Beberapa modul dari Metasploit yang kami gunakan adalah sebagai berikut :
 * **usermap_script**
 
 * **ssh_login_pubkey**
+SSH Login Pubkey adalah tools metasploit untuk bruteforce login ke komputer-komputer dalam subnet dengan private key tertentu. ([Keterangan dapat dilihat dalam link berikut](https://www.offensive-security.com/metasploit-unleashed/scanner-ssh-auxiliary-modules/))
 
 **3. Metasploitable**
 
@@ -48,10 +51,14 @@ Beberapa modul dari Metasploit yang kami gunakan adalah sebagai berikut :
 **4. Tools Lainnya**
 
 * **Nmap**
+Nmap (Network Mapper) adalah sebuah program open source yang berguna untuk mengesksplorasi jaringan.Nmap didesain untuk dapat melakukan scan jaringan yang besar, juga dapat digunakan untuk melakukan scan host tunggal.Nmap menggunakan paket IP untuk menentukan host- host yang aktif dalam suatu jaringan,port-port yang terbuka, sistem operasi yang dipunyai, tipe firewall yang dipakai, dll.
 
 * **OpenVAS**
+OpenVAS (Open Vulnerability Assessment System) merupakan alat bantu yang banyak digunakan untuk mencari celah keamanan  dan menguji keamanan sebuah sistem. OpenVAS masih keluarga dengan Nessus (tools yang banyak digunakan untuk melakukan scanning pada web). Bedanya OpenVAS ini open source. Konon kabarnya OpenVAS dikembangkan dari versi free dari Nessus. Tools ini banyak digunakan, dan termasuk top 5 open source tools di bidang security.
 
 * **John the Ripper**
+John the Ripper adalah password cracker yang cepat tersedia untuk system operasi Unix, Windows, DOS, BeOS, dan OpenVMS. Tujuan utamanya adalah untuk mendeteksi password Unix yang lemah. Selain 3 sandi jenis hash yang paling umum ditemukan di berbagai sistem Unix John the Ripper juga mendukung untuk Windows LM hash, ditambah dengan crypt hash yang lain.Terdapat 3 metode John the Ripper untuk mendekripsi password:Single Crack (mencari password paling lemah dari seluruh password) , Wordlist, dan Incremental (mencoba kombinasi karakter apapun).
+
 
 * **Ingreslock**
 
