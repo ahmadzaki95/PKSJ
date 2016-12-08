@@ -18,25 +18,25 @@ Anggota Kelompok
 **Penetration Testing** adalah serangan yang dilakukan secara sengaja kepada sistem dengan tujuan mencari celah keamanan dari sistem yang dapat diperbaiki atau dieksploitasi oleh penyerang. Terdapat beberapa tahapan yang dilakukan dalam penetration testing, tahapan-tahapan tersebut adalah sebagai berikut :
 
 * **Preinteractions**
-Tahap dimana seorang pentester menjelaskan kegiatan pentest yang akan dilakukan kepada client (perusahaan). Disini seorang pentester harus bisa menjelaskan kegiatan-kegiatan yang akan dilakukan dan tujuan akhir yang akan dicapai.
+Tahap dimana seorang atau sekelompok tester menetapkan tujuan, resources, kegiatan dan aturan dari penetration test yang akan dilakukan.
 
 * **Intelligence Gathering**
-Tahap dimana seorang pentester berusaha mengumpulkan sebanyak mungkin informasi mengenai perusahaan target yang bisa didapatkan dengan berbagai metode dan berbagai media. Hal yang perlu dijadikan dasar dalam pengumpulan informasi adalah : karakteristik sistem jaringan, cara kerja sistem jaringan, dan metode serangan yang bisa digunakan.
+Tahap dimana seorang atau sekelompok tester berusaha mengumpulkan sebanyak mungkin informasi mengenai target yang bisa didapatkan dengan berbagai metode dan berbagai media. Hal yang perlu dijadikan dasar dalam pengumpulan informasi adalah : karakteristik sistem jaringan, cara kerja sistem jaringan, dan metode serangan yang bisa digunakan.
 
 * **Threat Modeling**
-Tahap dimana seorang pentester mencari celah keamanan (vulnerabilities) berdasarkan informasi yang berhasil dikumpulkan pada tahap sebelumnya. Pada tahap ini seorang pentester tidak hanya mencari celah keamanan, tetapi juga menentukan celah yang paling efektif untuk digunakan.
+Tahap dimana seorang atau sekelompok tester mencari celah keamanan (vulnerabilities) berdasarkan informasi yang berhasil dikumpulkan pada tahap sebelumnya. Pada tahap ini seorang tester tidak hanya mencari celah keamanan, tetapi juga menentukan celah yang paling efektif untuk digunakan.
 
 * **Vulnerability Analysis**
-Tahap dimana seorang pentester mengkombinasikan informasi mengenai celah keamanan yang ada dengan metode serangan yang bisa dilakukan untuk melakukan serangan yang paling efektif.
+Tahap dimana seorang atau sekelompok tester mengkombinasikan informasi mengenai celah keamanan yang ada dengan metode serangan yang bisa dilakukan untuk melakukan serangan yang paling efektif.
 
 * **Exploitation**
 Tahap dimana seorang pentester melakukan serangan pada target. Walaupun demikian tahap ini kebanyakan dilakukan dengan metode brute force tanpa memiliki unsur presisi. Seorang pentester profesional hanya akan melakukan exploitation ketika dia sudah mengetahui secara pasti apakah serangan yang dilakukan akan berhasil atau tidak. Namun tentu saja ada kemungkinan tidak terduga dalam sistem keamanan target. Walaupun begitu, sebelum melakukan serangan, pentester harus tahu kalau target mempunyai celah keamanan yang bisa digunakan. Melakukan serangan secara membabi-buta dan berharap sukses bukanlah metode yang produktif. Seorang pentester profesional selalu menyempurnakan analisisnya terlebih dahulu sebelum melakukan serangan yang efektif.
 
 * **Post Exploitation**
-Tahap dimana seorang pentester berhasil masuk ke dalam sistem jaringan target dan kemudian melakukan analisis infrastruktur yang ada. Pada tahap ini seorang pentester mempelajari bagian-bagian di dalam sistem dan menentukan bagian yang paling critical bagi target (perusahaan). Disini seorang pentester harus bisa menghubungkan semua bagian-bagian sistem yang ada untuk menjelaskan dampak serangan / kerugian yang paling besar yang bisa terjadi pada target (perusahaan).
+Tahap dimana seorang pentester berhasil masuk ke dalam sistem jaringan target dan kemudian melakukan analisis infrastruktur yang ada. Pada tahap ini seorang pentester mempelajari bagian-bagian di dalam sistem dan menentukan bagian yang paling critical bagi target. Disini seorang pentester harus bisa menghubungkan semua bagian-bagian sistem yang ada untuk menjelaskan dampak serangan / kerugian yang paling besar yang bisa terjadi pada target.
 
 * **Reporting**
-Reporting adalah bagian paling penting dalam kegiatan pentest. Seorang pentester menggunakan report (laporan) untuk menjelaskan pada perusahaan mengenai pentesting yang dilakukan seperti : apa yang dilakukan, bagaimana cara melakukannya, resiko yang bisa terjadi dan yang paling utama adalah cara untuk memperbaiki sistemnya.
+Reporting adalah bagian penting dalam kegiatan penetration testing. Seorang pentester menggunakan report (laporan) untuk menjelaskan pada client mengenai pentesting yang dilakukan seperti : apa yang dilakukan, bagaimana cara melakukannya, resiko yang bisa terjadi dan yang paling utama adalah cara untuk memperbaiki sistemnya.
 
 
 **2. Metasploit**
@@ -58,16 +58,16 @@ SSH Login Pubkey adalah modul Metasploit untuk melakukan impersonate login ke ko
 **4. Tools Lainnya**
 
 * **Nmap**
-Nmap (Network Mapper) adalah sebuah program open source yang berguna untuk mengesksplorasi jaringan.Nmap didesain untuk dapat melakukan scan jaringan yang besar, juga dapat digunakan untuk melakukan scan host tunggal.Nmap menggunakan paket IP untuk menentukan host- host yang aktif dalam suatu jaringan,port-port yang terbuka, sistem operasi yang dipunyai, tipe firewall yang dipakai, dll.
+Nmap (Network Mapper) adalah sebuah program open source yang berguna untuk mengesksplorasi jaringan. Nmap didesain untuk dapat melakukan scan jaringan yang besar, juga dapat digunakan untuk melakukan scan host tunggal. Nmap menggunakan paket IP untuk menentukan host-host yang aktif dalam suatu jaringan, port-port yang terbuka, sistem operasi yang dipunyai, tipe firewall yang dipakai, dll.
 
 * **OpenVAS**
-OpenVAS (Open Vulnerability Assessment System) merupakan alat bantu yang banyak digunakan untuk mencari celah keamanan  dan menguji keamanan sebuah sistem. OpenVAS masih keluarga dengan Nessus (tools yang banyak digunakan untuk melakukan scanning pada web). Bedanya OpenVAS ini open source. Konon kabarnya OpenVAS dikembangkan dari versi free dari Nessus. Tools ini banyak digunakan, dan termasuk top 5 open source tools di bidang security.
+OpenVAS (Open Vulnerability Assessment System) merupakan alat bantu yang banyak digunakan untuk mencari celah keamanan  dan menguji keamanan sebuah sistem. OpenVAS masih satu keluarga dengan Nessus (tools yang banyak digunakan untuk melakukan scanning pada web),namun OpenVAS dikembangkan dengan cara yang berbeda dan bersifat free. Konon kabarnya OpenVAS dikembangkan dari versi free dari Nessus. Tools ini banyak digunakan dan termasuk top 5 open source tools di bidang security.
 
 * **John the Ripper**
-John the Ripper adalah password cracker yang cepat tersedia untuk system operasi Unix, Windows, DOS, BeOS, dan OpenVMS. Tujuan utamanya adalah untuk mendeteksi password Unix yang lemah. Selain 3 sandi jenis hash yang paling umum ditemukan di berbagai sistem Unix John the Ripper juga mendukung untuk Windows LM hash, ditambah dengan crypt hash yang lain.Terdapat 3 metode John the Ripper untuk mendekripsi password: Single Crack (mencari password paling lemah dari seluruh password) , Wordlist, dan Incremental (mencoba kombinasi karakter apapun).
+John the Ripper adalah password cracker yang cepat tersedia untuk system operasi Unix, Windows, DOS, BeOS, dan OpenVMS. Tujuan utamanya adalah untuk mendeteksi password Unix yang lemah. Selain 3 sandi jenis hash yang paling umum ditemukan di berbagai sistem Unix, John the Ripper juga mendukung untuk Windows LM hash, ditambah dengan crypt hash yang lain. Terdapat 3 metode yang dilakukan John the Ripper untuk mendekripsi password yaitu Single Crack (mencari password paling lemah dari seluruh password), Wordlist, dan Incremental (mencoba kombinasi karakter apapun).
 
 * **Ingreslock**
-Ingreslock adalah layanan turunan dari database Ingres yang menggunakan TCP 1524 (Transmission Control Protocol). Yang menjadi masalah adalah pada port 1524 telah disusupi backdoor Trojan.
+Ingreslock adalah layanan turunan dari database Ingres yang menggunakan TCP 1524 (Transmission Control Protocol). Namun yang menjadi masalah adalah pada port 1524 rentan disusupi backdoor yang mengeksploitasi servis RPC (Remote Procedure Call).
 
 ## Langkah Instalasi  Metasploitable
 
@@ -138,32 +138,31 @@ Untuk tahap vulnerability analysis, dapat menggunakan bantuan tools OpenVAS, yai
 
 ### Preinteractions
 
-Kami melakukan diskusi terlebih dahulu mengenai tools-tools yang akan digunakan untuk melakukan penetration testing dan tujuan dari penetration testing
+Kami melakukan diskusi terlebih dahulu mengenai tools-tools yang akan digunakan untuk melakukan penetration testing (Metasploit, OpenVAS, dll), lingkup (Metasploit) dan tujuan dari penetration testing.
 
 ### Intelligence Gathering
 
-Untuk memulai analisa *exploit* apa saja yang bisa diterapkan, kita dapat melihat *list* port terbuka di Metasploitable. Lakukan perintah nmap -O < IP Metasploitable >  
+Untuk memulai analisa *exploit* apa saja yang dapat diterapkan, kita dapat melihat *list* port yang terbuka dan versi kernel yang digunakan pada Metasploitable menggunakan tool Nmap. Gunakan perintah **nmap -O < IP Metasploitable >**  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_11.jpg)
 
 ### Threat Modeling
 
-1. Kita dapat melihat detail OS metasploitable seperti versi kernel, dkk. Dari versi tersebut, kita dapat mencari *vulnerabilities* yang ada di website cvedetails.com    
+1. Dari hasil tahap sebelumnya dapat diketahui versi kernel yang digunakan Metasploitable. Dari versi tersebut, kita dapat mencari *vulnerabilities* yang ada di website cvedetails.com    
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_12.jpg)
 
-2. Jika pada score sangat tinggi dan higligh berwarna merah, maka dapat dipastikan bahwa celah tersebut sangat berbahaya.  
+2. Berikut adalah daftar *vulnerabilities* pada Linux Kernel versi 2.6.9 yang digunakan Metasploitable. Jika pada score sangat tinggi dan higligh berwarna merah, maka dapat dipastikan bahwa celah tersebut sangat berbahaya.  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_13.jpg)
 
 ### Vulnerability Analysis
 
-1. Kita masukkan IP target seperti di gambar berikut   
+1. Nyalakan OpenVAS dan login ke dalamnya melalui web browser. Masukkan IP target seperti di gambar berikut   
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_22.jpg)
 
 2. Kita dapat melihat hasil *scanning*	nya seperti gambar berikut  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_23.jpg)
 
-3. Dapat dilihat pada hasil audit oleh openvas, terdapat beberapa celah yang sangat riskan.  
+3. Dapat dilihat pada hasil audit oleh openvas, terdapat beberapa celah yang dapat dieksploitasi  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_24.jpg)
-
 
 ### Exploitation & Post Exploitation
 
@@ -214,7 +213,7 @@ Post Exploit yang akan dilakukan adalah menggunakan tool John The Ripper untuk m
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_Exploit_usermap_script/13.jpg)
 
 
-* #### Exploit Menggunakan mount NFS(Network Files System) & Post Exploit Menggunakan ssh_login_pubkey
+* #### Exploit Menggunakan mount NFS(Network File System) & Post Exploit Menggunakan ssh_login_pubkey
 
 1. Pada hasil nmap , kita melihat ada open port NFS pada Metasploitable  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/1.png)
@@ -231,7 +230,7 @@ Post Exploit yang akan dilakukan adalah menggunakan tool John The Ripper untuk m
 5. Lalu kita mount folder yang telah kita buat ke NFS target  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/5.png)
 
-6. Jika berhasil, coba tes apakah sudah berhasil me-mount apa belum dengan cd ke folder sementara dan lakukan ls.  
+6. Jika berhasil, coba tes apakah sudah berhasil me-mount apa belum dengan cd ke folder sementara dan lakukan ls  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/6.png)
 
 Tentu saja ini berbahaya, karena kita bisa melihat file apa saja yang ada di dalam komputer, bahkan file sensitif seperti key untuk ssh, file passwd dan lainlain.
@@ -241,13 +240,13 @@ Post Exploit yang dirancang adalah dengan *impersonate* sebagai komputer target 
 1. Kita ambil private key komputer target dengan copy file di ~/.ssh/id_rsa , misal ke file /tmp/r00tprivatekey  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/7.png)
 
-2. Kita masukkan public key kita ke komputer target dengan cat ~/.ssh/id_rsa.pub >> /tmp/target/home/msfadmin/.ssh/authorized_keys , ini dibutuhkan untuk SSH ke komputer target nantinya.  
+2. Kita masukkan public key kita ke komputer target dengan cat ~/.ssh/id_rsa.pub >> /tmp/target/home/msfadmin/.ssh/authorized_keys , ini dibutuhkan untuk SSH ke komputer target nantinya  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/pubkey.png)
 
 3. Hasil cat file authorized_keys, untuk memastikan bahwa public key kita sudah masuk ke komputer target  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/hasilcat.png)
 
-4. Setelah ini, kita coba menggunakan metasploit auxiliary/scanner/ssh/ssh_login_pubkey untuk menyerang. Kita ketik use auxiliary/scanner/ssh/ssh_login_pubkey untuk menggunakan modul tersebut dalam console metasploit.  
+4. Setelah ini, kita coba menggunakan metasploit auxiliary/scanner/ssh/ssh_login_pubkey untuk menyerang. Kita ketik use auxiliary/scanner/ssh/ssh_login_pubkey untuk menggunakan modul tersebut dalam console metasploit  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/10.png)
 
 5. Kita coba lihat info dari exploit tersebut. Parameter yang dibutuhkan adalah KEY_PATH, USER, dan RHOSTS  
@@ -259,44 +258,55 @@ Post Exploit yang dirancang adalah dengan *impersonate* sebagai komputer target 
 7. Masukkan USER yang kita inginkan, yaitu root  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/13.png)
 
-8. Masukkan RHOSTS yaitu subnet yang ingin kita bruteforce login dengan private key yang kita punya   
+8. Masukkan RHOSTS yaitu subnet yang ingin kita bruteforce login dengan private key yang kita punya  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/rhosts.png)
 
-9. Masukkan perintah run untuk menjalankan exploit. Tampak bahwa metasploit sedang mencoba login dengan semua IP dalam subnet satu per satu.   
+9. Masukkan perintah run untuk menjalankan exploit. Tampak bahwa metasploit sedang mencoba login dengan semua IP dalam subnet satu per satu  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/run.png)
 
-11. Jika ada yang berhasil, maka akan muncul tampilan seperti berikut.   
+11. Jika ada yang berhasil, maka akan muncul tampilan seperti berikut  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/success_otherpc.png)
 
-11. Pada bagian bawah, tampak bahwa metasploit telah membuka session ssh ke IP 192.168.43.12 di session 1   
+11. Pada bagian bawah, tampak bahwa metasploit telah membuka session ssh ke IP 192.168.43.12 di session 1  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/detailsuccess.png)
 
-12. Kita masuk ke session 1 dengan perintah session -i 1   
+12. Kita masuk ke session 1 dengan perintah session -i 1  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/17.png)
 
 13. Untuk memastikan apakah kita benar login sebagai root, ketikkan whoami  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/whoami.png)
 
-14. Kita dapat menjalankan perintah *shell* setelah melakukan session. Kita dapat melakukan post exploit seperti analisis OS yang digunakan, dll.   
+14. Kita dapat menjalankan perintah *shell* setelah melakukan session. Kita dapat melakukan post exploit seperti analisis OS yang digunakan, dll  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/example.png)
 
-* #### Exploit dengan menggunakan Ingreslock & Post Exploit menampilakan pesan pada console ketika pengguna login
-1. Pada saat dilakukan audit dengan openvas, terdapat backdoor Ingreslock pada Remote Host.
-![Ingresslock](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_Exploit_Ingreslock/Screenshot_1.jpg)
+* #### Exploit Menggunakan Ingreslock & Post Exploit menampilkan pesan pada console ketika pengguna login
 
-2. Jika di klik, maka akan menampilkan keterangan mengenai backdoor tersebut.
-![Ingresslock](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_Exploit_Ingreslock/Screenshot_2.jpg)
+1. Pada saat dilakukan audit dengan OpenVas, terdapat backdoor Ingreslock pada Remote Host  
+![Ingreslock](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_Exploit_Ingreslock/Screenshot_1.jpg)
 
-3. Karena sudah terdapat backdoor yang tertanam pada OS, serangan dapat dilakukan dengan perintah **telnet [Remote Host] 1524**. Maka kita sudah dapat mengakses console dari remote HOST
-![Ingresslock](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_Exploit_Ingreslock/success.jpeg).
+2. Jika di klik, maka akan menampilkan keterangan mengenai backdoor tersebut  
+![Ingreslock](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_Exploit_Ingreslock/Screenshot_2.jpg)
 
-4. Setelah masuk ke dalam console, buka file ~/.bashrc dan masukkan kata yang diinginkan, maka ketika terdapat yang masuk ke console, akan menampilkan pesan yang kita tulis. 
+3. Karena sudah terdapat backdoor yang tertanam pada Metasploitable, serangan dapat dilakukan dengan perintah **telnet [Remote Host] 1524**. Maka kita sudah dapat mengakses console dari remote HOST  
+![Ingreslock](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_Exploit_Ingreslock/success.jpeg).
+
+Post Exploit yang akan dilakukan adalah menampilkan pesan pada console ketika terdapat pengguna yang login, cara ini biasa dimanfaatkan penyerang untuk meninggalkan pesan yang bersifat provokatif atau memiliki tujuan lebih lanjut
+
+4. Setelah masuk ke dalam console, buka file ~/.bashrc dan masukkan kata yang diinginkan, maka ketika terdapat pengguna yang masuk ke console, akan menampilkan pesan yang kita tulis  
 ![Ingreslock](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/SC_Post_Exploit_menambahkan%20data%20di%20bashrc/1.jpeg)
+
+### Reporting
+
+Dokumen yang kami tulis ini adalah report dari hasil penetration testing yang sudah kami lakukan.
+
 
 ## Kesimpulan dan Saran
 
-1. Kesimpulan
+### Kesimpulan
+
+Penetration Testing adalah metode yang selalu dilakukan oleh penyerang ketika melakukan penetrasi ke sebuah sistem baik dengan tujuan mengeksploitasi atau memperbaiki celah keamanan yang ada. Metasploit dan Metasploitable merupakan tools yang cocok digunakan untuk melakukan uji coba penetration testing, karena Metasploitable memang dibuat khusus untuk mengevaluasi kinerja Metasploit.
  
-2. Saran
-*   Penting dilakukan untuk selalu mengaudit system kita apakah terdapat celah ataupun tidak. Bisa dilakukan dengan aplikasi seperti openvas. 
+### Saran
+*   Penting dilakukan untuk selalu mengaudit sistem kita apakah terdapat celah ataupun tidak. Bisa dilakukan dengan aplikasi seperti OpenVAS. 
 *   Selalu mengupdate kernel, aplikasi, dan OS agar berbagai celah yang ada dapat segera mendapatkan patch jika sudah tersedia.
+
