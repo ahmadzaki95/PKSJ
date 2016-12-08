@@ -67,7 +67,7 @@ OpenVAS (Open Vulnerability Assessment System) merupakan alat bantu yang banyak 
 John the Ripper adalah password cracker yang cepat tersedia untuk system operasi Unix, Windows, DOS, BeOS, dan OpenVMS. Tujuan utamanya adalah untuk mendeteksi password Unix yang lemah. Selain 3 sandi jenis hash yang paling umum ditemukan di berbagai sistem Unix John the Ripper juga mendukung untuk Windows LM hash, ditambah dengan crypt hash yang lain.Terdapat 3 metode John the Ripper untuk mendekripsi password: Single Crack (mencari password paling lemah dari seluruh password) , Wordlist, dan Incremental (mencoba kombinasi karakter apapun).
 
 * **Ingreslock**
-
+Ingreslock adalah layanan turunan dari database Ingres yang menggunakan TCP 1524 (Transmission Control Protocol). Yang menjadi masalah adalah pada port 1524 telah disusupi backdoor Trojan.
 
 ## Langkah Instalasi  Metasploitable
 
@@ -115,22 +115,22 @@ Untuk tahap vulnerability analysis, dapat menggunakan bantuan tools OpenVAS, yai
 2. Pilih OK untuk mengaktifkan redis unix socket agar OpenVAS scanner dapat mengakses redis database  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_15.jpg)
 
-3. Lorem ipsum  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_16.jpg)
-
-4. Lorem ipsum  
+3. Tunggu proses instalasi selesai, jika sudah maka pada baris akhir akan openvas akan menggenerate password 
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_17.jpg)
 
-5. Lorem ipsum  
+4. Setelah proses instalasi selesai, jalankan dengan perintah **openvas-setup** 
+![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_16.jpg)
+
+5. Untuk melihat port apa saja yang terbuka dan memastikan apakah openvas telah berjalan, jalankan perintah **netstat -antp**. Openvas mempunyai 3 servis yang dijalankan, yakni **openvasmd(openvas manager),  openvassd(melakukan inspeksi pada remote host), dan openvas gsad(openvas GUI yang dapat dijalankan dari web )**.  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_18.jpg)
 
-6. Lorem ipsum  
+6. Jika ketika aplikasi tersebut belum berjalan, dapat menjalankan dengan perintah **openvas-stasr**  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_19.jpg)
 
-7. Lorem ipsum  
+7. Akses openvas GUI pada browser dengan mengunjungi **https://localhost:9392**. Jika muncul sertifikat tidak valid, silahkan tambahkan sertifikat pada exceptions.  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_20.jpg)
 
-8. Lorem Ipsum  
+8. Login dengan kredensial Username **admin** dan password yang telah digenerate ketika menginstall openvas  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_21.jpg)
 
 
@@ -150,7 +150,7 @@ Untuk memulai analisa *exploit* apa saja yang bisa diterapkan, kita dapat meliha
 1. Kita dapat melihat detail OS metasploitable seperti versi kernel, dkk. Dari versi tersebut, kita dapat mencari *vulnerabilities* yang ada di website cvedetails.com    
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_12.jpg)
 
-2. Lorem Ipsum  
+2. Jika pada score sangat tinggi dan higligh berwarna merah, maka dapat dipastikan bahwa celah tersebut sangat berbahaya.  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_13.jpg)
 
 ### Vulnerability Analysis
@@ -161,8 +161,9 @@ Untuk memulai analisa *exploit* apa saja yang bisa diterapkan, kita dapat meliha
 2. Kita dapat melihat hasil *scanning*	nya seperti gambar berikut  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_23.jpg)
 
-3. Lorem Ipsum  
+3. Dapat dilihat pada hasil audit oleh openvas, terdapat beberapa celah yang sangat riskan.  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_InstalasiMetasploitable-RunningMetasploit/Screenshot_24.jpg)
+
 
 ### Exploitation & Post Exploitation
 
@@ -279,12 +280,23 @@ Post Exploit yang dirancang adalah dengan *impersonate* sebagai komputer target 
 14. Kita dapat menjalankan perintah *shell* setelah melakukan session. Kita dapat melakukan post exploit seperti analisis OS yang digunakan, dll.   
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/example.png)
 
-### Reporting
+* #### Exploit dengan menggunakan Ingreslock & Post Exploit menampilakan pesan pada console ketika pengguna login
+1. Pada saat dilakukan audit dengan openvas, terdapat backdoor Ingreslock pada Remote Host.
+![Ingresslock](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_Exploit_Ingreslock/Screenshot_1.jpg)
 
+2. Jika di klik, maka akan menampilkan keterangan mengenai backdoor tersebut.
+![Ingresslock](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_Exploit_Ingreslock/Screenshot_2.jpg)
+
+3. Karena sudah terdapat backdoor yang tertanam pada OS, serangan dapat dilakukan dengan perintah **telnet [Remote Host] 1524**. Maka kita sudah dapat mengakses console dari remote HOST
+![Ingresslock](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/Screenshot_Exploit_Ingreslock/success.jpeg).
+
+4. Setelah masuk ke dalam console, buka file ~/.bashrc dan masukkan kata yang diinginkan, maka ketika terdapat yang masuk ke console, akan menampilkan pesan yang kita tulis. 
+![Ingreslock](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/SC_Post_Exploit_menambahkan%20data%20di%20bashrc/1.jpeg)
 
 ## Kesimpulan dan Saran
 
-1. Lorem Ipsum
-2. Lorem Ipsum
-
-
+1. Kesimpulan
+ 
+2. Saran
+*   Penting dilakukan untuk selalu mengaudit system kita apakah terdapat celah ataupun tidak. Bisa dilakukan dengan aplikasi seperti openvas. 
+*   Selalu mengupdate kernel, aplikasi, dan OS agar berbagai celah yang ada dapat segera mendapatkan patch jika sudah tersedia.
