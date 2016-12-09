@@ -215,10 +215,10 @@ Post Exploit yang akan dilakukan adalah menggunakan tool John The Ripper untuk m
 
 * #### Exploit Menggunakan mount NFS(Network File System) & Post Exploit Menggunakan ssh_login_pubkey
 
-1. Pada hasil nmap , kita melihat ada open port NFS pada Metasploitable  
+1. Pada hasil nmap, kita melihat ada open port NFS pada Metasploitable  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/1.png)
 
-2. Kita coba lihat di mount apa yang disediakan oleh komputer target, ternyata menyediakan langsung ke direktori root (/*)  
+2. Kita coba lihat path mount apa yang disediakan oleh komputer target, ternyata menyediakan langsung ke direktori root (/*)  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/2.png)
 
 3. Untuk bisa mengakses mount NFS, kita harus menyalakan service rpcbind  
@@ -227,20 +227,20 @@ Post Exploit yang akan dilakukan adalah menggunakan tool John The Ripper untuk m
 4. Kita buat folder sementara untuk mount NFS komputer target  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/4.png)
 
-5. Lalu kita mount folder yang telah kita buat ke NFS target  
+5. Lalu kita mount folder yang telah kita buat dengan NFS target  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/5.png)
 
-6. Jika berhasil, coba tes apakah sudah berhasil me-mount apa belum dengan cd ke folder sementara dan lakukan ls  
+6. Berhasil melakukan mount dengan target  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/6.png)
 
-Tentu saja ini berbahaya, karena kita bisa melihat file apa saja yang ada di dalam komputer, bahkan file sensitif seperti key untuk ssh, file passwd dan lainlain.
+Tentu saja ini berbahaya, karena kita bisa melihat dan mengambil file apa saja yang ada di dalam komputer, bahkan file sensitif seperti key untuk ssh, file passwd, dll.
 
 Post Exploit yang dirancang adalah dengan *impersonate* sebagai komputer target dengan private key yang kita ambil.
 
 1. Kita ambil private key komputer target dengan copy file di ~/.ssh/id_rsa , misal ke file /tmp/r00tprivatekey  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/7.png)
 
-2. Setelah ini, kita coba menggunakan metasploit auxiliary/scanner/ssh/ssh_login_pubkey untuk menyerang. Kita ketik use auxiliary/scanner/ssh/ssh_login_pubkey untuk menggunakan modul tersebut dalam console metasploit  
+2. Setelah ini, kita coba menggunakan modul Metasploit ssh_login_pubkey untuk menyerang. Ketikkan **use auxiliary/scanner/ssh/ssh_login_pubkey** untuk menggunakan modul tersebut dalam msfconsole  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/10.png)
 
 3. Kita coba lihat info dari exploit tersebut. Parameter yang dibutuhkan adalah KEY_PATH, USER, dan RHOSTS  
@@ -252,10 +252,10 @@ Post Exploit yang dirancang adalah dengan *impersonate* sebagai komputer target 
 5. Masukkan USER yang kita inginkan, yaitu root  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/13.png)
 
-6. Masukkan RHOSTS yaitu subnet yang ingin kita bruteforce login dengan private key yang kita punya  
+6. Masukkan RHOSTS yaitu subnet yang ingin kita lakukan login dengan private key yang kita punya  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/rhosts.png)
 
-7. Masukkan perintah run untuk menjalankan exploit. Tampak bahwa metasploit sedang mencoba login dengan semua IP dalam subnet satu per satu  
+7. Masukkan perintah run untuk menjalankan exploit. Tampak bahwa Metasploit sedang mencoba login dengan semua IP dalam subnet satu per satu  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/run.png)
 
 8. Jika ada yang berhasil, maka akan muncul tampilan seperti berikut  
@@ -270,7 +270,7 @@ Post Exploit yang dirancang adalah dengan *impersonate* sebagai komputer target 
 11. Untuk memastikan apakah kita benar login sebagai root, ketikkan whoami  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/whoami.png)
 
-12. Kita dapat menjalankan perintah *shell* setelah melakukan session. Kita dapat melakukan post exploit seperti analisis OS yang digunakan, dll  
+12. Kita dapat menjalankan perintah *shell* setelah melakukan session. Kita dapat melakukan post exploit lain seperti mengubah password user, dll  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/example.png)
 
 * #### Exploit Menggunakan Ingreslock & Post Exploit menampilkan pesan pada console ketika pengguna login
@@ -303,4 +303,5 @@ Penetration Testing adalah metode yang selalu dilakukan oleh penyerang ketika me
 ### Saran
 *   Penting dilakukan untuk selalu mengaudit sistem kita apakah terdapat celah ataupun tidak. Bisa dilakukan dengan aplikasi seperti OpenVAS. 
 *   Selalu mengupdate kernel, aplikasi, dan OS agar berbagai celah yang ada dapat segera mendapatkan patch jika sudah tersedia.
+
 
