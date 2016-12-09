@@ -240,43 +240,37 @@ Post Exploit yang dirancang adalah dengan *impersonate* sebagai komputer target 
 1. Kita ambil private key komputer target dengan copy file di ~/.ssh/id_rsa , misal ke file /tmp/r00tprivatekey  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/7.png)
 
-2. Kita masukkan public key kita ke komputer target dengan cat ~/.ssh/id_rsa.pub >> /tmp/target/home/msfadmin/.ssh/authorized_keys , ini dibutuhkan untuk SSH ke komputer target nantinya  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/pubkey.png)
-
-3. Hasil cat file authorized_keys, untuk memastikan bahwa public key kita sudah masuk ke komputer target  
-![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/hasilcat.png)
-
-4. Setelah ini, kita coba menggunakan metasploit auxiliary/scanner/ssh/ssh_login_pubkey untuk menyerang. Kita ketik use auxiliary/scanner/ssh/ssh_login_pubkey untuk menggunakan modul tersebut dalam console metasploit  
+2. Setelah ini, kita coba menggunakan metasploit auxiliary/scanner/ssh/ssh_login_pubkey untuk menyerang. Kita ketik use auxiliary/scanner/ssh/ssh_login_pubkey untuk menggunakan modul tersebut dalam console metasploit  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/10.png)
 
-5. Kita coba lihat info dari exploit tersebut. Parameter yang dibutuhkan adalah KEY_PATH, USER, dan RHOSTS  
+3. Kita coba lihat info dari exploit tersebut. Parameter yang dibutuhkan adalah KEY_PATH, USER, dan RHOSTS  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/11.png)
 
-6. Masukkan KEY_PATH atau file private key komputer server yang tadi telah kita copy  
+4. Masukkan KEY_PATH atau file private key komputer server yang tadi telah kita copy  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/12.png)
 
-7. Masukkan USER yang kita inginkan, yaitu root  
+5. Masukkan USER yang kita inginkan, yaitu root  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/13.png)
 
-8. Masukkan RHOSTS yaitu subnet yang ingin kita bruteforce login dengan private key yang kita punya  
+6. Masukkan RHOSTS yaitu subnet yang ingin kita bruteforce login dengan private key yang kita punya  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/rhosts.png)
 
-9. Masukkan perintah run untuk menjalankan exploit. Tampak bahwa metasploit sedang mencoba login dengan semua IP dalam subnet satu per satu  
+7. Masukkan perintah run untuk menjalankan exploit. Tampak bahwa metasploit sedang mencoba login dengan semua IP dalam subnet satu per satu  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/run.png)
 
-11. Jika ada yang berhasil, maka akan muncul tampilan seperti berikut  
+8. Jika ada yang berhasil, maka akan muncul tampilan seperti berikut  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/success_otherpc.png)
 
-11. Pada bagian bawah, tampak bahwa metasploit telah membuka session ssh ke IP 192.168.43.12 di session 1  
+9. Pada bagian bawah, tampak bahwa metasploit telah membuka session ssh ke IP 192.168.43.12 di session 1  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/detailsuccess.png)
 
-12. Kita masuk ke session 1 dengan perintah session -i 1  
+10. Kita masuk ke session 1 dengan perintah session -i 1  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/17.png)
 
-13. Untuk memastikan apakah kita benar login sebagai root, ketikkan whoami  
+11. Untuk memastikan apakah kita benar login sebagai root, ketikkan whoami  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/whoami.png)
 
-14. Kita dapat menjalankan perintah *shell* setelah melakukan session. Kita dapat melakukan post exploit seperti analisis OS yang digunakan, dll  
+12. Kita dapat menjalankan perintah *shell* setelah melakukan session. Kita dapat melakukan post exploit seperti analisis OS yang digunakan, dll  
 ![Install](https://raw.githubusercontent.com/ronayumik/PKSJ/master/Tugas5/ssh_login_pubkey/example.png)
 
 * #### Exploit Menggunakan Ingreslock & Post Exploit menampilkan pesan pada console ketika pengguna login
